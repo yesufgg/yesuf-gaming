@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,12 +10,12 @@
 
 body{
   margin:0;
-  font-family:Arial, sans-serif;
+  font-family:Arial;
   background:#050508;
   color:white;
 }
 
-/* 🔥 Header */
+/* 🔥 الهيدر */
 header{
   text-align:center;
   padding:80px 20px;
@@ -23,19 +23,26 @@ header{
 }
 
 header h1{
-  font-size:52px;
+  font-size:50px;
   margin:0;
 }
 
 header p{
-  font-size:18px;
   opacity:0.8;
+  font-size:18px;
 }
 
-/* 🔍 Search */
+/* 🔍 البحث */
+.section-title{
+  text-align:center;
+  font-size:22px;
+  margin-top:20px;
+  color:#06b6d4;
+}
+
 .search-box{
   text-align:center;
-  margin:25px 0;
+  margin:15px 0 20px;
 }
 
 .search-box input{
@@ -51,7 +58,28 @@ header p{
   border:1px solid rgba(255,255,255,0.1);
 }
 
-/* 🎮 Games Grid */
+/* 🎯 الفلاتر */
+.filters{
+  text-align:center;
+  margin:10px 0 30px;
+}
+
+.filters button{
+  margin:5px;
+  padding:10px 15px;
+  border:none;
+  border-radius:10px;
+  background:#1a1a1a;
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.filters button:hover{
+  background:#7c3aed;
+}
+
+/* 🎮 الألعاب */
 .games{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -61,7 +89,7 @@ header p{
   margin:auto;
 }
 
-/* 🎴 Card */
+/* 🎴 الكرت */
 .card{
   background:rgba(255,255,255,0.05);
   border:1px solid rgba(255,255,255,0.1);
@@ -85,11 +113,10 @@ header p{
 .card h2{
   text-align:center;
   margin:10px 0;
-  font-size:20px;
 }
 
-/* 🔘 Button */
-button{
+/* 🔘 زر */
+button.game-btn{
   width:90%;
   margin:15px auto;
   display:block;
@@ -103,11 +130,11 @@ button{
   transition:0.3s;
 }
 
-button:hover{
+button.game-btn:hover{
   transform:scale(1.05);
 }
 
-/* 📌 Footer */
+/* 📌 الفوتر */
 footer{
   text-align:center;
   padding:25px;
@@ -122,21 +149,39 @@ footer{
 <body>
 
 <header>
-<h1>Yesuf Gaming</h1>
-<p>Premium Game Library</p>
+<h1>🎮 Yesuf Gaming</h1>
+<p>مكتبة الألعاب الأفضل للأندرويد والبيسي</p>
 </header>
 
+<!-- 🔍 البحث -->
+<h2 class="section-title">🔍 البحث</h2>
+
 <div class="search-box">
-  <input type="text" id="searchInput" onkeyup="searchGames()" placeholder="Search for a game...">
+  <input type="text" id="searchInput" onkeyup="searchGames()" placeholder="ابحث عن لعبة...">
 </div>
+
+<!-- 🎯 الفلاتر -->
+<div class="filters">
+
+<button onclick="filterGames('all')">الكل</button>
+<button onclick="filterGames('android')">أندرويد</button>
+<button onclick="filterGames('pc')">PC</button>
+<button onclick="filterGames('online')">أونلاين</button>
+
+</div>
+
+<!-- 🎮 الألعاب -->
+<h2 class="section-title">🎮 الألعاب</h2>
 
 <section class="games">
 
-<div class="card">
+<!-- 🎮 لعبة 1 -->
+<div class="card" data-category="android">
   <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/297190/capsule_616x353.jpg?t=1700734056">
   <h2>Grayland</h2>
+
   <a href="grayland.html">
-    <button>View Details</button>
+    <button class="game-btn">📖 التفاصيل</button>
   </a>
 </div>
 
@@ -147,6 +192,8 @@ footer{
 </footer>
 
 <script>
+
+/* 🔍 البحث */
 function searchGames(){
   let input = document.getElementById("searchInput").value.toLowerCase();
   let cards = document.getElementsByClassName("card");
@@ -161,6 +208,28 @@ function searchGames(){
     }
   }
 }
+
+/* 🎯 الفلترة */
+function filterGames(category){
+
+  let cards = document.getElementsByClassName("card");
+
+  for(let i = 0; i < cards.length; i++){
+
+    let cat = cards[i].getAttribute("data-category");
+
+    if(category === "all"){
+      cards[i].style.display = "block";
+    }
+    else if(cat === category){
+      cards[i].style.display = "block";
+    }
+    else{
+      cards[i].style.display = "none";
+    }
+  }
+}
+
 </script>
 
 </body>
