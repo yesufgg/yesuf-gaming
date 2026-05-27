@@ -7,12 +7,17 @@
 <title>Grayland</title>
 
 <style>
+
 body{
   margin:0;
   background:#0f0f0f;
   color:white;
   font-family:Arial;
   line-height:1.8;
+
+  /* 🔥 حل مشكلة اتجاه الكتابة */
+  direction: rtl;
+  text-align: right;
 }
 
 .container{
@@ -21,17 +26,20 @@ body{
   padding:30px;
 }
 
+/* الصورة الرئيسية */
 img{
   width:100%;
   border-radius:20px;
   margin-bottom:20px;
 }
 
+/* العنوان */
 h1{
   color:#7c3aed;
   text-align:center;
 }
 
+/* الكرت */
 .card{
   background:#1a1a1a;
   padding:20px;
@@ -39,6 +47,7 @@ h1{
   margin-top:20px;
 }
 
+/* badges */
 .badge{
   display:inline-block;
   background:#2a2a2a;
@@ -48,12 +57,14 @@ h1{
   font-size:14px;
 }
 
+/* العناوين */
 .section-title{
   color:#06b6d4;
   margin-top:20px;
   font-weight:bold;
 }
 
+/* الصور */
 .gallery{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
@@ -74,6 +85,7 @@ h1{
   transform:scale(1.05);
 }
 
+/* الزر */
 button{
   width:100%;
   padding:15px;
@@ -84,17 +96,18 @@ button{
   color:white;
   font-size:16px;
   cursor:pointer;
+  transition:0.2s;
 }
 
 button:hover{
   background:#9b5cff;
   transform:scale(1.03);
-  transition:0.2s;
 }
 
 a{
   text-decoration:none;
 }
+
 </style>
 </head>
 
@@ -139,9 +152,7 @@ a{
 <div class="gallery">
 
   <img src="https://www.vgchartz.com/articles_media/images/grayland-5-1.jpg">
-
   <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/297190/ss_83b78a3c7b2848e6e8b41c2743d128642b0d27d0.1920x1080.jpg?t=1700734056">
-
   <img src="https://images.forfun.com/v2/fetch/ce/ce281eff2eba6fb8949334d27a236c7a.jpeg">
 
 </div>
