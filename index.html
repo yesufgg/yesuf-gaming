@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,19 +10,19 @@
 
 body{
   margin:0;
-  background:#0f0f0f;
+  background:#0b0b0f;
   color:white;
-  font-family:Arial;
+  font-family:Arial, sans-serif;
 }
 
 header{
   text-align:center;
-  padding:60px 20px;
+  padding:70px 20px;
   background:linear-gradient(135deg,#7c3aed,#06b6d4);
 }
 
 header h1{
-  font-size:45px;
+  font-size:48px;
   margin:0;
 }
 
@@ -33,29 +33,29 @@ header p{
 
 .search-box{
   text-align:center;
-  margin:20px 0;
+  margin:25px 0;
 }
 
 .search-box input{
   width:85%;
-  max-width:450px;
-  padding:12px;
-  border-radius:12px;
+  max-width:500px;
+  padding:14px;
+  border-radius:14px;
   border:none;
   outline:none;
   font-size:16px;
 }
 
 .games{
-  display:flex;
-  justify-content:center;
-  gap:25px;
-  flex-wrap:wrap;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
   padding:20px;
+  max-width:1100px;
+  margin:auto;
 }
 
 .card{
-  width:300px;
   background:#1a1a1a;
   border-radius:18px;
   overflow:hidden;
@@ -64,8 +64,8 @@ header p{
 }
 
 .card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 10px 25px rgba(124,58,237,0.3);
+  transform:translateY(-10px);
+  box-shadow:0 10px 30px rgba(124,58,237,0.4);
 }
 
 .card img{
@@ -77,11 +77,13 @@ header p{
 .card h2{
   text-align:center;
   margin:10px 0;
+  font-size:20px;
 }
 
 button{
-  margin:15px;
-  width:calc(100% - 30px);
+  width:90%;
+  margin:15px auto;
+  display:block;
   padding:12px;
   border:none;
   border-radius:12px;
@@ -99,7 +101,8 @@ button:hover{
 footer{
   text-align:center;
   padding:25px;
-  color:#888;
+  color:#777;
+  margin-top:30px;
 }
 
 </style>
@@ -109,26 +112,22 @@ footer{
 <body>
 
 <header>
-<h1>🎮 Yesuf Gaming</h1>
-<p>أفضل ألعاب الأندرويد والبيسي والمحاكيات</p>
+<h1>Yesuf Gaming</h1>
+<p>Games Hub</p>
 </header>
 
 <div class="search-box">
-  <input type="text" id="searchInput" onkeyup="searchGames()" placeholder="🔍 ابحث عن لعبة...">
+  <input type="text" id="searchInput" onkeyup="searchGames()" placeholder="Search game...">
 </div>
 
 <section class="games">
 
 <div class="card">
-
-<img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/297190/capsule_616x353.jpg?t=1700734056">
-
-<h2>Grayland</h2>
-
-<a href="grayland.html">
-  <button>📖 عرض التفاصيل</button>
-</a>
-
+  <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/297190/capsule_616x353.jpg?t=1700734056">
+  <h2>Grayland</h2>
+  <a href="grayland.html">
+    <button>View Details</button>
+  </a>
 </div>
 
 </section>
