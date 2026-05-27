@@ -10,27 +10,29 @@
 
 body{
   margin:0;
-  background:#0b0b0f;
-  color:white;
   font-family:Arial, sans-serif;
+  background:#050508;
+  color:white;
 }
 
+/* 🔥 Header */
 header{
   text-align:center;
-  padding:70px 20px;
-  background:linear-gradient(135deg,#7c3aed,#06b6d4);
+  padding:80px 20px;
+  background: radial-gradient(circle at top, #7c3aed, #050508);
 }
 
 header h1{
-  font-size:48px;
+  font-size:52px;
   margin:0;
 }
 
 header p{
   font-size:18px;
-  opacity:0.9;
+  opacity:0.8;
 }
 
+/* 🔍 Search */
 .search-box{
   text-align:center;
   margin:25px 0;
@@ -44,28 +46,34 @@ header p{
   border:none;
   outline:none;
   font-size:16px;
+  background:rgba(255,255,255,0.05);
+  color:white;
+  border:1px solid rgba(255,255,255,0.1);
 }
 
+/* 🎮 Games Grid */
 .games{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:20px;
-  padding:20px;
+  padding:30px;
   max-width:1100px;
   margin:auto;
 }
 
+/* 🎴 Card */
 .card{
-  background:#1a1a1a;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
   border-radius:18px;
   overflow:hidden;
   transition:0.3s;
-  box-shadow:0 0 10px rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
 }
 
 .card:hover{
   transform:translateY(-10px);
-  box-shadow:0 10px 30px rgba(124,58,237,0.4);
+  box-shadow:0 15px 40px rgba(124,58,237,0.4);
 }
 
 .card img{
@@ -80,6 +88,7 @@ header p{
   font-size:20px;
 }
 
+/* 🔘 Button */
 button{
   width:90%;
   margin:15px auto;
@@ -98,6 +107,7 @@ button:hover{
   transform:scale(1.05);
 }
 
+/* 📌 Footer */
 footer{
   text-align:center;
   padding:25px;
@@ -113,11 +123,11 @@ footer{
 
 <header>
 <h1>Yesuf Gaming</h1>
-<p>Games Hub</p>
+<p>Premium Game Library</p>
 </header>
 
 <div class="search-box">
-  <input type="text" id="searchInput" onkeyup="searchGames()" placeholder="Search game...">
+  <input type="text" id="searchInput" onkeyup="searchGames()" placeholder="Search for a game...">
 </div>
 
 <section class="games">
