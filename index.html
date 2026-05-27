@@ -79,8 +79,8 @@ header p{
   background:#7c3aed;
 }
 
-/* 🎮 الألعاب + الكونسولات */
-.games, .consoles{
+/* 🎮 الألعاب */
+.games{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:20px;
@@ -104,13 +104,22 @@ header p{
   box-shadow:0 15px 40px rgba(124,58,237,0.4);
 }
 
-.card h2{
-  text-align:center;
-  margin:20px 0;
+/* 🖼️ الصور */
+.card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
 }
 
-/* 🔘 زر */
-button.game-btn{
+/* 📝 العنوان */
+.card h2{
+  text-align:center;
+  margin:15px 0;
+}
+
+/* 🔘 الأزرار */
+button.game-btn,
+.emu-btn{
   width:90%;
   margin:15px auto;
   display:block;
@@ -124,7 +133,8 @@ button.game-btn{
   transition:0.3s;
 }
 
-button.game-btn:hover{
+button.game-btn:hover,
+.emu-btn:hover{
   transform:scale(1.05);
 }
 
@@ -151,16 +161,23 @@ footer{
 <h2 class="section-title">🔍 البحث</h2>
 
 <div class="search-box">
-  <input type="text" id="searchInput" onkeyup="searchGames()" placeholder="ابحث عن لعبة...">
+<input type="text" id="searchInput" onkeyup="searchGames()" placeholder="ابحث عن لعبة...">
 </div>
 
 <!-- 🎯 الفلاتر -->
 <div class="filters">
+
 <button onclick="filterGames('all')">الكل</button>
 <button onclick="filterGames('android')">أندرويد</button>
 <button onclick="filterGames('pc')">PC</button>
 <button onclick="filterGames('online')">أونلاين</button>
+
 </div>
+
+<!-- 🕹️ زر ROMS -->
+<button class="emu-btn" onclick="toggleEmulators()">
+🕹️ ألعاب المحاكيات ROMS
+</button>
 
 <!-- 🎮 الألعاب -->
 <h2 class="section-title">🎮 الألعاب</h2>
@@ -168,60 +185,70 @@ footer{
 <section class="games">
 
 <div class="card" data-category="android">
+
+  <!-- 🔥 ضع رابط صورة اللعبة هنا -->
+  <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/297190/capsule_616x353.jpg?t=1700734056">
+
   <h2>Grayland</h2>
+
   <a href="grayland.html">
     <button class="game-btn">📖 التفاصيل</button>
   </a>
+
 </div>
 
 </section>
 
-<!-- 🎮 الكونسولات (NEW) -->
-<h2 class="section-title">🕹️ الكونسولات</h2>
+<!-- 🕹️ قسم ROMS -->
+<div id="emulatorsSection" style="display:none;">
 
-<section class="consoles">
+<h2 class="section-title">🕹️ ألعاب المحاكيات ROMS</h2>
 
+<section class="games">
+
+<!-- 🎮 PS2 -->
 <div class="card">
-  <h2>Nintendo Entertainment System (NES)</h2>
+
+  <!-- 🔥 ضع رابط صورة الجهاز هنا -->
+  <img src="https://media.sketchfab.com/models/266d26be2a6d47d58880bb723d1faf7a/thumbnails/67943311943141aab921e5f9a1916ae4/53435a17ae3242e9b07b89c417472d88.jpeg">
+
+  <h2>PlayStation 2</h2>
+
+  <button class="game-btn">
+    عرض الألعاب
+  </button>
+
 </div>
 
+<!-- 🎮 PSP -->
 <div class="card">
-  <h2>Super Nintendo (SNES)</h2>
+
+  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/PSP-1000.jpg">
+
+  <h2>PlayStation Portable</h2>
+
+  <button class="game-btn">
+    عرض الألعاب
+  </button>
+
 </div>
 
+<!-- 🎮 Nintendo Switch -->
 <div class="card">
-  <h2>Nintendo 64 (N64)</h2>
-</div>
 
-<div class="card">
-  <h2>Game Boy Advance (GBA)</h2>
-</div>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/NintendoSwitchLogo.png">
 
-<div class="card">
-  <h2>Sega Genesis</h2>
-</div>
+  <h2>Nintendo Switch</h2>
 
-<div class="card">
-  <h2>PlayStation 1 (PS1)</h2>
-</div>
+  <button class="game-btn">
+    عرض الألعاب
+  </button>
 
-<div class="card">
-  <h2>PlayStation 2 (PS2)</h2>
-</div>
-
-<div class="card">
-  <h2>PlayStation Portable (PSP)</h2>
-</div>
-
-<div class="card">
-  <h2>Nintendo Switch (NSW)</h2>
-</div>
-
-<div class="card">
-  <h2>Nintendo Wii (WII)</h2>
 </div>
 
 </section>
+
+</div>
 
 <footer>
 © 2026 YESUF Gaming
@@ -231,17 +258,22 @@ footer{
 
 /* 🔍 البحث */
 function searchGames(){
+
   let input = document.getElementById("searchInput").value.toLowerCase();
+
   let cards = document.getElementsByClassName("card");
 
   for(let i = 0; i < cards.length; i++){
+
     let title = cards[i].getElementsByTagName("h2")[0];
 
     if(title.innerText.toLowerCase().includes(input)){
       cards[i].style.display = "block";
-    } else {
+    }
+    else{
       cards[i].style.display = "none";
     }
+
   }
 }
 
@@ -263,6 +295,28 @@ function filterGames(category){
     else{
       cards[i].style.display = "none";
     }
+
+  }
+}
+
+/* 🕹️ إظهار وإخفاء قسم ROMS */
+function toggleEmulators(){
+
+  let section = document.getElementById("emulatorsSection");
+
+  if(section.style.display === "none"){
+
+    section.style.display = "block";
+
+    section.scrollIntoView({
+      behavior:"smooth"
+    });
+
+  }
+  else{
+
+    section.style.display = "none";
+
   }
 }
 
