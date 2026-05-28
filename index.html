@@ -1,149 +1,201 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Yesuf Gaming</title>
+<title>YESUF Gaming</title>
+
+<!-- 🔥 خط احترافي -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
 body{
-  margin:0;
-  font-family:Arial;
-  background:#050508;
-  color:white;
+    font-family:'Cairo',sans-serif;
+    background:#0b1118;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* 🔥 خلفية */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at top right,rgba(124,58,237,0.25),transparent 30%),
+    radial-gradient(circle at bottom left,rgba(6,182,212,0.18),transparent 30%);
+    z-index:-1;
 }
 
 /* 🔥 الهيدر */
 header{
-  text-align:center;
-  padding:80px 20px;
-  background: radial-gradient(circle at top, #7c3aed, #050508);
+    text-align:center;
+    padding:110px 20px 90px;
+    background:
+    linear-gradient(to bottom,rgba(20,25,35,0.95),rgba(11,17,24,0.95));
+    border-bottom:1px solid rgba(255,255,255,0.08);
+    position:relative;
 }
 
 header h1{
-  font-size:50px;
-  margin:0;
+    font-size:72px;
+    font-weight:800;
+    letter-spacing:1px;
+    background:linear-gradient(90deg,#7c3aed,#06b6d4);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
 header p{
-  opacity:0.8;
-  font-size:18px;
+    margin-top:15px;
+    color:#a5b4c7;
+    font-size:20px;
 }
 
 /* 🔍 البحث */
-.section-title{
-  text-align:center;
-  font-size:22px;
-  margin-top:20px;
-  color:#06b6d4;
-}
-
 .search-box{
-  text-align:center;
-  margin:15px 0 20px;
+    max-width:650px;
+    margin:40px auto 0;
+    padding:0 20px;
 }
 
 .search-box input{
-  width:85%;
-  max-width:500px;
-  padding:14px;
-  border-radius:14px;
-  border:none;
-  outline:none;
-  font-size:16px;
-  background:rgba(255,255,255,0.05);
-  color:white;
-  border:1px solid rgba(255,255,255,0.1);
+    width:100%;
+    padding:18px 22px;
+    border:none;
+    border-radius:18px;
+    background:#111827;
+    color:white;
+    font-size:16px;
+    outline:none;
+    border:1px solid rgba(255,255,255,0.08);
+    transition:0.3s;
 }
 
-/* 🎯 الفلاتر */
-.filters{
-  text-align:center;
-  margin:10px 0 30px;
+.search-box input:focus{
+    border-color:#06b6d4;
+    box-shadow:0 0 25px rgba(6,182,212,0.2);
 }
 
-.filters button{
-  margin:5px;
-  padding:10px 15px;
-  border:none;
-  border-radius:10px;
-  background:#1a1a1a;
-  color:white;
-  cursor:pointer;
-  transition:0.3s;
+/* 🎯 عنوان */
+.section-title{
+    text-align:center;
+    font-size:34px;
+    margin-top:65px;
+    margin-bottom:15px;
+    font-weight:800;
 }
 
-.filters button:hover{
-  background:#7c3aed;
-}
-
-/* 🎮 الألعاب */
+/* 🎮 البطاقات */
 .games{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:20px;
-  padding:30px;
-  max-width:1100px;
-  margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    max-width:1250px;
+    margin:auto;
+    padding:40px 25px 80px;
 }
 
 /* 🎴 الكرت */
 .card{
-  background:rgba(255,255,255,0.05);
-  border:1px solid rgba(255,255,255,0.1);
-  border-radius:18px;
-  overflow:hidden;
-  transition:0.3s;
-  backdrop-filter: blur(10px);
+    background:#111827;
+    border-radius:24px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,0.06);
+    transition:0.35s;
+    position:relative;
 }
 
 .card:hover{
-  transform:translateY(-10px);
-  box-shadow:0 15px 40px rgba(124,58,237,0.4);
+    transform:translateY(-12px);
+    box-shadow:
+    0 20px 45px rgba(0,0,0,0.45),
+    0 0 25px rgba(124,58,237,0.22);
 }
 
 /* 🖼️ الصور */
 .card img{
-  width:100%;
-  height:180px;
-  object-fit:cover;
+    width:100%;
+    height:210px;
+    object-fit:cover;
+    display:block;
 }
 
-/* 📝 العنوان */
+/* 📝 المحتوى */
+.card-content{
+    padding:22px;
+}
+
 .card h2{
-  text-align:center;
-  margin:15px 0;
+    font-size:28px;
+    margin-bottom:10px;
 }
 
-/* 🔘 الأزرار */
-button.game-btn,
-.emu-btn{
-  width:90%;
-  margin:15px auto;
-  display:block;
-  padding:12px;
-  border:none;
-  border-radius:12px;
-  background:linear-gradient(135deg,#7c3aed,#06b6d4);
-  color:white;
-  font-size:15px;
-  cursor:pointer;
-  transition:0.3s;
+.card p{
+    color:#9ca3af;
+    line-height:1.7;
+    font-size:15px;
+    min-height:50px;
 }
 
-button.game-btn:hover,
-.emu-btn:hover{
-  transform:scale(1.05);
+/* 🔘 الزر */
+.game-btn{
+    width:100%;
+    margin-top:18px;
+    padding:14px;
+    border:none;
+    border-radius:14px;
+    background:linear-gradient(135deg,#7c3aed,#06b6d4);
+    color:white;
+    font-size:16px;
+    font-weight:700;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.game-btn:hover{
+    transform:scale(1.03);
+    opacity:0.95;
 }
 
 /* 📌 الفوتر */
 footer{
-  text-align:center;
-  padding:25px;
-  color:#777;
-  margin-top:30px;
+    text-align:center;
+    padding:35px;
+    color:#7b8798;
+    border-top:1px solid rgba(255,255,255,0.06);
+    background:#0d141d;
+}
+
+/* 📱 الجوال */
+@media(max-width:768px){
+
+header h1{
+    font-size:48px;
+}
+
+header p{
+    font-size:16px;
+}
+
+.section-title{
+    font-size:28px;
+}
+
+.games{
+    gap:22px;
+}
+
 }
 
 </style>
@@ -152,175 +204,709 @@ footer{
 
 <body>
 
+<!-- 🔥 الهيدر -->
 <header>
-<h1>🎮 Yesuf Gaming</h1>
-<p>مكتبة الألعاب الأفضل للأندرويد والبيسي</p>
-</header>
+
+<h1>YESUF Gaming</h1>
+
+<p>
+أفضل مكتبة ألعاب للأندرويد والبيسي والمحاكيات
+</p>
 
 <!-- 🔍 البحث -->
-<h2 class="section-title">🔍 البحث</h2>
-
 <div class="search-box">
-<input type="text" id="searchInput" onkeyup="searchGames()" placeholder="ابحث عن لعبة...">
+<input type="text" placeholder="ابحث عن لعبة أو قسم...">
 </div>
 
-<!-- 🎯 الفلاتر -->
-<div class="filters">
+</header>
 
-<button onclick="filterGames('all')">الكل</button>
-<button onclick="filterGames('android')">أندرويد</button>
-<button onclick="filterGames('pc')">PC</button>
-<button onclick="filterGames('online')">أونلاين</button>
+<!-- 🎯 الفئات -->
+<h2 class="section-title">🎮 الفئات</h2>
 
-</div>
+<section class="games">
 
-<!-- 🕹️ زر ROMS -->
-<button class="emu-btn" onclick="toggleEmulators()">
-🕹️ ألعاب المحاكيات ROMS
+<!-- 📱 Android -->
+<div class="card">
+
+<img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/HeroHomepage_2880x1200.width-1300_oirLRAu.jpg">
+
+<div class="card-content">
+
+<h2>Android</h2>
+
+<p>
+ألعاب أندرويد الأصلية والمعدلة مع أفضل التجارب للأجهزة الضعيفة والقوية.
+</p>
+
+<button class="game-btn">
+دخول القسم
 </button>
 
-<!-- 🎮 الألعاب -->
-<h2 class="section-title">🎮 الألعاب</h2>
+</div>
 
-<section class="games">
+</div>
 
-<div class="card" data-category="android">
+<!-- 💻 PC -->
+<div class="card">
 
-  <!-- 🔥 ضع رابط صورة اللعبة هنا -->
-  <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/297190/capsule_616x353.jpg?t=1700734056">
+<img src="https://images.unsplash.com/photo-1542751110-97427bbecf20?q=80&w=1200&auto=format&fit=crop">
 
-  <h2>Grayland</h2>
+<div class="card-content">
 
-  <a href="grayland.html">
-    <button class="game-btn">📖 التفاصيل</button>
-  </a>
+<h2>PC</h2>
+
+<p>
+مكتبة ألعاب الكمبيوتر الكاملة من الألعاب الخفيفة وحتى ألعاب AAA.
+</p>
+
+<button class="game-btn">
+دخول القسم
+</button>
+
+</div>
+
+</div>
+
+<!-- 🕹️ ROMS -->
+<div class="card">
+
+<img src="https://media.sketchfab.com/models/266d26be2a6d47d58880bb723d1faf7a/thumbnails/67943311943141aab921e5f9a1916ae4/53435a17ae3242e9b07b89c417472d88.jpeg">
+
+<div class="card-content">
+
+<h2>ROMS</h2>
+
+<p>
+ألعاب المحاكيات الكلاسيكية لأجهزة PlayStation وNintendo وSEGA.
+</p>
+
+<button class="game-btn">
+دخول القسم
+</button>
+
+</div>
 
 </div>
 
 </section>
 
-<!-- 🕹️ قسم ROMS -->
-<div id="emulatorsSection" style="display:none;">
-
-<h2 class="section-title">🕹️ ألعاب المحاكيات ROMS</h2>
-
-<section class="games">
-
-<!-- 🎮 PS2 -->
-<div class="card">
-
-  <!-- 🔥 ضع رابط صورة الجهاز هنا -->
-  <img src="https://media.sketchfab.com/models/266d26be2a6d47d58880bb723d1faf7a/thumbnails/67943311943141aab921e5f9a1916ae4/53435a17ae3242e9b07b89c417472d88.jpeg">
-
-  <h2>PlayStation 2</h2>
-
-  <button class="game-btn">
-    عرض الألعاب
-  </button>
-
-</div>
-
-<!-- 🎮 PSP -->
-<div class="card">
-
-  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/PSP-1000.jpg">
-
-  <h2>PlayStation Portable</h2>
-
-  <button class="game-btn">
-    عرض الألعاب
-  </button>
-
-</div>
-
-<!-- 🎮 Nintendo Switch -->
-<div class="card">
-
-  <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/NintendoSwitchLogo.png">
-
-  <h2>Nintendo Switch</h2>
-
-  <button class="game-btn">
-    عرض الألعاب
-  </button>
-
-</div>
-
-</section>
-
-</div>
-
+<!-- 📌 الفوتر -->
 <footer>
-© 2026 YESUF Gaming
+
+© 2026 YESUF Gaming — All Rights Reserved
+
 </footer>
-
-<script>
-
-/* 🔍 البحث */
-function searchGames(){
-
-  let input = document.getElementById("searchInput").value.toLowerCase();
-
-  let cards = document.getElementsByClassName("card");
-
-  for(let i = 0; i < cards.length; i++){
-
-    let title = cards[i].getElementsByTagName("h2")[0];
-
-    if(title.innerText.toLowerCase().includes(input)){
-      cards[i].style.display = "block";
-    }
-    else{
-      cards[i].style.display = "none";
-    }
-
-  }
-}
-
-/* 🎯 الفلترة */
-function filterGames(category){
-
-  let cards = document.getElementsByClassName("card");
-
-  for(let i = 0; i < cards.length; i++){
-
-    let cat = cards[i].getAttribute("data-category");
-
-    if(category === "all"){
-      cards[i].style.display = "block";
-    }
-    else if(cat === category){
-      cards[i].style.display = "block";
-    }
-    else{
-      cards[i].style.display = "none";
-    }
-
-  }
-}
-
-/* 🕹️ إظهار وإخفاء قسم ROMS */
-function toggleEmulators(){
-
-  let section = document.getElementById("emulatorsSection");
-
-  if(section.style.display === "none"){
-
-    section.style.display = "block";
-
-    section.scrollIntoView({
-      behavior:"smooth"
-    });
-
-  }
-  else{
-
-    section.style.display = "none";
-
-  }
-}
-
-</script>
 
 </body>
 </html>
+```
+# YESUF Gaming — تصميم محسّن بأسلوب احترافي شبيه Steam
+
+```html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>YESUF Gaming</title>
+
+<!-- 🔥 خط احترافي -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Cairo',sans-serif;
+    background:#0b1118;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* 🔥 خلفية */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at top right,rgba(124,58,237,0.25),transparent 30%),
+    radial-gradient(circle at bottom left,rgba(6,182,212,0.18),transparent 30%);
+    z-index:-1;
+}
+
+/* 🔥 الهيدر */
+header{
+    text-align:center;
+    padding:110px 20px 90px;
+    background:
+    linear-gradient(to bottom,rgba(20,25,35,0.95),rgba(11,17,24,0.95));
+    border-bottom:1px solid rgba(255,255,255,0.08);
+    position:relative;
+}
+
+header h1{
+    font-size:72px;
+    font-weight:800;
+    letter-spacing:1px;
+    background:linear-gradient(90deg,#7c3aed,#06b6d4);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+header p{
+    margin-top:15px;
+    color:#a5b4c7;
+    font-size:20px;
+}
+
+/* 🔍 البحث */
+.search-box{
+    max-width:650px;
+    margin:40px auto 0;
+    padding:0 20px;
+}
+
+.search-box input{
+    width:100%;
+    padding:18px 22px;
+    border:none;
+    border-radius:18px;
+    background:#111827;
+    color:white;
+    font-size:16px;
+    outline:none;
+    border:1px solid rgba(255,255,255,0.08);
+    transition:0.3s;
+}
+
+.search-box input:focus{
+    border-color:#06b6d4;
+    box-shadow:0 0 25px rgba(6,182,212,0.2);
+}
+
+/* 🎯 عنوان */
+.section-title{
+    text-align:center;
+    font-size:34px;
+    margin-top:65px;
+    margin-bottom:15px;
+    font-weight:800;
+}
+
+/* 🎮 البطاقات */
+.games{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    max-width:1250px;
+    margin:auto;
+    padding:40px 25px 80px;
+}
+
+/* 🎴 الكرت */
+.card{
+    background:#111827;
+    border-radius:24px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,0.06);
+    transition:0.35s;
+    position:relative;
+}
+
+.card:hover{
+    transform:translateY(-12px);
+    box-shadow:
+    0 20px 45px rgba(0,0,0,0.45),
+    0 0 25px rgba(124,58,237,0.22);
+}
+
+/* 🖼️ الصور */
+.card img{
+    width:100%;
+    height:210px;
+    object-fit:cover;
+    display:block;
+}
+
+/* 📝 المحتوى */
+.card-content{
+    padding:22px;
+}
+
+.card h2{
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#9ca3af;
+    line-height:1.7;
+    font-size:15px;
+    min-height:50px;
+}
+
+/* 🔘 الزر */
+.game-btn{
+    width:100%;
+    margin-top:18px;
+    padding:14px;
+    border:none;
+    border-radius:14px;
+    background:linear-gradient(135deg,#7c3aed,#06b6d4);
+    color:white;
+    font-size:16px;
+    font-weight:700;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.game-btn:hover{
+    transform:scale(1.03);
+    opacity:0.95;
+}
+
+/* 📌 الفوتر */
+footer{
+    text-align:center;
+    padding:35px;
+    color:#7b8798;
+    border-top:1px solid rgba(255,255,255,0.06);
+    background:#0d141d;
+}
+
+/* 📱 الجوال */
+@media(max-width:768px){
+
+header h1{
+    font-size:48px;
+}
+
+header p{
+    font-size:16px;
+}
+
+.section-title{
+    font-size:28px;
+}
+
+.games{
+    gap:22px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- 🔥 الهيدر -->
+<header>
+
+<h1>YESUF Gaming</h1>
+
+<p>
+أفضل مكتبة ألعاب للأندرويد والبيسي والمحاكيات
+</p>
+
+<!-- 🔍 البحث -->
+<div class="search-box">
+<input type="text" placeholder="ابحث عن لعبة أو قسم...">
+</div>
+
+</header>
+
+<!-- 🎯 الفئات -->
+<h2 class="section-title">🎮 الفئات</h2>
+
+<section class="games">
+
+<!-- 📱 Android -->
+<div class="card">
+
+<img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/HeroHomepage_2880x1200.width-1300_oirLRAu.jpg">
+
+<div class="card-content">
+
+<h2>Android</h2>
+
+<p>
+ألعاب أندرويد الأصلية والمعدلة مع أفضل التجارب للأجهزة الضعيفة والقوية.
+</p>
+
+<button class="game-btn">
+دخول القسم
+</button>
+
+</div>
+
+</div>
+
+<!-- 💻 PC -->
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1542751110-97427bbecf20?q=80&w=1200&auto=format&fit=crop">
+
+<div class="card-content">
+
+<h2>PC</h2>
+
+<p>
+مكتبة ألعاب الكمبيوتر الكاملة من الألعاب الخفيفة وحتى ألعاب AAA.
+</p>
+
+<button class="game-btn">
+دخول القسم
+</button>
+
+</div>
+
+</div>
+
+<!-- 🕹️ ROMS -->
+<div class="card">
+
+<img src="https://media.sketchfab.com/models/266d26be2a6d47d58880bb723d1faf7a/thumbnails/67943311943141aab921e5f9a1916ae4/53435a17ae3242e9b07b89c417472d88.jpeg">
+
+<div class="card-content">
+
+<h2>ROMS</h2>
+
+<p>
+ألعاب المحاكيات الكلاسيكية لأجهزة PlayStation وNintendo وSEGA.
+</p>
+
+<button class="game-btn">
+دخول القسم
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- 📌 الفوتر -->
+<footer>
+
+© 2026 YESUF Gaming — All Rights Reserved
+
+</footer>
+
+</body>
+</html>
+```
+# YESUF Gaming — تصميم محسّن بأسلوب احترافي شبيه Steam
+
+```html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>YESUF Gaming</title>
+
+<!-- 🔥 خط احترافي -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Cairo',sans-serif;
+    background:#0b1118;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* 🔥 خلفية */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at top right,rgba(124,58,237,0.25),transparent 30%),
+    radial-gradient(circle at bottom left,rgba(6,182,212,0.18),transparent 30%);
+    z-index:-1;
+}
+
+/* 🔥 الهيدر */
+header{
+    text-align:center;
+    padding:110px 20px 90px;
+    background:
+    linear-gradient(to bottom,rgba(20,25,35,0.95),rgba(11,17,24,0.95));
+    border-bottom:1px solid rgba(255,255,255,0.08);
+    position:relative;
+}
+
+header h1{
+    font-size:72px;
+    font-weight:800;
+    letter-spacing:1px;
+    background:linear-gradient(90deg,#7c3aed,#06b6d4);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+header p{
+    margin-top:15px;
+    color:#a5b4c7;
+    font-size:20px;
+}
+
+/* 🔍 البحث */
+.search-box{
+    max-width:650px;
+    margin:40px auto 0;
+    padding:0 20px;
+}
+
+.search-box input{
+    width:100%;
+    padding:18px 22px;
+    border:none;
+    border-radius:18px;
+    background:#111827;
+    color:white;
+    font-size:16px;
+    outline:none;
+    border:1px solid rgba(255,255,255,0.08);
+    transition:0.3s;
+}
+
+.search-box input:focus{
+    border-color:#06b6d4;
+    box-shadow:0 0 25px rgba(6,182,212,0.2);
+}
+
+/* 🎯 عنوان */
+.section-title{
+    text-align:center;
+    font-size:34px;
+    margin-top:65px;
+    margin-bottom:15px;
+    font-weight:800;
+}
+
+/* 🎮 البطاقات */
+.games{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    max-width:1250px;
+    margin:auto;
+    padding:40px 25px 80px;
+}
+
+/* 🎴 الكرت */
+.card{
+    background:#111827;
+    border-radius:24px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,0.06);
+    transition:0.35s;
+    position:relative;
+}
+
+.card:hover{
+    transform:translateY(-12px);
+    box-shadow:
+    0 20px 45px rgba(0,0,0,0.45),
+    0 0 25px rgba(124,58,237,0.22);
+}
+
+/* 🖼️ الصور */
+.card img{
+    width:100%;
+    height:210px;
+    object-fit:cover;
+    display:block;
+}
+
+/* 📝 المحتوى */
+.card-content{
+    padding:22px;
+}
+
+.card h2{
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#9ca3af;
+    line-height:1.7;
+    font-size:15px;
+    min-height:50px;
+}
+
+/* 🔘 الزر */
+.game-btn{
+    width:100%;
+    margin-top:18px;
+    padding:14px;
+    border:none;
+    border-radius:14px;
+    background:linear-gradient(135deg,#7c3aed,#06b6d4);
+    color:white;
+    font-size:16px;
+    font-weight:700;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.game-btn:hover{
+    transform:scale(1.03);
+    opacity:0.95;
+}
+
+/* 📌 الفوتر */
+footer{
+    text-align:center;
+    padding:35px;
+    color:#7b8798;
+    border-top:1px solid rgba(255,255,255,0.06);
+    background:#0d141d;
+}
+
+/* 📱 الجوال */
+@media(max-width:768px){
+
+header h1{
+    font-size:48px;
+}
+
+header p{
+    font-size:16px;
+}
+
+.section-title{
+    font-size:28px;
+}
+
+.games{
+    gap:22px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- 🔥 الهيدر -->
+<header>
+
+<h1>YESUF Gaming</h1>
+
+<p>
+أفضل مكتبة ألعاب للأندرويد والبيسي والمحاكيات
+</p>
+
+<!-- 🔍 البحث -->
+<div class="search-box">
+<input type="text" placeholder="ابحث عن لعبة أو قسم...">
+</div>
+
+</header>
+
+<!-- 🎯 الفئات -->
+<h2 class="section-title">🎮 الفئات</h2>
+
+<section class="games">
+
+<!-- 📱 Android -->
+<div class="card">
+
+<img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/HeroHomepage_2880x1200.width-1300_oirLRAu.jpg">
+
+<div class="card-content">
+
+<h2>Android</h2>
+
+<p>
+ألعاب أندرويد الأصلية والمعدلة مع أفضل التجارب للأجهزة الضعيفة والقوية.
+</p>
+
+<button class="game-btn">
+دخول القسم
+</button>
+
+</div>
+
+</div>
+
+<!-- 💻 PC -->
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1542751110-97427bbecf20?q=80&w=1200&auto=format&fit=crop">
+
+<div class="card-content">
+
+<h2>PC</h2>
+
+<p>
+مكتبة ألعاب الكمبيوتر الكاملة من الألعاب الخفيفة وحتى ألعاب AAA.
+</p>
+
+<button class="game-btn">
+دخول القسم
+</button>
+
+</div>
+
+</div>
+
+<!-- 🕹️ ROMS -->
+<div class="card">
+
+<img src="https://media.sketchfab.com/models/266d26be2a6d47d58880bb723d1faf7a/thumbnails/67943311943141aab921e5f9a1916ae4/53435a17ae3242e9b07b89c417472d88.jpeg">
+
+<div class="card-content">
+
+<h2>ROMS</h2>
+
+<p>
+ألعاب المحاكيات الكلاسيكية لأجهزة PlayStation وNintendo وSEGA.
+</p>
+
+<button class="game-btn">
+دخول القسم
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- 📌 الفوتر -->
+<footer>
+
+© 2026 YESUF Gaming — All Rights Reserved
+
+</footer>
+
+</body>
+</html>
+```
