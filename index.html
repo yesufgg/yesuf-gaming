@@ -4,168 +4,48 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Yesuf Gaming PRO</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800&display=swap" rel="stylesheet">
+<title>Yesuf Gaming</title>
 
 <style>
 
-*{margin:0;padding:0;box-sizing:border-box;}
-
 body{
-font-family:'Cairo',sans-serif;
-background:#050b14;
+font-family:Arial;
+background:#0b1220;
 color:white;
-overflow-x:hidden;
+margin:0;
 }
 
-/* 🌌 الخلفية */
-body::before{
-content:"";
-position:fixed;
-inset:0;
-background:
-radial-gradient(circle at top,#2563eb 0%,transparent 40%),
-radial-gradient(circle at bottom,#7c3aed 0%,transparent 35%);
-opacity:0.25;
-z-index:-1;
+.page{
+display:none;
+padding:20px;
 }
 
-/* 🏠 الهيدر */
-header{
-text-align:center;
-padding:50px 20px;
-}
-
-header h1{
-font-size:45px;
-background:linear-gradient(90deg,#60a5fa,#a855f7);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
-/* 🎴 الكروت */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:20px;
-padding:30px;
-max-width:1100px;
-margin:auto;
+.active{
+display:block;
 }
 
 .card{
 background:#111827;
-border-radius:18px;
-overflow:hidden;
-cursor:pointer;
-transition:0.3s;
-border:1px solid rgba(255,255,255,0.08);
-}
-
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 20px 50px rgba(96,165,250,0.25);
-}
-
-.card img{
-width:100%;
-height:180px;
-object-fit:cover;
-}
-
-.card-content{
 padding:15px;
+margin:10px 0;
+border-radius:12px;
+cursor:pointer;
 }
 
-/* 📦 الصفحات */
-.page{
-display:none;
-padding:20px;
-max-width:1000px;
-margin:auto;
+img{
+width:100%;
+border-radius:10px;
+margin-top:10px;
 }
 
-/* 🔙 زر الرجوع */
-.back-btn{
-margin-bottom:15px;
-padding:10px 15px;
+button{
+padding:10px;
 border:none;
 border-radius:10px;
-background:#111827;
+background:#2563eb;
 color:white;
+margin-bottom:10px;
 cursor:pointer;
-}
-.back-btn:hover{background:#2563eb;}
-
-/* 🧠 info */
-.info-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:15px;
-margin:15px 0;
-}
-
-.info-card{
-background:#111827;
-padding:15px;
-border-radius:15px;
-border:1px solid rgba(255,255,255,0.08);
-}
-
-/* 🖼️ صور */
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-gap:10px;
-}
-
-.gallery img{
-width:100%;
-height:130px;
-object-fit:cover;
-border-radius:12px;
-cursor:pointer;
-transition:0.3s;
-}
-
-.gallery img:hover{transform:scale(1.05);}
-
-/* 📥 زر */
-.btn{
-display:inline-block;
-margin:8px 5px;
-padding:12px 18px;
-border-radius:12px;
-background:linear-gradient(90deg,#2563eb,#7c3aed);
-color:white;
-text-decoration:none;
-}
-
-/* ⚠️ تحذير */
-.warning{
-background:#7f1d1d;
-padding:10px;
-margin-top:10px;
-border-radius:10px;
-}
-
-/* 🔍 popup */
-#popup{
-display:none;
-position:fixed;
-inset:0;
-background:rgba(0,0,0,0.92);
-justify-content:center;
-align-items:center;
-z-index:999;
-}
-
-#popup img{
-max-width:90%;
-max-height:90%;
-border-radius:10px;
 }
 
 </style>
@@ -173,153 +53,66 @@ border-radius:10px;
 
 <body>
 
-<header>
-<h1>🎮 Yesuf Gaming</h1>
-<p>ROMs - Games - Guides 🔥</p>
-</header>
+<!-- HOME -->
+<div id="home" class="page active">
 
-<!-- 🏠 HOME -->
-<section id="home" class="grid" style="display:grid;">
-
-<div class="card" onclick="show('switch')">
-<img src="https://static0.howtogeekimages.com/wordpress/wp-content/uploads/2024/04/shutterstock_1290635251.jpg">
-<div class="card-content">
+<div class="card" onclick="go('switch')">
 <h2>🎮 ROMs</h2>
+<img src="https://static0.howtogeekimages.com/wordpress/wp-content/uploads/2024/04/shutterstock_1290635251.jpg">
 </div>
+
 </div>
 
-</section>
+<!-- SWITCH -->
+<div id="switch" class="page">
 
-<!-- 🎮 SWITCH -->
-<section id="switch" class="page">
+<button onclick="go('home')">⬅ رجوع</button>
 
-<button class="back-btn" onclick="back()">⬅ رجوع</button>
-
-<div class="grid">
-
-<div class="card" onclick="show('zelda')">
-<img src="https://pixelz.cc/wp-content/uploads/2019/08/nintendo-switch-logo-blue-and-red-uhd-4k-wallpaper.jpg">
-<div class="card-content">
+<div class="card" onclick="go('zelda')">
 <h2>🎮 Nintendo Switch</h2>
-</div>
-</div>
-
+<img src="https://pixelz.cc/wp-content/uploads/2019/08/nintendo-switch-logo-blue-and-red-uhd-4k-wallpaper.jpg">
 </div>
 
-</section>
+</div>
 
-<!-- 🗡️ ZELDA -->
-<section id="zelda" class="page">
+<!-- ZELDA -->
+<div id="zelda" class="page">
 
-<button class="back-btn" onclick="back()">⬅ رجوع</button>
+<button onclick="go('switch')">⬅ رجوع</button>
 
-<h2>🗡️ The Legend of Zelda: Tears of the Kingdom (معربة)</h2>
+<div class="card">
+
+<h2>🗡️ Zelda TOTK</h2>
 
 <p>
-🌍 لعبة عالم مفتوح ضخمة داخل Hyrule 👑  
-مليئة بالمغامرات، الألغاز، والجزر الطائرة ☁️
+🌍 لعبة عالم مفتوح في Hyrule  
+🧩 ألغاز + قتال + استكشاف
 </p>
 
-<!-- 📖 لمحة طويلة -->
-<div class="info-grid">
+<img src="https://oaklandpostonline.com/wp-content/uploads/2023/07/Picture1.png">
 
-<div class="info-card">
-<h3>🌍 القصة (بدون حرق)</h3>
-<p>
-تدور الأحداث بعد تغييرات غامضة في مملكة Hyrule 👑  
-حيث تظهر ظواهر غريبة في السماء والأرض.  
-تلعب بشخصية Link 🗡️ الذي ينطلق في رحلة لاكتشاف الحقيقة وإنقاذ المملكة من خطر مجهول.
-</p>
-</div>
-
-<div class="info-card">
-<h3>🎮 أسلوب اللعب</h3>
-<p>
-✔ عالم مفتوح 🌍  
-✔ قتال ⚔️  
-✔ ألغاز 🧩  
-✔ بناء أدوات ⚙️  
-✔ فيزياء متقدمة 🧠  
-</p>
-</div>
-
-<div class="info-card">
-<h3>🌌 العالم</h3>
-<p>
-☁️ جزر طائرة  
-🌿 أرض واسعة  
-🕳️ كهوف عميقة  
-🔍 أسرار مخفية  
-</p>
-</div>
+<p>⬇ اللعبة: https://ouo.io/MZiezH</p>
+<p>⬆ التحديث: https://ouo.io/xBRaCU</p>
+<p>🈯 التعريب: MediaFire link</p>
+<p>💻 Yuzu / 📱 Eden</p>
 
 </div>
 
-<!-- 🖼️ صور -->
-<h3>🖼️ صور من اللعبة</h3>
-
-<div class="gallery">
-<img src="https://oaklandpostonline.com/wp-content/uploads/2023/07/Picture1.png" onclick="openImg(this.src)">
-<img src="https://i.imgur.com/nP8q030.jpg" onclick="openImg(this.src)">
-<img src="https://i.imgur.com/wEnhdDd.jpg" onclick="openImg(this.src)">
-<img src="https://i.imgur.com/EcvOLni.jpg" onclick="openImg(this.src)">
-</div>
-
-<!-- 📥 روابط -->
-<h3>📥 روابط التحميل</h3>
-
-<a class="btn" href="https://ouo.io/MZiezH" target="_blank">⬇ اللعبة</a>
-<a class="btn" href="https://ouo.io/xBRaCU" target="_blank">⬆ التحديث</a>
-<a class="btn" href="https://www.mediafire.com/file/kk2ckr9ihx9qmd5/TOTK_Arabic_V1.0-172-5-1778188660.zip/file" target="_blank">🈯 التعريب</a>
-<a class="btn" href="https://yuzu-emulator.cc/" target="_blank">💻 Yuzu</a>
-<a class="btn" href="https://stable.eden-emu.dev/v0.2.0/Eden-Android-v0.2.0-legacy.apk" target="_blank">📱 Eden</a>
-<a class="btn" href="https://files.prodkeys.net/ProdKeys.net-v20.3.0.zip" target="_blank">🔑 Keys</a>
-<a class="btn" href="https://github.com/THZoria/NX_Firmware/releases/download/20.3.0/Firmware.20.3.0.zip" target="_blank">⚙️ Firmware</a>
-
-<div class="warning">
-⚠️ تأكد من تحميل كل الملفات للحصول على أفضل تجربة 🎮
-</div>
-
-</section>
-
-<!-- 🔍 popup -->
-<div id="popup" onclick="this.style.display='none'">
-<img id="popupImg">
 </div>
 
 <script>
 
-/* ✅ نظام التنقل الصحيح */
-function show(page){
+function go(id){
 
-document.querySelectorAll(".page, .grid").forEach(e=>{
-e.style.display="none";
+let pages = document.querySelectorAll(".page");
+
+pages.forEach(p=>{
+p.classList.remove("active");
 });
 
-if(page === "home"){
-document.getElementById("home").style.display="grid";
-}else{
-document.getElementById(page).style.display="block";
-}
+document.getElementById(id).classList.add("active");
 
 window.scrollTo(0,0);
-}
-
-/* 🔙 رجوع ذكي */
-function back(){
-
-if(document.getElementById("zelda").style.display === "block"){
-show("switch");
-}else{
-show("home");
-}
-
-}
-
-/* 🖼️ popup */
-function openImg(src){
-document.getElementById("popup").style.display="flex";
-document.getElementById("popupImg").src=src;
 }
 
 </script>
