@@ -7,7 +7,7 @@
 
 <title>Yesuf Gaming</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800&display=swap" rel="stylesheet">
 
 <style>
 
@@ -23,73 +23,48 @@ body{
     color:white;
 }
 
-/* 🔥 الهيدر */
 header{
     text-align:center;
-    padding:90px 20px;
+    padding:80px 20px;
     background:linear-gradient(to bottom,#141925,#0b1118);
 }
 
 header h1{
-    font-size:60px;
-    background:linear-gradient(90deg,#7c3aed,#06b6d4);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
+    font-size:50px;
+    color:#7c3aed;
 }
 
-header p{
-    color:#a5b4c7;
-}
-
-/* 🎮 الفئات */
 .games{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:25px;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
     padding:30px;
     max-width:1200px;
     margin:auto;
 }
 
-/* 🎴 الكرت */
 .card{
     background:#111827;
-    border-radius:20px;
+    border-radius:18px;
     overflow:hidden;
     cursor:pointer;
     transition:0.3s;
 }
 
 .card:hover{
-    transform:translateY(-10px);
+    transform:translateY(-8px);
 }
 
-/* 🖼️ الصور */
 .card img{
     width:100%;
-    height:200px;
+    height:180px;
     object-fit:cover;
-    display:block;
 }
 
-/* 📝 المحتوى */
 .card-content{
-    padding:18px;
+    padding:15px;
 }
 
-/* 🔘 زر */
-.game-btn{
-    width:100%;
-    padding:12px;
-    margin-top:15px;
-    border:none;
-    border-radius:12px;
-    background:linear-gradient(135deg,#7c3aed,#06b6d4);
-    color:white;
-    cursor:pointer;
-}
-
-/* 🔙 زر الرجوع */
 .back-btn{
     margin:20px;
     padding:10px 15px;
@@ -100,11 +75,6 @@ header p{
     cursor:pointer;
 }
 
-.back-btn:hover{
-    background:#374151;
-}
-
-/* 📂 إخفاء الأقسام */
 .hidden{
     display:none;
 }
@@ -116,102 +86,51 @@ header p{
 
 <header>
 <h1>🎮 Yesuf Gaming</h1>
-<p>أفضل مكتبة ألعاب للأندرويد و ROMS</p>
 </header>
 
 <!-- 🔥 الصفحة الرئيسية -->
 <section class="games" id="main">
 
-<!-- Android -->
-<div class="card" onclick="showSection('android')">
-<img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/HeroHomepage_2880x1200.width-1300_oirLRAu.jpg">
-<div class="card-content">
-<h2>Android</h2>
-<button class="game-btn">دخول</button>
-</div>
-</div>
-
-<!-- ROMS -->
-<div class="card" onclick="showSection('roms')">
-<img src="https://media.sketchfab.com/models/266d26be2a6d47d58880bb723d1faf7a/thumbnails/67943311943141aab921e5f9a1916ae4/53435a17ae3242e9b07b89c417472d88.jpeg">
-<div class="card-content">
-<h2>ROMS</h2>
-<button class="game-btn">دخول</button>
-</div>
-</div>
-
-</section>
-
-<!-- 🎮 Android -->
-<section id="android" class="games hidden">
-
-<button class="back-btn" onclick="goBack()">⬅ رجوع</button>
-
-<div class="card" onclick="openGrayland()">
-<img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/297190/capsule_616x353.jpg">
-<div class="card-content">
-<h2>Grayland</h2>
-<p>لعبة مغامرات وألغاز بأجواء مظلمة</p>
-</div>
-</div>
-
-</section>
-
-<!-- 🎮 ROMS -->
-<section id="roms" class="games hidden">
-
-<button class="back-btn" onclick="goBack()">⬅ رجوع</button>
-
-<!-- NES -->
-<div class="card">
+<div class="card" onclick="showNES()">
 <img src="https://cdn.shopify.com/s/files/1/0336/4824/6924/collections/1760169.png?v=1597423331">
-<div class="card-content"><h2>NES</h2></div>
+<div class="card-content">
+<h2>NES Games</h2>
+</div>
 </div>
 
-<!-- SNES -->
-<div class="card">
-<img src="https://bitjumpgames.com/cdn/shop/files/snes_logo.png?v=1736747784&width=460">
-<div class="card-content"><h2>SNES</h2></div>
-</div>
+</section>
 
-<!-- Sega Genesis -->
-<div class="card">
-<img src="https://i.ytimg.com/vi/nOaew78FV54/maxresdefault.jpg">
-<div class="card-content"><h2>Sega Genesis</h2></div>
-</div>
+<!-- 🎮 NES -->
+<section id="nes" class="games hidden">
 
-<!-- PSP -->
-<div class="card">
-<img src="https://pbs.twimg.com/media/F4OTmp9XgAAB0lj.jpg">
-<div class="card-content"><h2>PSP</h2></div>
+<button class="back-btn" onclick="goBack()">⬅ رجوع</button>
+
+<!-- 🎮 Super Mario Bros -->
+<div class="card" onclick="openMario()">
+<img src="https://www.covercentury.com/covers/nes/s/nes_supermariobros.jpg">
+<div class="card-content">
+<h2>Super Mario Bros</h2>
+<p>لعبة منصات كلاسيكية</p>
+</div>
 </div>
 
 </section>
 
 <script>
 
-function showSection(id){
-
+function showNES(){
     document.getElementById("main").style.display="none";
-
-    document.querySelectorAll(".hidden").forEach(s=>{
-        s.style.display="none";
-    });
-
-    document.getElementById(id).style.display="grid";
+    document.getElementById("nes").style.display="grid";
 }
 
 function goBack(){
-
-    document.querySelectorAll(".hidden").forEach(s=>{
-        s.style.display="none";
-    });
-
+    document.getElementById("nes").style.display="none";
     document.getElementById("main").style.display="grid";
 }
 
-function openGrayland(){
-    window.location.href = "grayland.html";
+/* 🎮 فتح صفحة Mario */
+function openMario(){
+    window.location.href = "mario.html";
 }
 
 </script>
