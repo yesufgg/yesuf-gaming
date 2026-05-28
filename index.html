@@ -60,11 +60,13 @@ header h1{
     transform:translateY(-10px);
 }
 
-/* 🖼️ صورة */
+/* 🖼️ صورة (تم تصغيرها) */
 .card img{
     width:100%;
-    height:200px;
-    object-fit:cover;
+    height:150px;
+    object-fit:contain;
+    background:linear-gradient(145deg,#0b1118,#111827);
+    padding:12px;
 }
 
 /* 📝 */
@@ -72,6 +74,7 @@ header h1{
     padding:18px;
 }
 
+/* 🔘 زر الدخول */
 .game-btn{
     width:100%;
     padding:12px;
@@ -83,11 +86,28 @@ header h1{
     cursor:pointer;
 }
 
+/* 🔙 زر الرجوع */
+.back-btn{
+    margin:20px;
+    padding:10px 15px;
+    border:none;
+    border-radius:10px;
+    background:#1f2937;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.back-btn:hover{
+    background:#374151;
+}
+
 /* 📂 إخفاء الأقسام */
 .hidden{
     display:none;
 }
 
+/* 🎯 عنوان */
 .section-title{
     text-align:center;
     margin:25px 0;
@@ -95,6 +115,7 @@ header h1{
 }
 
 </style>
+
 </head>
 
 <body>
@@ -136,65 +157,72 @@ header h1{
 
 </section>
 
-<!-- 🎮 Android Games -->
+<!-- 🎮 Android -->
 <section id="android" class="games hidden">
 
+<button class="back-btn" onclick="goBack()">⬅ رجوع</button>
+
 <div class="card">
+
 <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/297190/capsule_616x353.jpg">
+
 <div class="card-content">
 <h2>Grayland</h2>
 <p>لعبة مغامرات وألغاز بأجواء مظلمة</p>
 </div>
+
 </div>
 
 </section>
 
-<!-- 🎮 ROMS DEVICES -->
+<!-- 🎮 ROMS -->
 <section id="roms" class="games hidden">
 
-<!-- NES (1983) -->
+<button class="back-btn" onclick="goBack()">⬅ رجوع</button>
+
+<!-- NES -->
 <div class="card">
 <img src="https://s2.dmcdn.net/v/3U4291epBEg7WFB8t/x1080">
 <div class="card-content"><h2>NES</h2></div>
 </div>
 
-<!-- Sega Master System (1985) -->
-<div class="card">
-<img src="https://live.staticflickr.com/7753/29090801190_dc96280dfd_z.jpg">
-<div class="card-content"><h2>Sega Master System</h2></div>
-</div>
-
-<!-- Sega Genesis (1988) -->
-<div class="card">
-<img src="https://static.wikia.nocookie.net/aaahhrealmonsters/images/a/ab/Sega-Genesis-Logo.jpg">
-<div class="card-content"><h2>Sega Genesis</h2></div>
-</div>
-
-<!-- SNES (1990) -->
+<!-- SNES -->
 <div class="card">
 <img src="https://vectorseek.com/wp-content/uploads/2023/10/super-nintendo-Logo-Vector.svg-.png">
 <div class="card-content"><h2>SNES</h2></div>
 </div>
 
-<!-- PS1 (1994) -->
+<!-- Sega Master System -->
+<div class="card">
+<img src="https://live.staticflickr.com/7753/29090801190_dc96280dfd_z.jpg">
+<div class="card-content"><h2>Sega Master System</h2></div>
+</div>
+
+<!-- Sega Genesis -->
+<div class="card">
+<img src="https://static.wikia.nocookie.net/aaahhrealmonsters/images/a/ab/Sega-Genesis-Logo.jpg">
+<div class="card-content"><h2>Sega Genesis</h2></div>
+</div>
+
+<!-- PS1 -->
 <div class="card">
 <img src="https://4kwallpapers.com/images/wallpapers/playstation-logo-8k-3840x2160-14190.png">
 <div class="card-content"><h2>PlayStation 1</h2></div>
 </div>
 
-<!-- N64 (1996) -->
+<!-- N64 -->
 <div class="card">
 <img src="https://res.cloudinary.com/jerrick/image/upload/v1775590452/69d55c34213ac3001da17971.jpg">
 <div class="card-content"><h2>Nintendo 64</h2></div>
 </div>
 
-<!-- GBA (2001) -->
+<!-- GBA -->
 <div class="card">
 <img src="https://cdn2.steamgriddb.com/grid/458375c3383253b03634e8c476101be3.png">
 <div class="card-content"><h2>Game Boy Advance</h2></div>
 </div>
 
-<!-- PSP (2004) -->
+<!-- PSP -->
 <div class="card">
 <img src="https://cdn.wallpapersafari.com/86/32/zTf5DI.jpg">
 <div class="card-content"><h2>PSP</h2></div>
@@ -213,7 +241,15 @@ function showSection(id){
     });
 
     document.getElementById(id).style.display="grid";
+}
 
+function goBack(){
+
+    document.querySelectorAll(".hidden").forEach(s=>{
+        s.style.display="none";
+    });
+
+    document.getElementById("main").style.display="grid";
 }
 
 </script>
