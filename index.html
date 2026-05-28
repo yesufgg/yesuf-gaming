@@ -7,7 +7,6 @@
 
 <title>Yesuf Gaming</title>
 
-<!-- 🔥 خط احترافي -->
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
@@ -78,11 +77,6 @@ header p{
     padding:18px;
 }
 
-.card h2{
-    font-size:22px;
-    margin-bottom:10px;
-}
-
 /* 🔘 زر */
 .game-btn{
     width:100%;
@@ -122,7 +116,7 @@ header p{
 
 <header>
 <h1>🎮 Yesuf Gaming</h1>
-<p>أفضل مكتبة ألعاب للأندرويد والـ ROMS</p>
+<p>أفضل مكتبة ألعاب للأندرويد و ROMS</p>
 </header>
 
 <!-- 🔥 الصفحة الرئيسية -->
@@ -148,7 +142,7 @@ header p{
 
 </section>
 
-<!-- 🎮 Android Games -->
+<!-- 🎮 Android -->
 <section id="android" class="games hidden">
 
 <button class="back-btn" onclick="goBack()">⬅ رجوع</button>
@@ -168,37 +162,54 @@ header p{
 
 <button class="back-btn" onclick="goBack()">⬅ رجوع</button>
 
-<div class="card"><img src="https://s2.dmcdn.net/v/3U4291epBEg7WFB8t/x1080"><div class="card-content"><h2>NES</h2></div></div>
-<div class="card"><img src="https://vectorseek.com/wp-content/uploads/2023/10/super-nintendo-Logo-Vector.svg-.png"><div class="card-content"><h2>SNES</h2></div></div>
-<div class="card"><img src="https://live.staticflickr.com/7753/29090801190_dc96280dfd_z.jpg"><div class="card-content"><h2>Sega Master System</h2></div></div>
-<div class="card"><img src="https://static.wikia.nocookie.net/aaahhrealmonsters/images/a/ab/Sega-Genesis-Logo.jpg"><div class="card-content"><h2>Sega Genesis</h2></div></div>
-<div class="card"><img src="https://4kwallpapers.com/images/wallpapers/playstation-logo-8k-3840x2160-14190.png"><div class="card-content"><h2>PS1</h2></div></div>
-<div class="card"><img src="https://res.cloudinary.com/jerrick/image/upload/v1775590452/69d55c34213ac3001da17971.jpg"><div class="card-content"><h2>N64</h2></div></div>
-<div class="card"><img src="https://cdn2.steamgriddb.com/grid/458375c3383253b03634e8c476101be3.png"><div class="card-content"><h2>GBA</h2></div></div>
-<div class="card"><img src="https://cdn.wallpapersafari.com/86/32/zTf5DI.jpg"><div class="card-content"><h2>PSP</h2></div></div>
+<!-- NES -->
+<div class="card">
+<img src="https://cdn.shopify.com/s/files/1/0336/4824/6924/collections/1760169.png?v=1597423331">
+<div class="card-content"><h2>NES</h2></div>
+</div>
+
+<!-- SNES -->
+<div class="card">
+<img src="https://bitjumpgames.com/cdn/shop/files/snes_logo.png?v=1736747784&width=460">
+<div class="card-content"><h2>SNES</h2></div>
+</div>
+
+<!-- Sega Genesis -->
+<div class="card">
+<img src="https://i.ytimg.com/vi/nOaew78FV54/maxresdefault.jpg">
+<div class="card-content"><h2>Sega Genesis</h2></div>
+</div>
+
+<!-- PSP -->
+<div class="card">
+<img src="https://pbs.twimg.com/media/F4OTmp9XgAAB0lj.jpg">
+<div class="card-content"><h2>PSP</h2></div>
+</div>
 
 </section>
 
 <script>
 
-/* 🔥 فتح الأقسام */
 function showSection(id){
+
     document.getElementById("main").style.display="none";
+
     document.querySelectorAll(".hidden").forEach(s=>{
         s.style.display="none";
     });
+
     document.getElementById(id).style.display="grid";
 }
 
-/* 🔙 رجوع */
 function goBack(){
+
     document.querySelectorAll(".hidden").forEach(s=>{
         s.style.display="none";
     });
+
     document.getElementById("main").style.display="grid";
 }
 
-/* 🎮 فتح Grayland */
 function openGrayland(){
     window.location.href = "grayland.html";
 }
