@@ -20,7 +20,7 @@ color:white;
 overflow-x:hidden;
 }
 
-/* 🌌 خلفية */
+/* 🌌 الخلفية */
 body::before{
 content:"";
 position:fixed;
@@ -87,7 +87,7 @@ max-width:1000px;
 margin:auto;
 }
 
-/* 🔙 زر */
+/* 🔙 زر الرجوع */
 .back-btn{
 margin-bottom:15px;
 padding:10px 15px;
@@ -99,7 +99,7 @@ cursor:pointer;
 }
 .back-btn:hover{background:#2563eb;}
 
-/* 🧠 info cards */
+/* 🧠 info */
 .info-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -130,9 +130,7 @@ cursor:pointer;
 transition:0.3s;
 }
 
-.gallery img:hover{
-transform:scale(1.05);
-}
+.gallery img:hover{transform:scale(1.05);}
 
 /* 📥 زر */
 .btn{
@@ -145,7 +143,7 @@ color:white;
 text-decoration:none;
 }
 
-/* ⚠️ */
+/* ⚠️ تحذير */
 .warning{
 background:#7f1d1d;
 padding:10px;
@@ -167,6 +165,7 @@ z-index:999;
 #popup img{
 max-width:90%;
 max-height:90%;
+border-radius:10px;
 }
 
 </style>
@@ -179,10 +178,10 @@ max-height:90%;
 <p>ROMs - Games - Guides 🔥</p>
 </header>
 
-<!-- 🏠 HOME (ROMs) -->
-<section id="home" class="grid">
+<!-- 🏠 HOME -->
+<section id="home" class="grid" style="display:grid;">
 
-<div class="card" onclick="go('switch')">
+<div class="card" onclick="show('switch')">
 <img src="https://static0.howtogeekimages.com/wordpress/wp-content/uploads/2024/04/shutterstock_1290635251.jpg">
 <div class="card-content">
 <h2>🎮 ROMs</h2>
@@ -194,11 +193,11 @@ max-height:90%;
 <!-- 🎮 SWITCH -->
 <section id="switch" class="page">
 
-<button class="back-btn" onclick="go('home')">⬅ رجوع</button>
+<button class="back-btn" onclick="back()">⬅ رجوع</button>
 
 <div class="grid">
 
-<div class="card" onclick="go('zelda')">
+<div class="card" onclick="show('zelda')">
 <img src="https://pixelz.cc/wp-content/uploads/2019/08/nintendo-switch-logo-blue-and-red-uhd-4k-wallpaper.jpg">
 <div class="card-content">
 <h2>🎮 Nintendo Switch</h2>
@@ -212,13 +211,13 @@ max-height:90%;
 <!-- 🗡️ ZELDA -->
 <section id="zelda" class="page">
 
-<button class="back-btn" onclick="go('switch')">⬅ رجوع</button>
+<button class="back-btn" onclick="back()">⬅ رجوع</button>
 
 <h2>🗡️ The Legend of Zelda: Tears of the Kingdom (معربة)</h2>
 
 <p>
-🌍 لعبة عالم مفتوح ضخمة تدور أحداثها في مملكة Hyrule 👑  
-تقدم تجربة مليئة بالأسرار، الجزر الطائرة ☁️، والكهوف المظلمة 🕳️، مع حرية لعب غير محدودة 🎮
+🌍 لعبة عالم مفتوح ضخمة داخل Hyrule 👑  
+مليئة بالمغامرات، الألغاز، والجزر الطائرة ☁️
 </p>
 
 <!-- 📖 لمحة طويلة -->
@@ -227,32 +226,30 @@ max-height:90%;
 <div class="info-card">
 <h3>🌍 القصة (بدون حرق)</h3>
 <p>
-تعود أحداث اللعبة بعد تغيّرات غامضة في مملكة Hyrule 👑  
-حيث تبدأ قوى غير معروفة بالظهور في السماء والأرض.  
-تلعب بشخصية Link 🗡️ الذي ينطلق في رحلة طويلة لاكتشاف الحقيقة وإنقاذ المملكة من خطر مجهول، مع قصة عميقة مليئة بالغموض والمفاجآت.
+تدور الأحداث بعد تغييرات غامضة في مملكة Hyrule 👑  
+حيث تظهر ظواهر غريبة في السماء والأرض.  
+تلعب بشخصية Link 🗡️ الذي ينطلق في رحلة لاكتشاف الحقيقة وإنقاذ المملكة من خطر مجهول.
 </p>
 </div>
 
 <div class="info-card">
 <h3>🎮 أسلوب اللعب</h3>
 <p>
-✔ عالم مفتوح ضخم 🌍  
-✔ استكشاف حر بالكامل  
-✔ قتال بأسلحة متنوعة ⚔️  
-✔ حل ألغاز ذكية 🧩  
-✔ بناء أدوات ومركبات ⚙️  
-✔ فيزياء واقعية متقدمة 🧠
+✔ عالم مفتوح 🌍  
+✔ قتال ⚔️  
+✔ ألغاز 🧩  
+✔ بناء أدوات ⚙️  
+✔ فيزياء متقدمة 🧠  
 </p>
 </div>
 
 <div class="info-card">
 <h3>🌌 العالم</h3>
 <p>
-☁️ جزر طائرة في السماء  
-🌿 أراضٍ واسعة على الأرض  
-🕳️ كهوف مليئة بالأسرار  
-🔍 مناطق مخفية وتحديات قوية  
-كل منطقة تقدم تجربة مختلفة تمامًا 🎮
+☁️ جزر طائرة  
+🌿 أرض واسعة  
+🕳️ كهوف عميقة  
+🔍 أسرار مخفية  
 </p>
 </div>
 
@@ -263,29 +260,24 @@ max-height:90%;
 
 <div class="gallery">
 <img src="https://oaklandpostonline.com/wp-content/uploads/2023/07/Picture1.png" onclick="openImg(this.src)">
-<img src="https://i.imgur.com/nP8q030.jpg">
-<img src="https://i.imgur.com/wEnhdDd.jpg">
-<img src="https://i.imgur.com/EcvOLni.jpg">
+<img src="https://i.imgur.com/nP8q030.jpg" onclick="openImg(this.src)">
+<img src="https://i.imgur.com/wEnhdDd.jpg" onclick="openImg(this.src)">
+<img src="https://i.imgur.com/EcvOLni.jpg" onclick="openImg(this.src)">
 </div>
 
 <!-- 📥 روابط -->
 <h3>📥 روابط التحميل</h3>
 
-<a class="btn" href="https://ouo.io/MZiezH" target="_blank">⬇ تحميل اللعبة</a>
-<a class="btn" href="https://ouo.io/xBRaCU" target="_blank">⬆ تحميل التحديث</a>
-
+<a class="btn" href="https://ouo.io/MZiezH" target="_blank">⬇ اللعبة</a>
+<a class="btn" href="https://ouo.io/xBRaCU" target="_blank">⬆ التحديث</a>
 <a class="btn" href="https://www.mediafire.com/file/kk2ckr9ihx9qmd5/TOTK_Arabic_V1.0-172-5-1778188660.zip/file" target="_blank">🈯 التعريب</a>
-
-<a class="btn" href="https://yuzu-emulator.cc/" target="_blank">💻 Yuzu PC</a>
-
-<a class="btn" href="https://stable.eden-emu.dev/v0.2.0/Eden-Android-v0.2.0-legacy.apk" target="_blank">📱 Eden Android</a>
-
-<a class="btn" href="https://files.prodkeys.net/ProdKeys.net-v20.3.0.zip" target="_blank">🔑 Prod Keys</a>
-
+<a class="btn" href="https://yuzu-emulator.cc/" target="_blank">💻 Yuzu</a>
+<a class="btn" href="https://stable.eden-emu.dev/v0.2.0/Eden-Android-v0.2.0-legacy.apk" target="_blank">📱 Eden</a>
+<a class="btn" href="https://files.prodkeys.net/ProdKeys.net-v20.3.0.zip" target="_blank">🔑 Keys</a>
 <a class="btn" href="https://github.com/THZoria/NX_Firmware/releases/download/20.3.0/Firmware.20.3.0.zip" target="_blank">⚙️ Firmware</a>
 
 <div class="warning">
-⚠️ تأكد من تحميل: اللعبة + التحديث + التعريب للحصول على أفضل تجربة 🎮
+⚠️ تأكد من تحميل كل الملفات للحصول على أفضل تجربة 🎮
 </div>
 
 </section>
@@ -297,12 +289,34 @@ max-height:90%;
 
 <script>
 
-function go(page){
-document.querySelectorAll(".page, .grid").forEach(e=>e.style.display="none");
-document.getElementById(page).style.display = (page==="home") ? "grid" : "block";
+/* ✅ نظام التنقل الصحيح */
+function show(page){
+
+document.querySelectorAll(".page, .grid").forEach(e=>{
+e.style.display="none";
+});
+
+if(page === "home"){
+document.getElementById("home").style.display="grid";
+}else{
+document.getElementById(page).style.display="block";
+}
+
 window.scrollTo(0,0);
 }
 
+/* 🔙 رجوع ذكي */
+function back(){
+
+if(document.getElementById("zelda").style.display === "block"){
+show("switch");
+}else{
+show("home");
+}
+
+}
+
+/* 🖼️ popup */
 function openImg(src){
 document.getElementById("popup").style.display="flex";
 document.getElementById("popupImg").src=src;
