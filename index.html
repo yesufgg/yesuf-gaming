@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>YESUF Gaming</title>
-
-<!-- 🔥 خط احترافي -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>Yesuf Gaming</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 
@@ -24,375 +21,198 @@ body{
     font-family:'Cairo',sans-serif;
     background:#0b1118;
     color:white;
-    overflow-x:hidden;
-}
-
-/* 🔥 الخلفية */
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-
-    background:
-    radial-gradient(circle at top right,rgba(124,58,237,0.25),transparent 30%),
-    radial-gradient(circle at bottom left,rgba(6,182,212,0.18),transparent 30%);
-
-    z-index:-1;
 }
 
 /* 🔥 الهيدر */
 header{
     text-align:center;
-    padding:110px 20px 90px;
-
-    background:
-    linear-gradient(to bottom,
-    rgba(20,25,35,0.95),
-    rgba(11,17,24,0.95));
-
-    border-bottom:1px solid rgba(255,255,255,0.08);
+    padding:90px 20px;
+    background:linear-gradient(to bottom,#141925,#0b1118);
 }
 
 header h1{
-    font-size:72px;
-    font-weight:800;
-
+    font-size:60px;
     background:linear-gradient(90deg,#7c3aed,#06b6d4);
-
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
 
-header p{
-    margin-top:15px;
-    color:#a5b4c7;
-    font-size:20px;
-}
-
-/* 🔍 البحث */
-.search-box{
-    max-width:650px;
-    margin:40px auto 0;
-    padding:0 20px;
-}
-
-.search-box input{
-    width:100%;
-    padding:18px 22px;
-
-    border:none;
-    border-radius:18px;
-
-    background:#111827;
-    color:white;
-
-    font-size:16px;
-    outline:none;
-
-    border:1px solid rgba(255,255,255,0.08);
-}
-
-/* 🎯 العنوان */
-.section-title{
-    text-align:center;
-    font-size:34px;
-
-    margin-top:65px;
-    margin-bottom:15px;
-
-    font-weight:800;
-}
-
-/* 🎮 البطاقات */
+/* 🎮 الفئات */
 .games{
     display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(280px,1fr));
-
-    gap:30px;
-
-    max-width:1250px;
-
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+    padding:30px;
+    max-width:1200px;
     margin:auto;
-
-    padding:40px 25px 80px;
 }
 
-/* 🎴 الكرت */
+/* 🎴 كرت */
 .card{
     background:#111827;
-
-    border-radius:24px;
-
+    border-radius:20px;
     overflow:hidden;
-
-    border:1px solid rgba(255,255,255,0.06);
-
-    transition:0.35s;
-
     cursor:pointer;
-}
-
-.card:hover{
-    transform:translateY(-12px);
-
-    box-shadow:
-    0 20px 45px rgba(0,0,0,0.45),
-    0 0 25px rgba(124,58,237,0.22);
-}
-
-/* 🖼️ الصور */
-.card img{
-    width:100%;
-    height:210px;
-
-    object-fit:cover;
-
-    display:block;
-}
-
-/* 📝 المحتوى */
-.card-content{
-    padding:22px;
-}
-
-.card h2{
-    font-size:28px;
-    margin-bottom:10px;
-}
-
-.card p{
-    color:#9ca3af;
-    line-height:1.7;
-    font-size:15px;
-}
-
-/* 🔘 الزر */
-.game-btn{
-    width:100%;
-
-    margin-top:18px;
-
-    padding:14px;
-
-    border:none;
-    border-radius:14px;
-
-    background:
-    linear-gradient(135deg,#7c3aed,#06b6d4);
-
-    color:white;
-
-    font-size:16px;
-    font-weight:700;
-
-    cursor:pointer;
-
     transition:0.3s;
 }
 
-.game-btn:hover{
-    transform:scale(1.03);
+.card:hover{
+    transform:translateY(-10px);
 }
 
-/* 📂 الأقسام */
-.games-section{
+/* 🖼️ صورة */
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+/* 📝 */
+.card-content{
+    padding:18px;
+}
+
+.game-btn{
+    width:100%;
+    padding:12px;
+    margin-top:15px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(135deg,#7c3aed,#06b6d4);
+    color:white;
+    cursor:pointer;
+}
+
+/* 📂 إخفاء الأقسام */
+.hidden{
     display:none;
 }
 
-/* 📌 الفوتر */
-footer{
-    text-align:center;
-
-    padding:35px;
-
-    color:#7b8798;
-
-    border-top:1px solid rgba(255,255,255,0.06);
-
-    background:#0d141d;
-}
-
-/* 📱 الجوال */
-@media(max-width:768px){
-
-header h1{
-    font-size:48px;
-}
-
-header p{
-    font-size:16px;
-}
-
 .section-title{
+    text-align:center;
+    margin:25px 0;
     font-size:28px;
 }
 
-}
-
 </style>
-
 </head>
 
 <body>
 
-<!-- 🔥 الهيدر -->
 <header>
-
-<h1>YESUF Gaming</h1>
-
-<p>
-أفضل مكتبة ألعاب للأندرويد والكمبيوتر والمحاكيات
-</p>
-
-<!-- 🔍 البحث -->
-<div class="search-box">
-
-<input type="text"
-placeholder="ابحث عن لعبة أو قسم...">
-
-</div>
-
+<h1>🎮 Yesuf Gaming</h1>
+<p>أفضل مكتبة ألعاب للأندرويد والكمبيوتر والمحاكيات</p>
 </header>
 
-<!-- 🎯 الفئات -->
-<h2 class="section-title">
-🎮 الفئات
-</h2>
+<!-- 🔥 الفئات الرئيسية -->
+<section class="games" id="main">
 
-<section class="games">
-
-<!-- 📱 Android -->
-<div class="card"
-onclick="showSection('android-games')">
-
+<!-- Android -->
+<div class="card" onclick="showSection('android')">
 <img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/HeroHomepage_2880x1200.width-1300_oirLRAu.jpg">
-
 <div class="card-content">
-
 <h2>Android</h2>
-
-<p>
-ألعاب أندرويد الأصلية والمعدلة بأفضل تجربة ممكنة.
-</p>
-
-<button class="game-btn">
-دخول القسم
-</button>
-
+<button class="game-btn">دخول</button>
+</div>
 </div>
 
-</div>
-
-<!-- 💻 PC -->
+<!-- PC -->
 <div class="card">
-
-<img src="https://images.unsplash.com/photo-1542751110-97427bbecf20?q=80&w=1200&auto=format&fit=crop">
-
+<img src="https://images.unsplash.com/photo-1542751110-97427bbecf20?q=80&w=1200">
 <div class="card-content">
-
 <h2>PC</h2>
-
-<p>
-مكتبة ألعاب الكمبيوتر من الألعاب الخفيفة إلى ألعاب AAA.
-</p>
-
-<button class="game-btn">
-دخول القسم
-</button>
-
+<button class="game-btn">دخول</button>
+</div>
 </div>
 
-</div>
-
-<!-- 🕹️ ROMS -->
-<div class="card">
-
+<!-- ROMS -->
+<div class="card" onclick="showSection('roms')">
 <img src="https://media.sketchfab.com/models/266d26be2a6d47d58880bb723d1faf7a/thumbnails/67943311943141aab921e5f9a1916ae4/53435a17ae3242e9b07b89c417472d88.jpeg">
-
 <div class="card-content">
-
 <h2>ROMS</h2>
-
-<p>
-ألعاب المحاكيات الكلاسيكية لأجهزة
-PlayStation وNintendo وSEGA.
-</p>
-
-<button class="game-btn">
-دخول القسم
-</button>
-
+<button class="game-btn">دخول</button>
 </div>
-
 </div>
 
 </section>
 
-<!-- 🎮 قسم Android -->
-<section id="android-games"
-class="games games-section">
+<!-- 🎮 Android Games -->
+<section id="android" class="games hidden">
 
-<!-- 🎮 Grayland -->
 <div class="card">
-
-<img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/297190/capsule_616x353.jpg?t=1700734056">
-
+<img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/297190/capsule_616x353.jpg">
 <div class="card-content">
-
 <h2>Grayland</h2>
-
-<p>
-لعبة إندي ثنائية الأبعاد
-بأجواء مظلمة وكئيبة.
-</p>
-
-<a href="grayland.html">
-
-<button class="game-btn">
-عرض اللعبة
-</button>
-
-</a>
-
+<p>لعبة مغامرات وألغاز بأجواء مظلمة</p>
 </div>
-
 </div>
 
 </section>
 
-<!-- 📌 الفوتر -->
-<footer>
+<!-- 🎮 ROMS DEVICES -->
+<section id="roms" class="games hidden">
 
-© 2026 YESUF Gaming
+<!-- NES (1983) -->
+<div class="card">
+<img src="https://s2.dmcdn.net/v/3U4291epBEg7WFB8t/x1080">
+<div class="card-content"><h2>NES</h2></div>
+</div>
 
-</footer>
+<!-- Sega Master System (1985) -->
+<div class="card">
+<img src="https://live.staticflickr.com/7753/29090801190_dc96280dfd_z.jpg">
+<div class="card-content"><h2>Sega Master System</h2></div>
+</div>
+
+<!-- Sega Genesis (1988) -->
+<div class="card">
+<img src="https://static.wikia.nocookie.net/aaahhrealmonsters/images/a/ab/Sega-Genesis-Logo.jpg">
+<div class="card-content"><h2>Sega Genesis</h2></div>
+</div>
+
+<!-- SNES (1990) -->
+<div class="card">
+<img src="https://vectorseek.com/wp-content/uploads/2023/10/super-nintendo-Logo-Vector.svg-.png">
+<div class="card-content"><h2>SNES</h2></div>
+</div>
+
+<!-- PS1 (1994) -->
+<div class="card">
+<img src="https://4kwallpapers.com/images/wallpapers/playstation-logo-8k-3840x2160-14190.png">
+<div class="card-content"><h2>PlayStation 1</h2></div>
+</div>
+
+<!-- N64 (1996) -->
+<div class="card">
+<img src="https://res.cloudinary.com/jerrick/image/upload/v1775590452/69d55c34213ac3001da17971.jpg">
+<div class="card-content"><h2>Nintendo 64</h2></div>
+</div>
+
+<!-- GBA (2001) -->
+<div class="card">
+<img src="https://cdn2.steamgriddb.com/grid/458375c3383253b03634e8c476101be3.png">
+<div class="card-content"><h2>Game Boy Advance</h2></div>
+</div>
+
+<!-- PSP (2004) -->
+<div class="card">
+<img src="https://cdn.wallpapersafari.com/86/32/zTf5DI.jpg">
+<div class="card-content"><h2>PSP</h2></div>
+</div>
+
+</section>
 
 <script>
 
-/* 🎮 إظهار القسم */
+function showSection(id){
 
-function showSection(sectionId){
+    document.getElementById("main").style.display="none";
 
-    let sections =
-    document.querySelectorAll('.games-section');
-
-    sections.forEach(section => {
-
-        section.style.display = 'none';
-
+    document.querySelectorAll(".hidden").forEach(s=>{
+        s.style.display="none";
     });
 
-    document.getElementById(sectionId)
-    .style.display = 'grid';
-
-    document.getElementById(sectionId)
-    .scrollIntoView({
-
-        behavior:'smooth'
-
-    });
+    document.getElementById(id).style.display="grid";
 
 }
 
