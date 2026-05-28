@@ -1,346 +1,105 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<section id="zelda" class="section">
 
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<button class="back-btn" onclick="back()">⬅ رجوع</button>
 
-<title>Yesuf Gaming</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800&display=swap" rel="stylesheet">
-
-<style>
-
-/* ================= أساسيات ================= */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    font-family:'Cairo',sans-serif;
-    background:#050b14;
-    color:white;
-    overflow-x:hidden;
-}
-
-/* خلفية */
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    background:
-    radial-gradient(circle at top,#2563eb 0%,transparent 40%),
-    radial-gradient(circle at bottom,#7c3aed 0%,transparent 35%);
-    opacity:0.25;
-    z-index:-1;
-}
-
-/* ================= الهيدر ================= */
-header{
-    text-align:center;
-    padding:70px 20px 40px;
-}
-
-header h1{
-    font-size:55px;
-    font-weight:800;
-    background:linear-gradient(90deg,#60a5fa,#a855f7);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-
-header p{
-    margin-top:10px;
-    color:#cbd5e1;
-}
-
-/* ================= الكروت ================= */
-.games{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:25px;
-    padding:25px;
-    max-width:1200px;
-    margin:auto;
-}
-
-.card{
-    position:relative;
-    border-radius:20px;
-    overflow:hidden;
-    cursor:pointer;
-    background:#111827;
-    transition:0.35s;
-    box-shadow:0 10px 35px rgba(0,0,0,0.4);
-}
-
-.card:hover{
-    transform:translateY(-8px) scale(1.02);
-    box-shadow:0 15px 50px rgba(99,102,241,0.25);
-}
-
-.card img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-}
-
-.overlay{
-    position:absolute;
-    inset:0;
-    background:linear-gradient(to top,rgba(0,0,0,0.9),transparent);
-}
-
-.card-content{
-    position:absolute;
-    bottom:0;
-    width:100%;
-    padding:18px;
-}
-
-/* ================= زر الرجوع ================= */
-.back-btn{
-    margin:20px;
-    padding:10px 16px;
-    border:none;
-    border-radius:12px;
-    background:#111827;
-    color:white;
-    cursor:pointer;
-    transition:0.3s;
-}
-
-.back-btn:hover{
-    background:#2563eb;
-}
-
-/* ================= إخفاء ================= */
-.hidden{
-    display:none;
-}
-
-/* ================= التفاصيل ================= */
-.details{
-    max-width:900px;
-    margin:auto;
-    padding:25px;
-    line-height:1.9;
-}
-
-/* تحذير */
-.warning{
-    background:#7f1d1d;
-    padding:14px;
-    border-radius:12px;
-    margin-top:15px;
-    border:1px solid #ef4444;
-}
-
-/* روابط عامة */
-a{
-    color:#38bdf8;
-    text-decoration:none;
-}
-
-a:hover{
-    text-decoration:underline;
-}
-
-/* ================= زر تحميل احترافي ================= */
-.btn{
-    display:inline-block;
-    margin:10px 6px;
-    padding:12px 18px;
-    background:linear-gradient(90deg,#2563eb,#7c3aed);
-    color:white;
-    border-radius:14px;
-    font-weight:bold;
-    transition:0.3s;
-    box-shadow:0 10px 25px rgba(37,99,235,0.3);
-}
-
-.btn:hover{
-    transform:translateY(-3px);
-    box-shadow:0 15px 35px rgba(124,58,237,0.4);
-}
-
-/* ================= صور اللعبة ================= */
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:12px;
-    margin:20px 0;
-}
-
-.gallery img{
-    width:100%;
-    height:140px;
-    object-fit:cover;
-    border-radius:12px;
-    transition:0.3s;
-}
-
-.gallery img:hover{
-    transform:scale(1.05);
-}
-
-/* ================= موبايل ================= */
-@media(max-width:768px){
-header h1{
-    font-size:38px;
-}
-.games{
-    grid-template-columns:1fr;
-}
-.gallery img{
-    height:120px;
-}
-}
-
-</style>
-</head>
-
-<body>
-
-<header>
-<h1>🎮 Yesuf Gaming</h1>
-<p>🔥 ألعاب </p>
-</header>
-
-<!-- MAIN -->
-<section class="games" id="main">
-
-<div class="card" onclick="showSection('roms')">
-<img src="https://static0.howtogeekimages.com/wordpress/wp-content/uploads/2024/04/shutterstock_1290635251.jpg">
-<div class="overlay"></div>
-<div class="card-content">
-<h2>ROMS</h2>
-<p>🎮 مكتبة الألعاب</p>
-</div>
-</div>
-
-</section>
-
-<!-- ROMS -->
-<section class="games hidden" id="roms">
-
-<button class="back-btn" onclick="goBack()">⬅ رجوع</button>
-
-<div class="card" onclick="showSection('switch')">
-<img src="https://pixelz.cc/wp-content/uploads/2019/08/nintendo-switch-logo-blue-and-red-uhd-4k-wallpaper.jpg">
-<div class="overlay"></div>
-<div class="card-content">
-<h2>🎮 Nintendo Switch</h2>
-</div>
-</div>
-
-</section>
-
-<!-- SWITCH -->
-<section class="games hidden" id="switch">
-
-<button class="back-btn" onclick="goBack()">⬅ رجوع</button>
-
-<div class="card" onclick="showSection('zelda')">
-<img src="https://staticdelivery.nexusmods.com/mods/5363/images/thumbnails/172/172-1777565189-1692026617.png">
-<div class="overlay"></div>
-<div class="card-content">
-<h2>⚔️ Zelda TOTK معرّبة</h2>
-<p>🌍 عالم مفتوح • 🧩 ألغاز • 🧝 مغامرة أسطورية</p>
-</div>
-</div>
-
-</section>
-
-<!-- DETAILS -->
-<section class="hidden" id="zelda">
-
-<button class="back-btn" onclick="goBack()">⬅ رجوع</button>
-
-<div class="details">
-
-<h2>🎮 The Legend of Zelda: Tears of the Kingdom</h2>
-
-<!-- 📖 لمحة عن اللعبة -->
-<p>
-🎮 <b>The Legend of Zelda: Tears of the Kingdom</b> هي واحدة من أعظم ألعاب المغامرة والعالم المفتوح في تاريخ الألعاب الحديثة 🌍✨
-</p>
+<h2>🗡️ The Legend of Zelda: Tears of the Kingdom (معربة)</h2>
 
 <p>
-تأخذك اللعبة في رحلة مذهلة داخل عالم <b>Hyrule</b>، عالم واسع مليء بالتضاريس المتنوعة مثل الجبال ⛰️، الغابات 🌲، الكهوف 🕳️، والجزر العائمة ☁️.
+🌍 لعبة أسطورية من نينتندو تأخذك إلى عالم Hyrule المفتوح، حيث تبدأ مغامرة جديدة مليئة بالأسرار، الجزر الطائرة ☁️، والألغاز المعقدة 🧩.  
+اللعبة تقدم تجربة عالم مفتوح غير مسبوقة تعتمد على الإبداع، الاستكشاف، والفيزياء المتقدمة 🧠.
 </p>
 
+<!-- 📖 لمحة طويلة -->
+<div class="info-grid">
+
+<div class="info-card">
+<h3>🌍 القصة (بدون حرق)</h3>
 <p>
-اللعبة تمنحك حرية كاملة في الاستكشاف 🎮، حل الألغاز 🧩، واستخدام الأدوات بطرق إبداعية تعتمد على الفيزياء والتفكير الذكي 🧠.
+بعد أحداث غامضة في مملكة Hyrule 👑، تبدأ ظواهر غير طبيعية بالظهور في السماء والأرض.  
+تعود لتلعب بشخصية Link 🗡️ الذي ينطلق في رحلة لكشف الحقيقة وإنقاذ المملكة من خطر مجهول، مع قصة مليئة بالغموض والتشويق بدون حرق الأحداث الأساسية.
 </p>
+</div>
 
+<div class="info-card">
+<h3>🎮 أسلوب اللعب</h3>
 <p>
-تدور القصة حول تهديد جديد يواجه مملكة Hyrule 👑، حيث ينطلق البطل Link في مغامرة مليئة بالأسرار والتحديات دون حرق الأحداث 🔥.
+اللعبة تعتمد على:
+<br>✔ استكشاف عالم مفتوح ضخم 🌿  
+<br>✔ حل ألغاز ذكية 🧩  
+<br>✔ قتال باستخدام أسلحة متنوعة ⚔️  
+<br>✔ بناء أدوات ومركبات بطرق إبداعية ⚙️  
+<br>✔ فيزياء تفاعلية متقدمة جدًا 🧠
 </p>
+</div>
 
+<div class="info-card">
+<h3>🌌 العالم</h3>
 <p>
-تجربة اللعبة تجمع بين الأكشن ⚔️، الاستكشاف 🌍، والألغاز الذكية، مع موسيقى وأجواء أسطورية تجعل كل لحظة ممتعة ✨.
+العالم يتكون من:
+<br>☁️ جزر طائرة في السماء  
+<br>🌿 أراضٍ واسعة على الأرض  
+<br>🕳️ كهوف عميقة مليئة بالأسرار  
+<br>🔍 مناطق خفية مليئة بالتحديات  
+كل منطقة تقدم تجربة مختلفة تمامًا.
 </p>
+</div>
 
-<!-- 🖼️ صور -->
+</div>
+
+<!-- 🖼️ الصور -->
+<h3>🖼️ صور من اللعبة</h3>
+
 <div class="gallery">
+<img src="https://i.imgur.com/b9A2dmB.jpg" onclick="openImg(this.src)">
+<img src="https://i.imgur.com/nP8q030.jpg" onclick="openImg(this.src)">
+<img src="https://i.imgur.com/wEnhdDd.jpg" onclick="openImg(this.src)">
+<img src="https://i.imgur.com/EcvOLni.jpg" onclick="openImg(this.src)">
+</div>
 
-<img src="https://preview.redd.it/%D8%AA%D8%B9%D8%B1%D9%8A%D8%A8-%D8%B2%D9%8A%D9%84%D8%AF%D8%A7-%D8%AF%D9%85%D9%88%D8%B9-%D8%A7%D9%84%D9%85%D9%85%D9%84%D9%83%D8%A9-%D8%AA%D8%B9%D8%B1%D9%8A%D8%A8-zelda-totk-v0-7mb0boh7kjvg1.png">
+<!-- 📱 معلومات التشغيل -->
+<h3>📱 المنصات والتشغيل</h3>
 
-<img src="https://preview.redd.it/%D8%AA%D8%B9%D8%B1%D9%8A%D8%A8-%D8%B2%D9%8A%D9%84%D8%AF%D8%A7-%D8%AF%D9%85%D9%88%D8%B9-%D8%A7%D9%84%D9%85%D9%85%D9%84%D9%83%D8%A9-%D8%AA%D8%B9%D8%B1%D9%8A%D8%A8-zelda-totk-v0-71lg4ph7kjvg1.png">
+<div class="info-grid">
 
-<img src="https://preview.redd.it/%D8%AA%D8%B9%D8%B1%D9%8A%D8%A8-%D8%B2%D9%8A%D9%84%D8%AF%D8%A7-%D8%AF%D9%85%D9%88%D8%B9-%D8%A7%D9%84%D9%85%D9%85%D9%84%D9%83%D8%A9-%D8%AA%D8%B9%D8%B1%D9%8A%D8%A8-zelda-totk-v0-8ggcgdi7kjvg1.png">
+<div class="info-card">
+<h3>🎮 المنصات</h3>
+<p>Android + PC 💻📱</p>
+</div>
 
-<img src="https://preview.redd.it/%D8%AA%D8%B9%D8%B1%D9%8A%D8%A8-%D8%B2%D9%8A%D9%84%D8%AF%D8%A7-%D8%AF%D9%85%D9%88%D8%B9-%D8%A7%D9%84%D9%85%D9%85%D9%84%D9%83%D8%A9-%D8%AA%D8%B9%D8%B1%D9%8A%D8%A8-zelda-totk-v0-uvajsoh7kjvg1.png">
+<div class="info-card">
+<h3>🧩 المحاكيات</h3>
+<p>Yuzu Emulator + Eden Emulator</p>
+</div>
+
+<div class="info-card">
+<h3>⚙️ الأداء</h3>
+<p>يعتمد على قوة الجهاز + إعدادات المحاكي</p>
+</div>
 
 </div>
 
-<p>
-🎮 النوع: أكشن - مغامرات - عالم مفتوح - ألغاز<br>
-🗓️ الإصدار: 2023<br>
-💾 الحجم: 16GB - 18GB<br>
-📱 المنصات: Nintendo Switch
-</p>
-
-<div class="warning">
-⚠️ تأكد من تحميل اللعبة والتحديث معًا للحصول على أفضل تجربة تشغيل
-</div>
-
-<!-- 🔥 أزرار تحميل -->
+<!-- 📥 الروابط -->
 <h3>📥 روابط التحميل</h3>
-<a class="btn" href="https://ouo.io/MZiezH" target="_blank">⬇️ تحميل اللعبة</a>
-<a class="btn" href="https://ouo.io/xBRaCU" target="_blank">⬆️ تحميل التحديث</a>
 
-<h3>🌐 التعريب</h3>
-<p><a href="https://www.mediafire.com/file/kk2ckr9ihx9qmd5/TOTK_Arabic_V1.0-172-5-1778188660.zip/file">تحميل التعريب</a></p>
+<a class="btn" href="https://ouo.io/MZiezH" target="_blank">⬇ تحميل اللعبة</a>
+<a class="btn" href="https://ouo.io/xBRaCU" target="_blank">⬆ تحميل التحديث</a>
 
-<h3>🖥️ المحاكيات</h3>
-<p><a href="https://yuzu-emulator.cc/">Yuzu PC</a></p>
-<p><a href="https://stable.eden-emu.dev/v0.2.0/Eden-Android-v0.2.0-legacy.apk">Eden Android</a></p>
+<h3>🌍 إضافات مهمة</h3>
 
+<a class="btn" href="https://www.mediafire.com/file/kk2ckr9ihx9qmd5/TOTK_Arabic_V1.0-172-5-1778188660.zip/file" target="_blank">🈯 التعريب</a>
+
+<a class="btn" href="https://yuzu-emulator.cc/" target="_blank">💻 محاكي PC (Yuzu)</a>
+
+<a class="btn" href="https://stable.eden-emu.dev/v0.2.0/Eden-Android-v0.2.0-legacy.apk" target="_blank">📱 محاكي Android (Eden)</a>
+
+<a class="btn" href="https://files.prodkeys.net/ProdKeys.net-v20.3.0.zip" target="_blank">🔑 Prod Keys</a>
+
+<a class="btn" href="https://github.com/THZoria/NX_Firmware/releases/download/20.3.0/Firmware.20.3.0.zip" target="_blank">⚙️ Firmware</a>
+
+<!-- ⚠️ تحذير -->
+<div class="warning">
+⚠️ تأكد من تحميل اللعبة + التحديث + التعريب للحصول على أفضل تجربة تشغيل.  
+⚠️ يفضل استخدام محاكي قوي مثل Yuzu أو Eden للحصول على أداء مستقر 🎮
 </div>
 
 </section>
-
-<script>
-
-function showSection(id){
-    document.querySelectorAll("section").forEach(s=>{
-        s.classList.add("hidden");
-    });
-    document.getElementById(id).classList.remove("hidden");
-}
-
-function goBack(){
-    document.querySelectorAll("section").forEach(s=>{
-        s.classList.add("hidden");
-    });
-    document.getElementById("main").classList.remove("hidden");
-}
-
-</script>
-
-</body>
-</html>
