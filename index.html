@@ -11,21 +11,17 @@
 
 <style>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
 body{
+    margin:0;
     font-family:'Cairo',sans-serif;
     background:#0b1118;
     color:white;
 }
 
+/* 🔥 الهيدر */
 header{
     text-align:center;
-    padding:80px 20px;
+    padding:70px 20px;
     background:linear-gradient(to bottom,#141925,#0b1118);
 }
 
@@ -34,11 +30,12 @@ header h1{
     color:#7c3aed;
 }
 
+/* 🎮 الكروت */
 .games{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:20px;
-    padding:30px;
+    padding:25px;
     max-width:1200px;
     margin:auto;
 }
@@ -65,6 +62,7 @@ header h1{
     padding:15px;
 }
 
+/* 🔙 زر الرجوع داخل الموقع (اختياري) */
 .back-btn{
     margin:20px;
     padding:10px 15px;
@@ -79,6 +77,13 @@ header h1{
     display:none;
 }
 
+/* 📱 تحسين الهاتف */
+@media (max-width:768px){
+    header h1{
+        font-size:32px;
+    }
+}
+
 </style>
 </head>
 
@@ -91,11 +96,50 @@ header h1{
 <!-- 🔥 الصفحة الرئيسية -->
 <section class="games" id="main">
 
+<div class="card" onclick="showSection('android')">
+<img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/HeroHomepage_2880x1200.width-1300_oirLRAu.jpg">
+<div class="card-content"><h2>Android</h2></div>
+</div>
+
+<div class="card" onclick="showSection('roms')">
+<img src="https://media.sketchfab.com/models/266d26be2a6d47d58880bb723d1faf7a/thumbnails/67943311943141aab921e5f9a1916ae4/53435a17ae3242e9b07b89c417472d88.jpeg">
+<div class="card-content"><h2>ROMS</h2></div>
+</div>
+
+</section>
+
+<!-- 🎮 Android -->
+<section id="android" class="games hidden">
+
+<button class="back-btn" onclick="goBack()">⬅ رجوع</button>
+
+<div class="card" onclick="openGrayland()">
+<img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/297190/capsule_616x353.jpg">
+<div class="card-content">
+<h2>Grayland</h2>
+</div>
+</div>
+
+</section>
+
+<!-- 🎮 ROMS -->
+<section id="roms" class="games hidden">
+
+<button class="back-btn" onclick="goBack()">⬅ رجوع</button>
+
 <div class="card" onclick="showNES()">
 <img src="https://cdn.shopify.com/s/files/1/0336/4824/6924/collections/1760169.png?v=1597423331">
-<div class="card-content">
-<h2>NES Games</h2>
+<div class="card-content"><h2>NES</h2></div>
 </div>
+
+<div class="card">
+<img src="https://bitjumpgames.com/cdn/shop/files/snes_logo.png?v=1736747784&width=460">
+<div class="card-content"><h2>SNES</h2></div>
+</div>
+
+<div class="card">
+<img src="https://pbs.twimg.com/media/F4OTmp9XgAAB0lj.jpg">
+<div class="card-content"><h2>PSP</h2></div>
 </div>
 
 </section>
@@ -105,12 +149,10 @@ header h1{
 
 <button class="back-btn" onclick="goBack()">⬅ رجوع</button>
 
-<!-- 🎮 Super Mario Bros -->
 <div class="card" onclick="openMario()">
 <img src="https://www.covercentury.com/covers/nes/s/nes_supermariobros.jpg">
 <div class="card-content">
 <h2>Super Mario Bros</h2>
-<p>لعبة منصات كلاسيكية</p>
 </div>
 </div>
 
@@ -118,19 +160,51 @@ header h1{
 
 <script>
 
-function showNES(){
+function showSection(id){
+
     document.getElementById("main").style.display="none";
-    document.getElementById("nes").style.display="grid";
+
+    document.querySelectorAll(".hidden").forEach(s=>{
+        s.style.display="none";
+    });
+
+    document.getElementById(id).style.display="grid";
+
+    // 🔥 إضافة للسجل (زر الرجوع في الهاتف)
+    history.pushState({page:id}, "", "#" + id);
 }
 
+/* 🔙 رجوع داخل الموقع */
 function goBack(){
-    document.getElementById("nes").style.display="none";
+    document.querySelectorAll(".hidden").forEach(s=>{
+        s.style.display="none";
+    });
     document.getElementById("main").style.display="grid";
 }
 
-/* 🎮 فتح صفحة Mario */
+/* 🔥 دعم زر الرجوع في الهاتف */
+window.addEventListener("popstate", function(event){
+
+    document.querySelectorAll(".hidden").forEach(s=>{
+        s.style.display="none";
+    });
+
+    if(event.state && event.state.page){
+        document.getElementById(event.state.page).style.display="grid";
+        document.getElementById("main").style.display="none";
+    } else {
+        document.getElementById("main").style.display="grid";
+    }
+
+});
+
+/* 🎮 فتح الألعاب */
 function openMario(){
     window.location.href = "mario.html";
+}
+
+function openGrayland(){
+    window.location.href = "grayland.html";
 }
 
 </script>
