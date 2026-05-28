@@ -26,7 +26,7 @@ body{
     overflow-x:hidden;
 }
 
-/* 🔥 خلفية */
+/* 🔥 الخلفية */
 body::before{
     content:"";
     position:fixed;
@@ -44,13 +44,11 @@ header{
     background:
     linear-gradient(to bottom,rgba(20,25,35,0.95),rgba(11,17,24,0.95));
     border-bottom:1px solid rgba(255,255,255,0.08);
-    position:relative;
 }
 
 header h1{
     font-size:72px;
     font-weight:800;
-    letter-spacing:1px;
     background:linear-gradient(90deg,#7c3aed,#06b6d4);
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
@@ -87,7 +85,7 @@ header p{
     box-shadow:0 0 25px rgba(6,182,212,0.2);
 }
 
-/* 🎯 عنوان */
+/* 🎯 العنوان */
 .section-title{
     text-align:center;
     font-size:34px;
@@ -113,7 +111,6 @@ header p{
     overflow:hidden;
     border:1px solid rgba(255,255,255,0.06);
     transition:0.35s;
-    position:relative;
 }
 
 .card:hover{
@@ -210,7 +207,7 @@ header p{
 <h1>YESUF Gaming</h1>
 
 <p>
-أفضل مكتبة ألعاب للأندرويد والبيسي والمحاكيات
+أفضل مكتبة ألعاب للأندرويد والكمبيوتر والمحاكيات
 </p>
 
 <!-- 🔍 البحث -->
@@ -235,7 +232,7 @@ header p{
 <h2>Android</h2>
 
 <p>
-ألعاب أندرويد الأصلية والمعدلة مع أفضل التجارب للأجهزة الضعيفة والقوية.
+ألعاب أندرويد الأصلية والمعدلة بأفضل تجربة ممكنة.
 </p>
 
 <button class="game-btn">
@@ -256,7 +253,7 @@ header p{
 <h2>PC</h2>
 
 <p>
-مكتبة ألعاب الكمبيوتر الكاملة من الألعاب الخفيفة وحتى ألعاب AAA.
+مكتبة ألعاب الكمبيوتر من الألعاب الخفيفة إلى ألعاب AAA.
 </p>
 
 <button class="game-btn">
@@ -277,11 +274,32 @@ header p{
 <h2>ROMS</h2>
 
 <p>
-ألعاب المحاكيات الكلاسيكية لأجهزة PlayStation وNintendo وSEGA.
+ألعاب المحاكيات الكلاسيكية لأجهزة PlayStation وNintendo وSEGA الشهيرة.
 </p>
 
 <button class="game-btn">
 دخول القسم
+</button>
+
+</div>
+
+</div>
+
+<!-- 🎮 Grayland -->
+<div class="card">
+
+<img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/297190/capsule_616x353.jpg?t=1700734056">
+
+<div class="card-content">
+
+<h2>Grayland</h2>
+
+<p>
+لعبة مغامرات وألغاز بأجواء مظلمة وقصة غامضة.
+</p>
+
+<button class="game-btn">
+عرض اللعبة
 </button>
 
 </div>
@@ -299,614 +317,3 @@ header p{
 
 </body>
 </html>
-```
-# YESUF Gaming — تصميم محسّن بأسلوب احترافي شبيه Steam
-
-```html
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>YESUF Gaming</title>
-
-<!-- 🔥 خط احترافي -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    font-family:'Cairo',sans-serif;
-    background:#0b1118;
-    color:white;
-    overflow-x:hidden;
-}
-
-/* 🔥 خلفية */
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    background:
-    radial-gradient(circle at top right,rgba(124,58,237,0.25),transparent 30%),
-    radial-gradient(circle at bottom left,rgba(6,182,212,0.18),transparent 30%);
-    z-index:-1;
-}
-
-/* 🔥 الهيدر */
-header{
-    text-align:center;
-    padding:110px 20px 90px;
-    background:
-    linear-gradient(to bottom,rgba(20,25,35,0.95),rgba(11,17,24,0.95));
-    border-bottom:1px solid rgba(255,255,255,0.08);
-    position:relative;
-}
-
-header h1{
-    font-size:72px;
-    font-weight:800;
-    letter-spacing:1px;
-    background:linear-gradient(90deg,#7c3aed,#06b6d4);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-
-header p{
-    margin-top:15px;
-    color:#a5b4c7;
-    font-size:20px;
-}
-
-/* 🔍 البحث */
-.search-box{
-    max-width:650px;
-    margin:40px auto 0;
-    padding:0 20px;
-}
-
-.search-box input{
-    width:100%;
-    padding:18px 22px;
-    border:none;
-    border-radius:18px;
-    background:#111827;
-    color:white;
-    font-size:16px;
-    outline:none;
-    border:1px solid rgba(255,255,255,0.08);
-    transition:0.3s;
-}
-
-.search-box input:focus{
-    border-color:#06b6d4;
-    box-shadow:0 0 25px rgba(6,182,212,0.2);
-}
-
-/* 🎯 عنوان */
-.section-title{
-    text-align:center;
-    font-size:34px;
-    margin-top:65px;
-    margin-bottom:15px;
-    font-weight:800;
-}
-
-/* 🎮 البطاقات */
-.games{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
-    max-width:1250px;
-    margin:auto;
-    padding:40px 25px 80px;
-}
-
-/* 🎴 الكرت */
-.card{
-    background:#111827;
-    border-radius:24px;
-    overflow:hidden;
-    border:1px solid rgba(255,255,255,0.06);
-    transition:0.35s;
-    position:relative;
-}
-
-.card:hover{
-    transform:translateY(-12px);
-    box-shadow:
-    0 20px 45px rgba(0,0,0,0.45),
-    0 0 25px rgba(124,58,237,0.22);
-}
-
-/* 🖼️ الصور */
-.card img{
-    width:100%;
-    height:210px;
-    object-fit:cover;
-    display:block;
-}
-
-/* 📝 المحتوى */
-.card-content{
-    padding:22px;
-}
-
-.card h2{
-    font-size:28px;
-    margin-bottom:10px;
-}
-
-.card p{
-    color:#9ca3af;
-    line-height:1.7;
-    font-size:15px;
-    min-height:50px;
-}
-
-/* 🔘 الزر */
-.game-btn{
-    width:100%;
-    margin-top:18px;
-    padding:14px;
-    border:none;
-    border-radius:14px;
-    background:linear-gradient(135deg,#7c3aed,#06b6d4);
-    color:white;
-    font-size:16px;
-    font-weight:700;
-    cursor:pointer;
-    transition:0.3s;
-}
-
-.game-btn:hover{
-    transform:scale(1.03);
-    opacity:0.95;
-}
-
-/* 📌 الفوتر */
-footer{
-    text-align:center;
-    padding:35px;
-    color:#7b8798;
-    border-top:1px solid rgba(255,255,255,0.06);
-    background:#0d141d;
-}
-
-/* 📱 الجوال */
-@media(max-width:768px){
-
-header h1{
-    font-size:48px;
-}
-
-header p{
-    font-size:16px;
-}
-
-.section-title{
-    font-size:28px;
-}
-
-.games{
-    gap:22px;
-}
-
-}
-
-</style>
-
-</head>
-
-<body>
-
-<!-- 🔥 الهيدر -->
-<header>
-
-<h1>YESUF Gaming</h1>
-
-<p>
-أفضل مكتبة ألعاب للأندرويد والبيسي والمحاكيات
-</p>
-
-<!-- 🔍 البحث -->
-<div class="search-box">
-<input type="text" placeholder="ابحث عن لعبة أو قسم...">
-</div>
-
-</header>
-
-<!-- 🎯 الفئات -->
-<h2 class="section-title">🎮 الفئات</h2>
-
-<section class="games">
-
-<!-- 📱 Android -->
-<div class="card">
-
-<img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/HeroHomepage_2880x1200.width-1300_oirLRAu.jpg">
-
-<div class="card-content">
-
-<h2>Android</h2>
-
-<p>
-ألعاب أندرويد الأصلية والمعدلة مع أفضل التجارب للأجهزة الضعيفة والقوية.
-</p>
-
-<button class="game-btn">
-دخول القسم
-</button>
-
-</div>
-
-</div>
-
-<!-- 💻 PC -->
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1542751110-97427bbecf20?q=80&w=1200&auto=format&fit=crop">
-
-<div class="card-content">
-
-<h2>PC</h2>
-
-<p>
-مكتبة ألعاب الكمبيوتر الكاملة من الألعاب الخفيفة وحتى ألعاب AAA.
-</p>
-
-<button class="game-btn">
-دخول القسم
-</button>
-
-</div>
-
-</div>
-
-<!-- 🕹️ ROMS -->
-<div class="card">
-
-<img src="https://media.sketchfab.com/models/266d26be2a6d47d58880bb723d1faf7a/thumbnails/67943311943141aab921e5f9a1916ae4/53435a17ae3242e9b07b89c417472d88.jpeg">
-
-<div class="card-content">
-
-<h2>ROMS</h2>
-
-<p>
-ألعاب المحاكيات الكلاسيكية لأجهزة PlayStation وNintendo وSEGA.
-</p>
-
-<button class="game-btn">
-دخول القسم
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- 📌 الفوتر -->
-<footer>
-
-© 2026 YESUF Gaming — All Rights Reserved
-
-</footer>
-
-</body>
-</html>
-```
-# YESUF Gaming — تصميم محسّن بأسلوب احترافي شبيه Steam
-
-```html
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>YESUF Gaming</title>
-
-<!-- 🔥 خط احترافي -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    font-family:'Cairo',sans-serif;
-    background:#0b1118;
-    color:white;
-    overflow-x:hidden;
-}
-
-/* 🔥 خلفية */
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    background:
-    radial-gradient(circle at top right,rgba(124,58,237,0.25),transparent 30%),
-    radial-gradient(circle at bottom left,rgba(6,182,212,0.18),transparent 30%);
-    z-index:-1;
-}
-
-/* 🔥 الهيدر */
-header{
-    text-align:center;
-    padding:110px 20px 90px;
-    background:
-    linear-gradient(to bottom,rgba(20,25,35,0.95),rgba(11,17,24,0.95));
-    border-bottom:1px solid rgba(255,255,255,0.08);
-    position:relative;
-}
-
-header h1{
-    font-size:72px;
-    font-weight:800;
-    letter-spacing:1px;
-    background:linear-gradient(90deg,#7c3aed,#06b6d4);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-
-header p{
-    margin-top:15px;
-    color:#a5b4c7;
-    font-size:20px;
-}
-
-/* 🔍 البحث */
-.search-box{
-    max-width:650px;
-    margin:40px auto 0;
-    padding:0 20px;
-}
-
-.search-box input{
-    width:100%;
-    padding:18px 22px;
-    border:none;
-    border-radius:18px;
-    background:#111827;
-    color:white;
-    font-size:16px;
-    outline:none;
-    border:1px solid rgba(255,255,255,0.08);
-    transition:0.3s;
-}
-
-.search-box input:focus{
-    border-color:#06b6d4;
-    box-shadow:0 0 25px rgba(6,182,212,0.2);
-}
-
-/* 🎯 عنوان */
-.section-title{
-    text-align:center;
-    font-size:34px;
-    margin-top:65px;
-    margin-bottom:15px;
-    font-weight:800;
-}
-
-/* 🎮 البطاقات */
-.games{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
-    max-width:1250px;
-    margin:auto;
-    padding:40px 25px 80px;
-}
-
-/* 🎴 الكرت */
-.card{
-    background:#111827;
-    border-radius:24px;
-    overflow:hidden;
-    border:1px solid rgba(255,255,255,0.06);
-    transition:0.35s;
-    position:relative;
-}
-
-.card:hover{
-    transform:translateY(-12px);
-    box-shadow:
-    0 20px 45px rgba(0,0,0,0.45),
-    0 0 25px rgba(124,58,237,0.22);
-}
-
-/* 🖼️ الصور */
-.card img{
-    width:100%;
-    height:210px;
-    object-fit:cover;
-    display:block;
-}
-
-/* 📝 المحتوى */
-.card-content{
-    padding:22px;
-}
-
-.card h2{
-    font-size:28px;
-    margin-bottom:10px;
-}
-
-.card p{
-    color:#9ca3af;
-    line-height:1.7;
-    font-size:15px;
-    min-height:50px;
-}
-
-/* 🔘 الزر */
-.game-btn{
-    width:100%;
-    margin-top:18px;
-    padding:14px;
-    border:none;
-    border-radius:14px;
-    background:linear-gradient(135deg,#7c3aed,#06b6d4);
-    color:white;
-    font-size:16px;
-    font-weight:700;
-    cursor:pointer;
-    transition:0.3s;
-}
-
-.game-btn:hover{
-    transform:scale(1.03);
-    opacity:0.95;
-}
-
-/* 📌 الفوتر */
-footer{
-    text-align:center;
-    padding:35px;
-    color:#7b8798;
-    border-top:1px solid rgba(255,255,255,0.06);
-    background:#0d141d;
-}
-
-/* 📱 الجوال */
-@media(max-width:768px){
-
-header h1{
-    font-size:48px;
-}
-
-header p{
-    font-size:16px;
-}
-
-.section-title{
-    font-size:28px;
-}
-
-.games{
-    gap:22px;
-}
-
-}
-
-</style>
-
-</head>
-
-<body>
-
-<!-- 🔥 الهيدر -->
-<header>
-
-<h1>YESUF Gaming</h1>
-
-<p>
-أفضل مكتبة ألعاب للأندرويد والبيسي والمحاكيات
-</p>
-
-<!-- 🔍 البحث -->
-<div class="search-box">
-<input type="text" placeholder="ابحث عن لعبة أو قسم...">
-</div>
-
-</header>
-
-<!-- 🎯 الفئات -->
-<h2 class="section-title">🎮 الفئات</h2>
-
-<section class="games">
-
-<!-- 📱 Android -->
-<div class="card">
-
-<img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/HeroHomepage_2880x1200.width-1300_oirLRAu.jpg">
-
-<div class="card-content">
-
-<h2>Android</h2>
-
-<p>
-ألعاب أندرويد الأصلية والمعدلة مع أفضل التجارب للأجهزة الضعيفة والقوية.
-</p>
-
-<button class="game-btn">
-دخول القسم
-</button>
-
-</div>
-
-</div>
-
-<!-- 💻 PC -->
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1542751110-97427bbecf20?q=80&w=1200&auto=format&fit=crop">
-
-<div class="card-content">
-
-<h2>PC</h2>
-
-<p>
-مكتبة ألعاب الكمبيوتر الكاملة من الألعاب الخفيفة وحتى ألعاب AAA.
-</p>
-
-<button class="game-btn">
-دخول القسم
-</button>
-
-</div>
-
-</div>
-
-<!-- 🕹️ ROMS -->
-<div class="card">
-
-<img src="https://media.sketchfab.com/models/266d26be2a6d47d58880bb723d1faf7a/thumbnails/67943311943141aab921e5f9a1916ae4/53435a17ae3242e9b07b89c417472d88.jpeg">
-
-<div class="card-content">
-
-<h2>ROMS</h2>
-
-<p>
-ألعاب المحاكيات الكلاسيكية لأجهزة PlayStation وNintendo وSEGA.
-</p>
-
-<button class="game-btn">
-دخول القسم
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- 📌 الفوتر -->
-<footer>
-
-© 2026 YESUF Gaming — All Rights Reserved
-
-</footer>
-
-</body>
-</html>
-```
