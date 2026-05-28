@@ -4,9 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yesuf Gaming PRO MAX</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800&display=swap" rel="stylesheet">
+<title>Yesuf Gaming</title>
 
 <style>
 
@@ -14,76 +12,56 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Cairo',sans-serif;
+font-family:Arial;
 }
 
 body{
-background:#070b14;
+background:#0b1220;
 color:white;
-overflow-x:hidden;
 }
 
-/* 🌌 خلفية */
-body::before{
-content:"";
-position:fixed;
-inset:0;
-background:
-radial-gradient(circle at top,#2563eb 0%,transparent 40%),
-radial-gradient(circle at bottom,#7c3aed 0%,transparent 35%);
-opacity:0.25;
-z-index:-1;
-}
-
-/* 🏠 الهيدر */
+/* ===== HEADER ===== */
 header{
 text-align:center;
-padding:50px 20px 20px;
+padding:30px;
 }
 
 header h1{
-font-size:42px;
+font-size:40px;
 background:linear-gradient(90deg,#60a5fa,#a855f7);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
 
-/* 🧭 breadcrumb */
-#breadcrumb{
-text-align:center;
-color:#93c5fd;
-font-size:14px;
-margin-bottom:10px;
+header p{
+color:#cbd5e1;
+margin-top:10px;
+line-height:1.6;
 }
 
-/* 📦 الصفحات */
+/* ===== PAGES ===== */
 .page{
 display:none;
 padding:20px;
 max-width:1100px;
 margin:auto;
-animation:fade .3s ease;
 }
 
 .page.active{
 display:block;
 }
 
-@keyframes fade{
-from{opacity:0;transform:translateY(10px);}
-to{opacity:1;transform:translateY(0);}
-}
-
-/* 🎴 الكروت */
+/* ===== GRID ===== */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:20px;
+gap:15px;
 }
 
+/* ===== CARD ===== */
 .card{
 background:#111827;
-border-radius:16px;
+border-radius:14px;
 overflow:hidden;
 cursor:pointer;
 transition:.3s;
@@ -91,8 +69,7 @@ border:1px solid rgba(255,255,255,0.06);
 }
 
 .card:hover{
-transform:translateY(-8px);
-box-shadow:0 20px 50px rgba(0,0,0,0.4);
+transform:translateY(-6px);
 }
 
 .card img{
@@ -102,86 +79,45 @@ object-fit:cover;
 }
 
 .card-content{
-padding:15px;
+padding:12px;
 }
 
-/* 📥 buttons */
+/* ===== BUTTON ===== */
 .btn{
 display:inline-block;
 padding:10px 14px;
 margin:6px 4px;
-border-radius:10px;
 background:#2563eb;
 color:white;
-text-decoration:none;
-font-size:14px;
-transition:.2s;
-}
-
-.btn:hover{
-transform:scale(1.05);
-background:#1d4ed8;
-}
-
-/* 🔙 back */
-.back{
-margin-bottom:15px;
-background:#111827;
-border:none;
-padding:10px 14px;
 border-radius:10px;
+text-decoration:none;
+}
+
+/* ===== BACK ===== */
+.back{
+padding:10px;
+margin-bottom:10px;
+border:none;
+border-radius:10px;
+background:#111827;
 color:white;
 cursor:pointer;
 }
 
-.back:hover{
-background:#2563eb;
-}
-
-/* 🧠 box */
+/* ===== BOX ===== */
 .box{
 background:#111827;
-padding:15px;
-border-radius:14px;
+padding:12px;
+border-radius:12px;
 margin:10px 0;
 border:1px solid rgba(255,255,255,0.05);
 }
 
-/* 🖼️ gallery */
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-gap:10px;
-}
-
+/* ===== IMAGE ===== */
 .gallery img{
 width:100%;
-height:130px;
-object-fit:cover;
 border-radius:10px;
-cursor:pointer;
-transition:.3s;
-}
-
-.gallery img:hover{
-transform:scale(1.05);
-}
-
-/* 🔍 popup */
-#popup{
-display:none;
-position:fixed;
-inset:0;
-background:rgba(0,0,0,0.9);
-justify-content:center;
-align-items:center;
-z-index:999;
-}
-
-#popup img{
-max-width:90%;
-max-height:90%;
-border-radius:10px;
+margin-top:10px;
 }
 
 </style>
@@ -189,17 +125,20 @@ border-radius:10px;
 
 <body>
 
+<!-- ===== HOME ===== -->
 <header>
-<h1>🎮 Yesuf Gaming PRO MAX</h1>
-<div id="breadcrumb">🏠 Home</div>
+<h1>🎮 Yesuf Gaming</h1>
+<p>
+🔥 ألعاب مهكرة + محاكيات + PC + Android  
+📥 روابط تحميل مباشرة  
+</p>
 </header>
 
-<!-- 🏠 HOME -->
 <section id="home" class="page active">
 
 <div class="grid">
 
-<div class="card" onclick="go('switch','ROMs')">
+<div class="card" onclick="go('switch')">
 <img src="https://static0.howtogeekimages.com/wordpress/wp-content/uploads/2024/04/shutterstock_1290635251.jpg">
 <div class="card-content">
 <h2>🎮 ROMs Library</h2>
@@ -210,17 +149,18 @@ border-radius:10px;
 
 </section>
 
-<!-- 🎮 SWITCH -->
+<!-- ===== SWITCH ===== -->
 <section id="switch" class="page">
 
-<button class="back" onclick="go('home','Home')">⬅ رجوع</button>
+<button class="back" onclick="go('home')">⬅ رجوع</button>
 
 <div class="grid">
 
-<div class="card" onclick="go('zelda','Switch / Zelda')">
+<div class="card" onclick="go('zelda')">
 <img src="https://pixelz.cc/wp-content/uploads/2019/08/nintendo-switch-logo-blue-and-red-uhd-4k-wallpaper.jpg">
 <div class="card-content">
 <h2>🎮 Nintendo Switch</h2>
+<p>اضغط لعرض الألعاب</p>
 </div>
 </div>
 
@@ -228,44 +168,35 @@ border-radius:10px;
 
 </section>
 
-<!-- 🗡️ ZELDA -->
+<!-- ===== ZELDA PAGE ===== -->
 <section id="zelda" class="page">
 
-<button class="back" onclick="go('switch','Switch')">⬅ رجوع</button>
+<button class="back" onclick="go('switch')">⬅ رجوع</button>
 
-<h2>🗡️ The Legend of Zelda: Tears of the Kingdom (معربة)</h2>
+<h2>🗡️ The Legend of Zelda: Tears of the Kingdom</h2>
 
 <div class="box">
-🌍 لعبة عالم مفتوح ضخمة داخل مملكة Hyrule 👑  
-🧭 استكشاف جزر طائرة + كهوف + عالم أرضي  
-⚔️ قتال + ألغاز + فيزياء متقدمة  
+🌍 عالم مفتوح ضخم داخل Hyrule  
+🧭 استكشاف + ألغاز + جزر طائرة  
+⚔️ قتال + حرية لعب كاملة  
 🎮 واحدة من أقوى ألعاب Nintendo
 </div>
 
 <div class="box">
-<h3>🎮 أسلوب اللعب</h3>
-✔ عالم مفتوح بالكامل  
-✔ بناء أدوات ومركبات ⚙️  
-✔ ألغاز ذكية 🧩  
-✔ قتال تكتيكي ⚔️  
-✔ حرية كاملة
+<h3>📊 معلومات اللعبة</h3>
+🎮 النوع: Action / Adventure  
+📦 الحجم: ~16GB  
+🎮 المنصة: Nintendo Switch  
 </div>
 
 <div class="box">
-<h3>📊 معلومات اللعبة</h3>
-🎮 الاسم: Zelda TOTK  
-📦 الحجم: ~16GB+  
-🎮 المنصة: Nintendo Switch  
-🌐 النوع: Action / Adventure / Open World  
-</div>
-
 <h3>🖼️ صور</h3>
-<div class="gallery">
-<img src="https://oaklandpostonline.com/wp-content/uploads/2023/07/Picture1.png" onclick="openImg(this.src)">
+<img src="https://oaklandpostonline.com/wp-content/uploads/2023/07/Picture1.png">
 <img src="https://i.imgur.com/nP8q030.jpg">
 <img src="https://i.imgur.com/wEnhdDd.jpg">
 </div>
 
+<div class="box">
 <h3>📥 روابط التحميل</h3>
 
 <a class="btn" href="https://ouo.io/MZiezH" target="_blank">⬇ تحميل اللعبة</a>
@@ -276,35 +207,20 @@ border-radius:10px;
 <a class="btn" href="https://files.prodkeys.net/ProdKeys.net-v20.3.0.zip" target="_blank">🔑 Keys</a>
 <a class="btn" href="https://github.com/THZoria/NX_Firmware/releases/download/20.3.0/Firmware.20.3.0.zip" target="_blank">⚙️ Firmware</a>
 
-<div class="box">
-⚠️ تأكد من تحميل كل الملفات للحصول على أفضل تجربة 🎮
 </div>
 
 </section>
 
-<!-- POPUP -->
-<div id="popup" onclick="this.style.display='none'">
-<img id="popupImg">
-</div>
-
 <script>
 
-function go(page,title){
-
+function go(page){
 document.querySelectorAll(".page").forEach(p=>{
 p.classList.remove("active");
 });
 
 document.getElementById(page).classList.add("active");
 
-document.getElementById("breadcrumb").innerText = "🏠 " + title;
-
 window.scrollTo(0,0);
-}
-
-function openImg(src){
-document.getElementById("popup").style.display="flex";
-document.getElementById("popupImg").src=src;
 }
 
 </script>
