@@ -27,7 +27,7 @@ padding:30px;
 }
 
 header h1{
-font-size:40px;
+font-size:42px;
 background:linear-gradient(90deg,#60a5fa,#a855f7);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
@@ -36,7 +36,7 @@ background:linear-gradient(90deg,#60a5fa,#a855f7);
 header p{
 color:#cbd5e1;
 margin-top:10px;
-line-height:1.6;
+line-height:1.8;
 }
 
 /* ===== PAGES ===== */
@@ -65,7 +65,7 @@ border-radius:14px;
 overflow:hidden;
 cursor:pointer;
 transition:.3s;
-border:1px solid rgba(255,255,255,0.06);
+border:1px solid rgba(255,255,255,0.05);
 }
 
 .card:hover{
@@ -113,27 +113,26 @@ margin:10px 0;
 border:1px solid rgba(255,255,255,0.05);
 }
 
-/* ===== IMAGE ===== */
-.gallery img{
-width:100%;
-border-radius:10px;
-margin-top:10px;
-}
-
 </style>
 </head>
 
 <body>
 
-<!-- ===== HOME ===== -->
+<!-- ===== HEADER ===== -->
 <header>
 <h1>🎮 Yesuf Gaming</h1>
+
 <p>
-🔥 ألعاب مهكرة + محاكيات + PC + Android  
-📥 روابط تحميل مباشرة  
+🔥 ألعاب مهكرة.<br>
+📱 ألعاب أندرويد و 💻 ألعاب بيسي.<br>
+🕹️ ألعاب محاكيات (PSP / Nintendo / وغيرها).<br>
+📥 روابط تحميل مباشرة وسريعة.<br>
+🛠️ دعم ومساعدة عند أي مشكلة.<br>
+✨ ألعاب مميزة قد لا تجدها في مكان آخر.
 </p>
 </header>
 
+<!-- ===== HOME ===== -->
 <section id="home" class="page active">
 
 <div class="grid">
@@ -156,11 +155,12 @@ margin-top:10px;
 
 <div class="grid">
 
+<!-- 🎴 Zelda Card -->
 <div class="card" onclick="go('zelda')">
-<img src="https://pixelz.cc/wp-content/uploads/2019/08/nintendo-switch-logo-blue-and-red-uhd-4k-wallpaper.jpg">
+<img src="https://imgur.com/Io2Df1H.jpg">
 <div class="card-content">
-<h2>🎮 Nintendo Switch</h2>
-<p>اضغط لعرض الألعاب</p>
+<h2>🗡️ Zelda TOTK معربة</h2>
+<p>اضغط لعرض التفاصيل</p>
 </div>
 </div>
 
@@ -168,7 +168,7 @@ margin-top:10px;
 
 </section>
 
-<!-- ===== ZELDA PAGE ===== -->
+<!-- ===== ZELDA DETAILS ===== -->
 <section id="zelda" class="page">
 
 <button class="back" onclick="go('switch')">⬅ رجوع</button>
@@ -177,35 +177,45 @@ margin-top:10px;
 
 <div class="box">
 🌍 عالم مفتوح ضخم داخل Hyrule  
-🧭 استكشاف + ألغاز + جزر طائرة  
-⚔️ قتال + حرية لعب كاملة  
-🎮 واحدة من أقوى ألعاب Nintendo
+⚔️ قتال + ألغاز + استكشاف حر  
+🧭 واحدة من أقوى ألعاب Nintendo Switch
 </div>
 
+<!-- 🖼️ صور -->
 <div class="box">
-<h3>📊 معلومات اللعبة</h3>
-🎮 النوع: Action / Adventure  
-📦 الحجم: ~16GB  
-🎮 المنصة: Nintendo Switch  
+<h3>🖼️ صور من اللعبة</h3>
+
+<img src="https://imgur.com/xkNdpTT.jpg" style="width:100%;margin:6px 0;border-radius:10px;">
+<img src="https://imgur.com/39wbThe.jpg" style="width:100%;margin:6px 0;border-radius:10px;">
+<img src="https://imgur.com/aYTf5BB.jpg" style="width:100%;margin:6px 0;border-radius:10px;">
+<img src="https://imgur.com/rDXkECf.jpg" style="width:100%;margin:6px 0;border-radius:10px;">
+
 </div>
 
-<div class="box">
-<h3>🖼️ صور</h3>
-<img src="https://oaklandpostonline.com/wp-content/uploads/2023/07/Picture1.png">
-<img src="https://i.imgur.com/nP8q030.jpg">
-<img src="https://i.imgur.com/wEnhdDd.jpg">
-</div>
-
+<!-- 📥 التحميل -->
 <div class="box">
 <h3>📥 روابط التحميل</h3>
 
+<p><b>🎮 تحميل اللعبة</b></p>
 <a class="btn" href="https://ouo.io/MZiezH" target="_blank">⬇ تحميل اللعبة</a>
+
+<p><b>⬆ تحديث اللعبة</b></p>
 <a class="btn" href="https://ouo.io/xBRaCU" target="_blank">⬆ تحميل التحديث</a>
-<a class="btn" href="https://www.mediafire.com/file/kk2ckr9ihx9qmd5/TOTK_Arabic_V1.0-172-5-1778188660.zip/file" target="_blank">🈯 التعريب</a>
-<a class="btn" href="https://yuzu-emulator.cc/" target="_blank">💻 Yuzu</a>
-<a class="btn" href="https://stable.eden-emu.dev/v0.2.0/Eden-Android-v0.2.0-legacy.apk" target="_blank">📱 Eden</a>
-<a class="btn" href="https://files.prodkeys.net/ProdKeys.net-v20.3.0.zip" target="_blank">🔑 Keys</a>
-<a class="btn" href="https://github.com/THZoria/NX_Firmware/releases/download/20.3.0/Firmware.20.3.0.zip" target="_blank">⚙️ Firmware</a>
+
+<p><b>🈯 التعريب</b></p>
+<a class="btn" href="https://www.mediafire.com/file/kk2ckr9ihx9qmd5/TOTK_Arabic_V1.0-172-5-1778188660.zip/file" target="_blank">⬇ تحميل التعريب</a>
+
+<p><b>💻 محاكي Yuzu (PC)</b></p>
+<a class="btn" href="https://yuzu-emulator.cc/" target="_blank">⬇ تحميل Yuzu</a>
+
+<p><b>📱 محاكي Eden (Android)</b></p>
+<a class="btn" href="https://stable.eden-emu.dev/v0.2.0/Eden-Android-v0.2.0-legacy.apk" target="_blank">⬇ تحميل Eden</a>
+
+<p><b>🔑 Prod Keys</b></p>
+<a class="btn" href="https://files.prodkeys.net/ProdKeys.net-v20.3.0.zip" target="_blank">⬇ تحميل Keys</a>
+
+<p><b>⚙️ Firmware</b></p>
+<a class="btn" href="https://github.com/THZoria/NX_Firmware/releases/download/20.3.0/Firmware.20.3.0.zip" target="_blank">⬇ تحميل Firmware</a>
 
 </div>
 
@@ -213,15 +223,32 @@ margin-top:10px;
 
 <script>
 
+/* ===== NAV SYSTEM (Steam style) ===== */
 function go(page){
+
 document.querySelectorAll(".page").forEach(p=>{
 p.classList.remove("active");
 });
 
 document.getElementById(page).classList.add("active");
 
+history.pushState({page:page},"","#"+page);
+
 window.scrollTo(0,0);
 }
+
+/* ===== BACK BUTTON FIX (mobile support) ===== */
+window.addEventListener("popstate",function(e){
+
+let page = (e.state && e.state.page) ? e.state.page : "home";
+
+document.querySelectorAll(".page").forEach(p=>{
+p.classList.remove("active");
+});
+
+document.getElementById(page).classList.add("active");
+
+});
 
 </script>
 
