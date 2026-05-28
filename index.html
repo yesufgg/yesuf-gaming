@@ -11,77 +11,143 @@
 
 <style>
 
-body{
+*{
     margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
     font-family:'Cairo',sans-serif;
-    background:#0b1118;
+    background:#07111d;
     color:white;
+    overflow-x:hidden;
+}
+
+/* 🔥 خلفية */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at top,#1d4ed8 0%,transparent 40%),
+    radial-gradient(circle at bottom,#7c3aed 0%,transparent 35%);
+    opacity:0.25;
+    z-index:-1;
 }
 
 /* 🔥 الهيدر */
 header{
     text-align:center;
-    padding:70px 20px;
-    background:linear-gradient(to bottom,#141925,#0b1118);
+    padding:80px 20px 50px;
 }
 
 header h1{
-    font-size:50px;
-    color:#7c3aed;
+    font-size:60px;
+    font-weight:800;
+    background:linear-gradient(90deg,#60a5fa,#a855f7);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
-/* 🎮 الكروت */
+header p{
+    margin-top:10px;
+    color:#9ca3af;
+    font-size:18px;
+}
+
+/* 🎮 الأقسام */
 .games{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
-    padding:25px;
-    max-width:1200px;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    padding:30px;
+    max-width:1300px;
     margin:auto;
 }
 
+/* 🎴 الكروت */
 .card{
-    background:#111827;
-    border-radius:18px;
+    position:relative;
+    border-radius:24px;
     overflow:hidden;
     cursor:pointer;
-    transition:0.3s;
+    background:#111827;
+    transition:0.4s;
+    border:1px solid rgba(255,255,255,0.08);
+    box-shadow:0 10px 40px rgba(0,0,0,0.35);
 }
 
 .card:hover{
-    transform:translateY(-8px);
+    transform:translateY(-10px) scale(1.02);
+    box-shadow:0 20px 60px rgba(96,165,250,0.25);
 }
 
 .card img{
     width:100%;
-    height:180px;
+    height:230px;
     object-fit:cover;
 }
 
-.card-content{
-    padding:15px;
+.overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top,rgba(0,0,0,0.9),transparent);
 }
 
-/* 🔙 زر الرجوع داخل الموقع (اختياري) */
+.card-content{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    padding:20px;
+}
+
+.card-content h2{
+    font-size:30px;
+    margin-bottom:5px;
+}
+
+.card-content p{
+    color:#d1d5db;
+    font-size:15px;
+}
+
+/* 🔙 زر الرجوع */
 .back-btn{
-    margin:20px;
-    padding:10px 15px;
+    margin:25px;
+    padding:12px 18px;
     border:none;
-    border-radius:10px;
-    background:#1f2937;
+    border-radius:14px;
+    background:#111827;
     color:white;
     cursor:pointer;
+    font-size:16px;
+    transition:0.3s;
+}
+
+.back-btn:hover{
+    background:#1d4ed8;
 }
 
 .hidden{
     display:none;
 }
 
-/* 📱 تحسين الهاتف */
-@media (max-width:768px){
+/* 📱 الهاتف */
+@media(max-width:768px){
+
     header h1{
-        font-size:32px;
+        font-size:38px;
     }
+
+    .card img{
+        height:190px;
+    }
+
+    .card-content h2{
+        font-size:24px;
+    }
+
 }
 
 </style>
@@ -91,121 +157,91 @@ header h1{
 
 <header>
 <h1>🎮 Yesuf Gaming</h1>
+<p>أفضل مكتبة ألعاب ومحاكيات بتصميم أسطوري 🔥</p>
 </header>
 
 <!-- 🔥 الصفحة الرئيسية -->
 <section class="games" id="main">
 
-<div class="card" onclick="showSection('android')">
-<img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/HeroHomepage_2880x1200.width-1300_oirLRAu.jpg">
-<div class="card-content"><h2>Android</h2></div>
-</div>
-
 <div class="card" onclick="showSection('roms')">
-<img src="https://media.sketchfab.com/models/266d26be2a6d47d58880bb723d1faf7a/thumbnails/67943311943141aab921e5f9a1916ae4/53435a17ae3242e9b07b89c417472d88.jpeg">
-<div class="card-content"><h2>ROMS</h2></div>
-</div>
 
-</section>
+<img src="https://static0.howtogeekimages.com/wordpress/wp-content/uploads/2024/04/shutterstock_1290635251.jpg?w=1600&h=900&fit=crop">
 
-<!-- 🎮 Android -->
-<section id="android" class="games hidden">
+<div class="overlay"></div>
 
-<button class="back-btn" onclick="goBack()">⬅ رجوع</button>
-
-<div class="card" onclick="openGrayland()">
-<img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/297190/capsule_616x353.jpg">
 <div class="card-content">
-<h2>Grayland</h2>
+<h2>ROMS</h2>
+<p>مكتبة أجهزة ومحاكيات الألعاب</p>
 </div>
+
 </div>
 
 </section>
 
 <!-- 🎮 ROMS -->
-<section id="roms" class="games hidden">
+<section class="games hidden" id="roms">
 
 <button class="back-btn" onclick="goBack()">⬅ رجوع</button>
 
-<div class="card" onclick="showNES()">
-<img src="https://cdn.shopify.com/s/files/1/0336/4824/6924/collections/1760169.png?v=1597423331">
-<div class="card-content"><h2>NES</h2></div>
-</div>
-
 <div class="card">
-<img src="https://bitjumpgames.com/cdn/shop/files/snes_logo.png?v=1736747784&width=460">
-<div class="card-content"><h2>SNES</h2></div>
-</div>
 
-<div class="card">
-<img src="https://pbs.twimg.com/media/F4OTmp9XgAAB0lj.jpg">
-<div class="card-content"><h2>PSP</h2></div>
-</div>
+<img src="https://pixelz.cc/wp-content/uploads/2019/08/nintendo-switch-logo-blue-and-red-uhd-4k-wallpaper.jpg">
 
-</section>
+<div class="overlay"></div>
 
-<!-- 🎮 NES -->
-<section id="nes" class="games hidden">
-
-<button class="back-btn" onclick="goBack()">⬅ رجوع</button>
-
-<div class="card" onclick="openMario()">
-<img src="https://www.covercentury.com/covers/nes/s/nes_supermariobros.jpg">
 <div class="card-content">
-<h2>Super Mario Bros</h2>
+<h2>Nintendo Switch</h2>
+<p>ألعاب ومحاكيات السويتش</p>
 </div>
+
 </div>
 
 </section>
 
 <script>
 
+/* 🔥 فتح الأقسام */
 function showSection(id){
 
     document.getElementById("main").style.display="none";
 
-    document.querySelectorAll(".hidden").forEach(s=>{
-        s.style.display="none";
+    document.querySelectorAll(".hidden").forEach(section=>{
+        section.style.display="none";
     });
 
     document.getElementById(id).style.display="grid";
 
-    // 🔥 إضافة للسجل (زر الرجوع في الهاتف)
-    history.pushState({page:id}, "", "#" + id);
+    history.pushState({page:id},"","#"+id);
 }
 
-/* 🔙 رجوع داخل الموقع */
+/* 🔙 الرجوع */
 function goBack(){
-    document.querySelectorAll(".hidden").forEach(s=>{
-        s.style.display="none";
+
+    document.querySelectorAll(".hidden").forEach(section=>{
+        section.style.display="none";
     });
+
     document.getElementById("main").style.display="grid";
 }
 
-/* 🔥 دعم زر الرجوع في الهاتف */
-window.addEventListener("popstate", function(event){
+/* 📱 دعم زر الرجوع بالهاتف */
+window.addEventListener("popstate",function(event){
 
-    document.querySelectorAll(".hidden").forEach(s=>{
-        s.style.display="none";
+    document.querySelectorAll(".hidden").forEach(section=>{
+        section.style.display="none";
     });
 
     if(event.state && event.state.page){
+
         document.getElementById(event.state.page).style.display="grid";
         document.getElementById("main").style.display="none";
-    } else {
+
+    }else{
+
         document.getElementById("main").style.display="grid";
     }
 
 });
-
-/* 🎮 فتح الألعاب */
-function openMario(){
-    window.location.href = "mario.html";
-}
-
-function openGrayland(){
-    window.location.href = "grayland.html";
-}
 
 </script>
 
