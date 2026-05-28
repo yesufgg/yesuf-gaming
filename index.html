@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
@@ -24,7 +25,7 @@ body{
     overflow-x:hidden;
 }
 
-/* 🔥 خلفية */
+/* 🔥 خلفية احترافية */
 body::before{
     content:"";
     position:fixed;
@@ -52,8 +53,8 @@ header h1{
 
 header p{
     margin-top:10px;
-    color:#9ca3af;
-    font-size:18px;
+    color:#cbd5e1;
+    font-size:20px;
 }
 
 /* 🎮 الأقسام */
@@ -87,12 +88,13 @@ header p{
     width:100%;
     height:230px;
     object-fit:cover;
+    display:block;
 }
 
 .overlay{
     position:absolute;
     inset:0;
-    background:linear-gradient(to top,rgba(0,0,0,0.9),transparent);
+    background:linear-gradient(to top,rgba(0,0,0,0.92),transparent);
 }
 
 .card-content{
@@ -109,7 +111,7 @@ header p{
 
 .card-content p{
     color:#d1d5db;
-    font-size:15px;
+    font-size:16px;
 }
 
 /* 🔙 زر الرجوع */
@@ -123,29 +125,60 @@ header p{
     cursor:pointer;
     font-size:16px;
     transition:0.3s;
+    font-family:'Cairo',sans-serif;
 }
 
 .back-btn:hover{
-    background:#1d4ed8;
+    background:#2563eb;
 }
 
+/* 🔥 إخفاء */
 .hidden{
     display:none;
+}
+
+/* 🔥 الفوتر */
+footer{
+    text-align:center;
+    padding:30px 15px;
+    margin-top:60px;
+    color:#94a3b8;
+    font-size:15px;
+    border-top:1px solid rgba(255,255,255,0.08);
+    background:#0b1220;
 }
 
 /* 📱 الهاتف */
 @media(max-width:768px){
 
+    header{
+        padding:60px 15px 35px;
+    }
+
     header h1{
-        font-size:38px;
+        font-size:40px;
+    }
+
+    header p{
+        font-size:16px;
+    }
+
+    .games{
+        grid-template-columns:1fr;
+        gap:20px;
+        padding:20px;
     }
 
     .card img{
-        height:190px;
+        height:210px;
     }
 
     .card-content h2{
         font-size:24px;
+    }
+
+    .card-content p{
+        font-size:14px;
     }
 
 }
@@ -155,9 +188,10 @@ header p{
 
 <body>
 
+<!-- 🔥 الهيدر -->
 <header>
 <h1>🎮 Yesuf Gaming</h1>
-<p>أفضل مكتبة ألعاب ومحاكيات بتصميم أسطوري 🔥</p>
+<p>🔥 ألعاب مميزة قد لا تجدها في مكان آخر 🎮📱💻</p>
 </header>
 
 <!-- 🔥 الصفحة الرئيسية -->
@@ -171,14 +205,14 @@ header p{
 
 <div class="card-content">
 <h2>ROMS</h2>
-<p>مكتبة أجهزة ومحاكيات الألعاب</p>
+<p>🎮 مكتبة الألعاب</p>
 </div>
 
 </div>
 
 </section>
 
-<!-- 🎮 ROMS -->
+<!-- 🎮 قسم ROMS -->
 <section class="games hidden" id="roms">
 
 <button class="back-btn" onclick="goBack()">⬅ رجوع</button>
@@ -191,21 +225,23 @@ header p{
 
 <div class="card-content">
 <h2>Nintendo Switch</h2>
-<p>ألعاب ومحاكيات السويتش</p>
 </div>
 
 </div>
 
 </section>
 
+<!-- 🔥 الفوتر -->
+<footer>
+© 2026 Yesuf Gaming — كل الحقوق محفوظة 🎮
+</footer>
+
 <script>
 
 /* 🔥 فتح الأقسام */
 function showSection(id){
 
-    document.getElementById("main").style.display="none";
-
-    document.querySelectorAll(".hidden").forEach(section=>{
+    document.querySelectorAll("section").forEach(section=>{
         section.style.display="none";
     });
 
@@ -217,24 +253,25 @@ function showSection(id){
 /* 🔙 الرجوع */
 function goBack(){
 
-    document.querySelectorAll(".hidden").forEach(section=>{
+    document.querySelectorAll("section").forEach(section=>{
         section.style.display="none";
     });
 
     document.getElementById("main").style.display="grid";
+
+    history.pushState({}, "", " ");
 }
 
-/* 📱 دعم زر الرجوع بالهاتف */
+/* 📱 دعم زر الرجوع */
 window.addEventListener("popstate",function(event){
 
-    document.querySelectorAll(".hidden").forEach(section=>{
+    document.querySelectorAll("section").forEach(section=>{
         section.style.display="none";
     });
 
     if(event.state && event.state.page){
 
         document.getElementById(event.state.page).style.display="grid";
-        document.getElementById("main").style.display="none";
 
     }else{
 
@@ -243,7 +280,11 @@ window.addEventListener("popstate",function(event){
 
 });
 
+/* 🔥 أول تشغيل */
+document.getElementById("main").style.display="grid";
+
 </script>
 
 </body>
 </html>
+```
