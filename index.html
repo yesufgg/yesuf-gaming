@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yesuf Gaming</title>
+
 <style>
 body{
   margin:0;
@@ -11,17 +12,20 @@ body{
   background:#0b0d12;
   color:white;
 }
+
 header{
   padding:14px 16px;
   background:#00000080;
   font-size:18px;
 }
+
 .tabs{
   padding:10px 12px;
   display:flex;
   flex-wrap:wrap;
   gap:8px;
 }
+
 button{
   padding:7px 14px;
   border:none;
@@ -30,18 +34,20 @@ button{
   font-size:13px;
   background:#1e2130;
   color:#aaa;
-  transition:background 0.2s, color 0.2s;
 }
+
 button.active, button:hover{
   background:#5865f2;
   color:#fff;
 }
+
 .cards{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
   gap:12px;
   padding:12px 14px 16px;
 }
+
 .card{
   background:#171a22;
   border-radius:12px;
@@ -49,20 +55,24 @@ button.active, button:hover{
   cursor:pointer;
   transition:transform 0.15s;
 }
+
 .card:hover{
   transform:scale(1.03);
 }
+
 .card img{
   width:100%;
   height:110px;
   object-fit:cover;
   display:block;
 }
+
 .card-content{
   padding:9px 10px;
   color:#ddd;
   font-size:13px;
 }
+
 .back-card{
   height:110px;
   display:flex;
@@ -70,11 +80,13 @@ button.active, button:hover{
   justify-content:center;
   font-size:28px;
 }
+
 .hide{
   display:none !important;
 }
 </style>
 </head>
+
 <body>
 
 <header>🎮 Yesuf Gaming</header>
@@ -83,42 +95,49 @@ button.active, button:hover{
   <button class="active" onclick="filter('all',this)">الكل</button>
   <button onclick="filter('android',this)">Android</button>
   <button onclick="filter('pc',this)">PC</button>
-  <button onclick="filter('roms',this)">ROMS</button>
 </div>
 
-<!-- الكروت الرئيسية -->
+<!-- MAIN -->
 <div class="cards" id="main-cards">
+
   <div class="card" data-type="android">
     <img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/HeroHomepage_2880x1200.width-1300_oirLRAu.jpg">
     <div class="card-content">Android Games</div>
   </div>
+
   <div class="card" data-type="pc">
     <img src="https://rubee.com.vn/admin/webroot/upload/image//images/tin-tuc/window-logo-2.jpg">
     <div class="card-content">PC Games</div>
   </div>
-  <div class="card" data-type="roms" onclick="openRoms()">
+
+  <!-- ROMS زر انتقال فقط -->
+  <div class="card" onclick="openRoms()">
     <img src="https://static0.howtogeekimages.com/wordpress/wp-content/uploads/2024/04/shutterstock_1290635251.jpg">
     <div class="card-content">ROMS</div>
   </div>
+
 </div>
 
-<!-- كروت ROMS -->
+<!-- ROMS PAGE -->
 <div class="cards hide" id="roms-cards">
+
   <div class="card" onclick="closeRoms()" style="border:1px solid #5865f2;">
     <div class="back-card">←</div>
     <div class="card-content" style="color:#5865f2;">رجوع</div>
   </div>
+
   <div class="card">
     <img src="https://pixelz.cc/wp-content/uploads/2019/08/nintendo-switch-logo-blue-and-red-uhd-4k-wallpaper.jpg">
     <div class="card-content">Nintendo Switch (NSW)</div>
   </div>
+
 </div>
 
 <script>
+
 function openRoms() {
   document.getElementById('main-cards').classList.add('hide');
   document.getElementById('roms-cards').classList.remove('hide');
-  document.querySelectorAll('button').forEach(b => b.classList.remove('active'));
 }
 
 function closeRoms() {
@@ -127,15 +146,24 @@ function closeRoms() {
 }
 
 function filter(type, btn) {
+
   document.querySelectorAll('button').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
+
   document.getElementById('roms-cards').classList.add('hide');
   document.getElementById('main-cards').classList.remove('hide');
+
   document.querySelectorAll('#main-cards .card').forEach(card => {
+
     let t = card.getAttribute('data-type');
+
+    // ROMS ما يدخل في الفلترة
+    if (!t) return;
+
     card.classList.toggle('hide', type !== 'all' && t !== type);
   });
 }
+
 </script>
 
 </body>
