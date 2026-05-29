@@ -48,43 +48,12 @@ header{
   width:160px;
 }
 
-/* ===== TABS ===== */
-.tabs{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  margin:12px;
-}
-
-.tabs button{
-  padding:8px 12px;
-  border:none;
-  border-radius:8px;
-  cursor:pointer;
-  background:#1a1d24;
-  color:white;
-  transition:0.2s;
-}
-
-.tabs button:hover{
-  background:#2a2f3a;
-}
-
-/* ===== SECTIONS ===== */
-.section{
-  display:none;
-  padding:10px 16px;
-}
-
-.section.active{
-  display:block;
-}
-
 /* ===== CARDS ===== */
 .cards{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
   gap:12px;
+  padding:16px;
 }
 
 .card{
@@ -128,77 +97,43 @@ header{
 <header>
   <div>
     <div class="logo">🎮 Yesuf Gaming</div>
-    <div class="subtitle">ألعاب PC + Android + ROMS + محاكيات</div>
+    <div class="subtitle">ألعاب PC + Android + ROMS</div>
   </div>
 
   <input class="search" placeholder="بحث...">
 </header>
 
-<!-- ===== TABS ===== -->
-<div class="tabs">
-  <button onclick="show('android')">Android</button>
-  <button onclick="show('pc')">PC</button>
-  <button onclick="show('roms')">ROMS</button>
-</div>
+<!-- ===== ALL CARDS (VISIBLE DIRECTLY) ===== -->
+<div class="cards">
 
-<!-- ===== ANDROID ===== -->
-<div id="android" class="section active">
-  <div class="cards">
-
-    <div class="card">
-      <img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/HeroHomepage_2880x1200.width-1300_oirLRAu.jpg">
-      <div class="card-content">
-        <div class="card-title">Android Games</div>
-        <div class="card-desc">ألعاب أندرويد متنوعة</div>
-      </div>
+  <!-- ANDROID -->
+  <div class="card">
+    <img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/HeroHomepage_2880x1200.width-1300_oirLRAu.jpg">
+    <div class="card-content">
+      <div class="card-title">Android Games</div>
+      <div class="card-desc">ألعاب أندرويد</div>
     </div>
-
   </div>
-</div>
 
-<!-- ===== PC ===== -->
-<div id="pc" class="section">
-  <div class="cards">
-
-    <div class="card">
-      <img src="https://rubee.com.vn/admin/webroot/upload/image//images/tin-tuc/window-logo-2.jpg">
-      <div class="card-content">
-        <div class="card-title">PC Games</div>
-        <div class="card-desc">ألعاب الكمبيوتر</div>
-      </div>
+  <!-- PC -->
+  <div class="card">
+    <img src="https://rubee.com.vn/admin/webroot/upload/image//images/tin-tuc/window-logo-2.jpg">
+    <div class="card-content">
+      <div class="card-title">PC Games</div>
+      <div class="card-desc">ألعاب الكمبيوتر</div>
     </div>
-
   </div>
-</div>
 
-<!-- ===== ROMS ===== -->
-<div id="roms" class="section">
-  <div class="cards">
-
-    <div class="card">
-      <img src="https://thumbs.dreamstime.com/b/assortiment-de-r%C3%A9tros-cartouches-syst%C3%A8mes-et-contr%C3%B4leurs-classiques-jeu-vid%C3%A9o-137215185.jpg">
-      <div class="card-content">
-        <div class="card-title">ROMS</div>
-        <div class="card-desc">ألعاب الأجهزة و محاكيات</div>
-      </div>
+  <!-- ROMS (NEW IMAGE) -->
+  <div class="card">
+    <img src="https://static0.howtogeekimages.com/wordpress/wp-content/uploads/2024/04/shutterstock_1290635251.jpg?w=1600&h=900&fit=crop">
+    <div class="card-content">
+      <div class="card-title">ROMS</div>
+      <div class="card-desc">ألعاب الأجهزة و المحاكيات</div>
     </div>
-
   </div>
+
 </div>
-
-<!-- ===== JS ===== -->
-<script>
-function show(id){
-
-  let sections = document.querySelectorAll(".section");
-
-  sections.forEach(sec=>{
-    sec.classList.remove("active");
-  });
-
-  document.getElementById(id).classList.add("active");
-}
-</script>
 
 </body>
 </html>
