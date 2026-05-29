@@ -97,7 +97,6 @@ button.active, button:hover{
   <button onclick="filter('pc',this)">PC</button>
 </div>
 
-<!-- MAIN -->
 <div class="cards" id="main-cards">
 
   <div class="card" data-type="android">
@@ -110,7 +109,6 @@ button.active, button:hover{
     <div class="card-content">PC Games</div>
   </div>
 
-  <!-- ROMS زر انتقال فقط -->
   <div class="card" onclick="openRoms()">
     <img src="https://static0.howtogeekimages.com/wordpress/wp-content/uploads/2024/04/shutterstock_1290635251.jpg">
     <div class="card-content">ROMS</div>
@@ -118,7 +116,6 @@ button.active, button:hover{
 
 </div>
 
-<!-- ROMS PAGE -->
 <div class="cards hide" id="roms-cards">
 
   <div class="card" onclick="closeRoms()" style="border:1px solid #5865f2;">
@@ -135,16 +132,38 @@ button.active, button:hover{
 
 <script>
 
+// فتح ROMS مع حفظ خطوة في المتصفح
 function openRoms() {
   document.getElementById('main-cards').classList.add('hide');
   document.getElementById('roms-cards').classList.remove('hide');
+
+  history.pushState({ page: "roms" }, "");
 }
 
+// رجوع من ROMS
 function closeRoms() {
   document.getElementById('roms-cards').classList.add('hide');
   document.getElementById('main-cards').classList.remove('hide');
+
+  history.pushState({ page: "home" }, "");
 }
 
+// زر الرجوع في المتصفح
+window.addEventListener("popstate", function (event) {
+  const state = event.state;
+
+  if (!state || state.page === "home") {
+    document.getElementById('roms-cards').classList.add('hide');
+    document.getElementById('main-cards').classList.remove('hide');
+  }
+
+  if (state && state.page === "roms") {
+    document.getElementById('main-cards').classList.add('hide');
+    document.getElementById('roms-cards').classList.remove('hide');
+  }
+});
+
+// فلترة
 function filter(type, btn) {
 
   document.querySelectorAll('button').forEach(b => b.classList.remove('active'));
@@ -154,14 +173,12 @@ function filter(type, btn) {
   document.getElementById('main-cards').classList.remove('hide');
 
   document.querySelectorAll('#main-cards .card').forEach(card => {
-
     let t = card.getAttribute('data-type');
-
-    // ROMS ما يدخل في الفلترة
     if (!t) return;
-
     card.classList.toggle('hide', type !== 'all' && t !== type);
   });
+
+  history.pushState({ page: "home" }, "");
 }
 
 </script>
