@@ -21,7 +21,6 @@ header{
   background: linear-gradient(90deg,#5865f2,#7c4dff);
 }
 
-/* 🔥 كبرنا الكروت */
 .cards{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
@@ -57,6 +56,51 @@ header{
 
 .hide{
   display:none !important;
+}
+
+/* MODAL */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.85);
+  display:none;
+  align-items:center;
+  justify-content:center;
+}
+
+.modal-content{
+  background:#141827;
+  padding:20px;
+  border-radius:16px;
+  width:90%;
+  max-width:450px;
+  text-align:center;
+}
+
+.modal img{
+  width:100%;
+  border-radius:10px;
+  margin-bottom:10px;
+}
+
+.btn{
+  width:100%;
+  padding:10px;
+  margin-top:8px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.download{
+  background:linear-gradient(90deg,#5865f2,#7c4dff);
+  color:white;
+}
+
+.close{
+  background:#222;
+  color:white;
 }
 
 footer{
@@ -107,11 +151,47 @@ footer{
 <!-- NSW -->
 <div class="cards hide" id="nsw">
 
-  <div class="card">
+  <div class="card" onclick="openZelda()">
     <img src="https://assets.nintendo.com/image/upload/c_limit,f_auto,h_300,q_auto,w_400/v1/Microsites/zelda-tears-of-the-kingdom/videos/posters/totk_microsite_officialtrailer2_fr">
-    <div class="card-content">
-      The Legend Of Zelda TOTK (معربة)
-    </div>
+    <div class="card-content">The Legend Of Zelda TOTK (معربة)</div>
+  </div>
+
+</div>
+
+<!-- ZELDA MODAL -->
+<div class="modal" id="zeldaModal">
+
+  <div class="modal-content">
+
+    <img src="https://assets.nintendo.com/image/upload/c_limit,f_auto,h_300,q_auto,w_400/v1/Microsites/zelda-tears-of-the-kingdom/videos/posters/totk_microsite_officialtrailer2_fr">
+
+    <h2>Zelda: Tears of the Kingdom</h2>
+
+    <p>
+      📅 تاريخ الإصدار: 12 مايو 2023<br>
+      🎮 Nintendo Switch<br>
+      🌍 عالم مفتوح + قتال + ألغاز<br>
+      📦 الحجم: 17 GB<br><br>
+
+      🧝‍♂️ لينك يبحث عن زيلدا داخل عالم Hyrule المليء بالأسرار بين السماء والأرض 🌌
+    </p>
+
+    <!-- صور -->
+    <img src="https://i.imgur.com/boqUPKX.jpg">
+    <img src="https://i.imgur.com/zhU7O2C.jpg">
+    <img src="https://i.imgur.com/og66pZr.jpg">
+    <img src="https://i.imgur.com/78qSPio.jpg">
+
+    <!-- روابط -->
+    <a href="https://ouo.io/MZiezH" target="_blank"><button class="btn download">⬇ تحميل اللعبة</button></a>
+    <a href="https://ouo.io/xBRaCU" target="_blank"><button class="btn download">🔄 التحديث</button></a>
+    <a href="https://yuzu-emulator.cc/download/" target="_blank"><button class="btn download">🖥️ محاكي PC</button></a>
+    <a href="https://stable.eden-emu.dev/v0.2.0/Eden-Android-v0.2.0-legacy.apk" target="_blank"><button class="btn download">📱 محاكي Android</button></a>
+    <a href="https://github.com/THZoria/NX_Firmware/releases/download/20.3.0/Firmware.20.3.0.zip" target="_blank"><button class="btn download">⚙️ Firmware</button></a>
+    <a href="https://files.prodkeys.net/ProdKeys.net-v20.3.0.zip" target="_blank"><button class="btn download">🔑 Prod Keys</button></a>
+
+    <button class="btn close" onclick="closeZelda()">إغلاق</button>
+
   </div>
 
 </div>
@@ -125,20 +205,20 @@ footer{
 function openRoms(){
   document.getElementById("main").classList.add("hide");
   document.getElementById("roms").classList.remove("hide");
-  history.pushState({page:"roms"}, "");
 }
 
 function openNSW(){
   document.getElementById("roms").classList.add("hide");
   document.getElementById("nsw").classList.remove("hide");
-  history.pushState({page:"nsw"}, "");
 }
 
-window.addEventListener("popstate", function(){
-  document.getElementById("nsw").classList.add("hide");
-  document.getElementById("roms").classList.add("hide");
-  document.getElementById("main").classList.remove("hide");
-});
+function openZelda(){
+  document.getElementById("zeldaModal").style.display = "flex";
+}
+
+function closeZelda(){
+  document.getElementById("zeldaModal").style.display = "none";
+}
 
 </script>
 
