@@ -9,80 +9,96 @@
 body{
   margin:0;
   font-family:Arial;
-  background:#0b0d12;
+  background: radial-gradient(circle at top, #1a1f3a, #0b0d12 60%);
   color:white;
 }
 
 header{
-  padding:14px 16px;
-  background:#00000080;
-  font-size:18px;
+  padding:16px;
+  font-size:20px;
+  text-align:center;
+  font-weight:bold;
+  background: linear-gradient(90deg,#5865f2,#7c4dff);
+  box-shadow:0 0 20px rgba(88,101,242,0.4);
 }
 
 .tabs{
-  padding:10px 12px;
+  padding:12px;
   display:flex;
+  gap:10px;
+  justify-content:center;
   flex-wrap:wrap;
-  gap:8px;
 }
 
 button{
-  padding:7px 14px;
+  padding:8px 16px;
   border:none;
-  border-radius:8px;
+  border-radius:10px;
   cursor:pointer;
   font-size:13px;
-  background:#1e2130;
-  color:#aaa;
+  background:#1e2235;
+  color:#bbb;
+  transition:0.2s;
 }
 
-button.active, button:hover{
-  background:#5865f2;
+button:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 10px rgba(88,101,242,0.4);
+}
+
+button.active{
+  background:linear-gradient(90deg,#5865f2,#7c4dff);
   color:#fff;
 }
 
 .cards{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-  gap:12px;
-  padding:12px 14px 16px;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:14px;
+  padding:16px;
 }
 
 .card{
-  background:#171a22;
-  border-radius:12px;
+  background:#141827;
+  border-radius:14px;
   overflow:hidden;
   cursor:pointer;
-  transition:transform 0.15s;
+  transition:0.25s;
+  border:1px solid rgba(255,255,255,0.05);
 }
 
 .card:hover{
-  transform:scale(1.03);
+  transform:translateY(-6px) scale(1.02);
+  box-shadow:0 0 20px rgba(88,101,242,0.25);
 }
 
 .card img{
   width:100%;
-  height:110px;
+  height:120px;
   object-fit:cover;
   display:block;
+  filter:brightness(0.9);
 }
 
 .card-content{
-  padding:9px 10px;
-  color:#ddd;
+  padding:10px;
   font-size:13px;
-}
-
-.back-card{
-  height:110px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:28px;
+  color:#ddd;
+  text-align:center;
 }
 
 .hide{
   display:none !important;
+}
+
+footer{
+  margin-top:20px;
+  padding:15px;
+  text-align:center;
+  font-size:12px;
+  color:#aaa;
+  border-top:1px solid rgba(255,255,255,0.08);
+  background:#0b0d12;
 }
 </style>
 </head>
@@ -116,12 +132,8 @@ button.active, button:hover{
 
 </div>
 
+<!-- ROMS بدون زر رجوع -->
 <div class="cards hide" id="roms-cards">
-
-  <div class="card" onclick="closeRoms()" style="border:1px solid #5865f2;">
-    <div class="back-card">←</div>
-    <div class="card-content" style="color:#5865f2;">رجوع</div>
-  </div>
 
   <div class="card">
     <img src="https://pixelz.cc/wp-content/uploads/2019/08/nintendo-switch-logo-blue-and-red-uhd-4k-wallpaper.jpg">
@@ -130,40 +142,29 @@ button.active, button:hover{
 
 </div>
 
+<footer>
+  جميع الحقوق محفوظة © 2026 Yesuf Gaming
+</footer>
+
 <script>
 
-// فتح ROMS مع حفظ خطوة في المتصفح
 function openRoms() {
   document.getElementById('main-cards').classList.add('hide');
   document.getElementById('roms-cards').classList.remove('hide');
-
   history.pushState({ page: "roms" }, "");
 }
 
-// رجوع من ROMS
 function closeRoms() {
   document.getElementById('roms-cards').classList.add('hide');
   document.getElementById('main-cards').classList.remove('hide');
-
   history.pushState({ page: "home" }, "");
 }
 
-// زر الرجوع في المتصفح
 window.addEventListener("popstate", function (event) {
-  const state = event.state;
-
-  if (!state || state.page === "home") {
-    document.getElementById('roms-cards').classList.add('hide');
-    document.getElementById('main-cards').classList.remove('hide');
-  }
-
-  if (state && state.page === "roms") {
-    document.getElementById('main-cards').classList.add('hide');
-    document.getElementById('roms-cards').classList.remove('hide');
-  }
+  document.getElementById('roms-cards').classList.add('hide');
+  document.getElementById('main-cards').classList.remove('hide');
 });
 
-// فلترة
 function filter(type, btn) {
 
   document.querySelectorAll('button').forEach(b => b.classList.remove('active'));
