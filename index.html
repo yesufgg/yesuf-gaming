@@ -19,36 +19,6 @@ header{
   text-align:center;
   font-weight:bold;
   background: linear-gradient(90deg,#5865f2,#7c4dff);
-  box-shadow:0 0 20px rgba(88,101,242,0.4);
-}
-
-.tabs{
-  padding:12px;
-  display:flex;
-  gap:10px;
-  justify-content:center;
-  flex-wrap:wrap;
-}
-
-button{
-  padding:8px 16px;
-  border:none;
-  border-radius:10px;
-  cursor:pointer;
-  font-size:13px;
-  background:#1e2235;
-  color:#bbb;
-  transition:0.2s;
-}
-
-button:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 10px rgba(88,101,242,0.4);
-}
-
-button.active{
-  background:linear-gradient(90deg,#5865f2,#7c4dff);
-  color:#fff;
 }
 
 .cards{
@@ -76,14 +46,11 @@ button.active{
   width:100%;
   height:120px;
   object-fit:cover;
-  display:block;
-  filter:brightness(0.9);
 }
 
 .card-content{
   padding:10px;
   font-size:13px;
-  color:#ddd;
   text-align:center;
 }
 
@@ -98,7 +65,6 @@ footer{
   font-size:12px;
   color:#aaa;
   border-top:1px solid rgba(255,255,255,0.08);
-  background:#0b0d12;
 }
 </style>
 </head>
@@ -107,20 +73,15 @@ footer{
 
 <header>🎮 Yesuf Gaming</header>
 
-<div class="tabs">
-  <button class="active" onclick="filter('all',this)">الكل</button>
-  <button onclick="filter('android',this)">Android</button>
-  <button onclick="filter('pc',this)">PC</button>
-</div>
+<!-- MAIN -->
+<div class="cards" id="main">
 
-<div class="cards" id="main-cards">
-
-  <div class="card" data-type="android">
+  <div class="card">
     <img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/HeroHomepage_2880x1200.width-1300_oirLRAu.jpg">
     <div class="card-content">Android Games</div>
   </div>
 
-  <div class="card" data-type="pc">
+  <div class="card">
     <img src="https://rubee.com.vn/admin/webroot/upload/image//images/tin-tuc/window-logo-2.jpg">
     <div class="card-content">PC Games</div>
   </div>
@@ -132,12 +93,32 @@ footer{
 
 </div>
 
-<!-- ROMS بدون زر رجوع -->
-<div class="cards hide" id="roms-cards">
+<!-- ROMS -->
+<div class="cards hide" id="roms">
 
-  <div class="card">
+  <div class="card" onclick="backHome()">
+    <div class="card-content">← رجوع</div>
+  </div>
+
+  <div class="card" onclick="openNSW()">
     <img src="https://pixelz.cc/wp-content/uploads/2019/08/nintendo-switch-logo-blue-and-red-uhd-4k-wallpaper.jpg">
     <div class="card-content">Nintendo Switch (NSW)</div>
+  </div>
+
+</div>
+
+<!-- NSW -->
+<div class="cards hide" id="nsw">
+
+  <div class="card" onclick="backRoms()">
+    <div class="card-content">← رجوع</div>
+  </div>
+
+  <div class="card">
+    <img src="https://assets.nintendo.com/image/upload/c_limit,f_auto,h_300,q_auto,w_400/v1/Microsites/zelda-tears-of-the-kingdom/videos/posters/totk_microsite_officialtrailer2_fr">
+    <div class="card-content">
+      The Legend Of Zelda TOTK (معربة)
+    </div>
   </div>
 
 </div>
@@ -148,39 +129,35 @@ footer{
 
 <script>
 
-function openRoms() {
-  document.getElementById('main-cards').classList.add('hide');
-  document.getElementById('roms-cards').classList.remove('hide');
-  history.pushState({ page: "roms" }, "");
+function openRoms(){
+  document.getElementById("main").classList.add("hide");
+  document.getElementById("roms").classList.remove("hide");
+  history.pushState({page:"roms"}, "");
 }
 
-function closeRoms() {
-  document.getElementById('roms-cards').classList.add('hide');
-  document.getElementById('main-cards').classList.remove('hide');
-  history.pushState({ page: "home" }, "");
+function openNSW(){
+  document.getElementById("roms").classList.add("hide");
+  document.getElementById("nsw").classList.remove("hide");
+  history.pushState({page:"nsw"}, "");
 }
 
-window.addEventListener("popstate", function (event) {
-  document.getElementById('roms-cards').classList.add('hide');
-  document.getElementById('main-cards').classList.remove('hide');
+function backRoms(){
+  document.getElementById("nsw").classList.add("hide");
+  document.getElementById("roms").classList.remove("hide");
+  history.pushState({page:"roms"}, "");
+}
+
+function backHome(){
+  document.getElementById("roms").classList.add("hide");
+  document.getElementById("main").classList.remove("hide");
+  history.pushState({page:"home"}, "");
+}
+
+window.addEventListener("popstate", function(){
+  document.getElementById("nsw").classList.add("hide");
+  document.getElementById("roms").classList.add("hide");
+  document.getElementById("main").classList.remove("hide");
 });
-
-function filter(type, btn) {
-
-  document.querySelectorAll('button').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-
-  document.getElementById('roms-cards').classList.add('hide');
-  document.getElementById('main-cards').classList.remove('hide');
-
-  document.querySelectorAll('#main-cards .card').forEach(card => {
-    let t = card.getAttribute('data-type');
-    if (!t) return;
-    card.classList.toggle('hide', type !== 'all' && t !== type);
-  });
-
-  history.pushState({ page: "home" }, "");
-}
 
 </script>
 
