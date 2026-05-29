@@ -48,6 +48,28 @@ header{
   width:160px;
 }
 
+/* ===== TABS ===== */
+.tabs{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin:12px;
+}
+
+.tabs button{
+  padding:8px 12px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  background:#1a1d24;
+  color:white;
+  transition:0.2s;
+}
+
+.tabs button:hover{
+  background:#2a2f3a;
+}
+
 /* ===== CARDS ===== */
 .cards{
   display:grid;
@@ -97,17 +119,25 @@ header{
 <header>
   <div>
     <div class="logo">🎮 Yesuf Gaming</div>
-    <div class="subtitle">ألعاب PC + Android + ROMS</div>
+    <div class="subtitle">PC + Android + ROMS</div>
   </div>
 
   <input class="search" placeholder="بحث...">
 </header>
 
-<!-- ===== ALL CARDS (VISIBLE DIRECTLY) ===== -->
+<!-- ===== TABS ===== -->
+<div class="tabs">
+  <button onclick="filter('all')">All</button>
+  <button onclick="filter('android')">Android</button>
+  <button onclick="filter('pc')">PC</button>
+  <button onclick="filter('roms')">ROMS</button>
+</div>
+
+<!-- ===== CARDS ===== -->
 <div class="cards">
 
   <!-- ANDROID -->
-  <div class="card">
+  <div class="card" data-type="android">
     <img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/HeroHomepage_2880x1200.width-1300_oirLRAu.jpg">
     <div class="card-content">
       <div class="card-title">Android Games</div>
@@ -116,7 +146,7 @@ header{
   </div>
 
   <!-- PC -->
-  <div class="card">
+  <div class="card" data-type="pc">
     <img src="https://rubee.com.vn/admin/webroot/upload/image//images/tin-tuc/window-logo-2.jpg">
     <div class="card-content">
       <div class="card-title">PC Games</div>
@@ -124,16 +154,39 @@ header{
     </div>
   </div>
 
-  <!-- ROMS (NEW IMAGE) -->
-  <div class="card">
-    <img src="https://static0.howtogeekimages.com/wordpress/wp-content/uploads/2024/04/shutterstock_1290635251.jpg?w=1600&h=900&fit=crop">
+  <!-- ROMS - Nintendo Switch -->
+  <div class="card" data-type="roms">
+    <img src="https://pixelz.cc/wp-content/uploads/2019/08/nintendo-switch-logo-blue-and-red-uhd-4k-wallpaper.jpg">
     <div class="card-content">
-      <div class="card-title">ROMS</div>
-      <div class="card-desc">ألعاب الأجهزة و المحاكيات</div>
+      <div class="card-title">Nintendo Switch</div>
+      <div class="card-desc">ROMS • Emulator</div>
     </div>
   </div>
 
 </div>
+
+<!-- ===== SCRIPT ===== -->
+<script>
+function filter(type){
+
+  let cards = document.querySelectorAll(".card");
+
+  cards.forEach(card => {
+
+    if(type === "all"){
+      card.style.display = "block";
+    }
+    else if(card.dataset.type === type){
+      card.style.display = "block";
+    }
+    else{
+      card.style.display = "none";
+    }
+
+  });
+
+}
+</script>
 
 </body>
 </html>
