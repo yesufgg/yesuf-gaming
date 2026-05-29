@@ -21,16 +21,17 @@ header{
   background: linear-gradient(90deg,#5865f2,#7c4dff);
 }
 
+/* 🔥 كبرنا الكروت */
 .cards{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-  gap:14px;
-  padding:16px;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:18px;
+  padding:18px;
 }
 
 .card{
   background:#141827;
-  border-radius:14px;
+  border-radius:16px;
   overflow:hidden;
   cursor:pointer;
   transition:0.25s;
@@ -38,19 +39,19 @@ header{
 }
 
 .card:hover{
-  transform:translateY(-6px) scale(1.02);
-  box-shadow:0 0 20px rgba(88,101,242,0.25);
+  transform:translateY(-6px) scale(1.03);
+  box-shadow:0 0 25px rgba(88,101,242,0.3);
 }
 
 .card img{
   width:100%;
-  height:120px;
+  height:140px;
   object-fit:cover;
 }
 
 .card-content{
-  padding:10px;
-  font-size:13px;
+  padding:12px;
+  font-size:14px;
   text-align:center;
 }
 
@@ -96,10 +97,6 @@ footer{
 <!-- ROMS -->
 <div class="cards hide" id="roms">
 
-  <div class="card" onclick="backHome()">
-    <div class="card-content">← رجوع</div>
-  </div>
-
   <div class="card" onclick="openNSW()">
     <img src="https://pixelz.cc/wp-content/uploads/2019/08/nintendo-switch-logo-blue-and-red-uhd-4k-wallpaper.jpg">
     <div class="card-content">Nintendo Switch (NSW)</div>
@@ -109,10 +106,6 @@ footer{
 
 <!-- NSW -->
 <div class="cards hide" id="nsw">
-
-  <div class="card" onclick="backRoms()">
-    <div class="card-content">← رجوع</div>
-  </div>
 
   <div class="card">
     <img src="https://assets.nintendo.com/image/upload/c_limit,f_auto,h_300,q_auto,w_400/v1/Microsites/zelda-tears-of-the-kingdom/videos/posters/totk_microsite_officialtrailer2_fr">
@@ -139,18 +132,6 @@ function openNSW(){
   document.getElementById("roms").classList.add("hide");
   document.getElementById("nsw").classList.remove("hide");
   history.pushState({page:"nsw"}, "");
-}
-
-function backRoms(){
-  document.getElementById("nsw").classList.add("hide");
-  document.getElementById("roms").classList.remove("hide");
-  history.pushState({page:"roms"}, "");
-}
-
-function backHome(){
-  document.getElementById("roms").classList.add("hide");
-  document.getElementById("main").classList.remove("hide");
-  history.pushState({page:"home"}, "");
 }
 
 window.addEventListener("popstate", function(){
