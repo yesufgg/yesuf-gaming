@@ -6,35 +6,21 @@
 <title>Yesuf Gaming</title>
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial;
-}
-
 body{
+  margin:0;
+  font-family:Arial;
   background:#0b0d12;
   color:white;
 }
 
-/* ===== HEADER ===== */
 header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
   padding:12px;
+  background:#00000080;
   position:sticky;
   top:0;
-  background:rgba(0,0,0,0.6);
-  backdrop-filter:blur(12px);
 }
 
-.logo{
-  font-weight:bold;
-}
-
-/* ===== CARDS ===== */
+/* cards */
 .cards{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
@@ -47,7 +33,7 @@ header{
   border-radius:14px;
   overflow:hidden;
   cursor:pointer;
-  transition:0.25s;
+  transition:0.2s;
 }
 
 .card:hover{
@@ -64,14 +50,17 @@ header{
   padding:10px;
 }
 
-.card-title{
-  font-weight:bold;
-  font-size:14px;
-}
-
-/* ===== HIDE SYSTEM ===== */
 .hide{
   display:none;
+}
+
+/* buttons */
+button{
+  margin:5px;
+  padding:8px 12px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
 }
 </style>
 </head>
@@ -79,66 +68,68 @@ header{
 <body>
 
 <header>
-  <div class="logo">🎮 Yesuf Gaming</div>
+  🎮 Yesuf Gaming
 </header>
 
-<!-- ===== MAIN CARDS ===== -->
+<!-- FILTER BUTTONS -->
+<div style="padding:10px;">
+  <button onclick="filter('all')">All</button>
+  <button onclick="filter('android')">Android</button>
+  <button onclick="filter('pc')">PC</button>
+  <button onclick="filter('roms')">ROMS</button>
+</div>
+
+<!-- CARDS -->
 <div class="cards">
 
   <!-- ANDROID -->
-  <div class="card" onclick="showOnly('android')">
+  <div class="card" data-type="android">
     <img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/HeroHomepage_2880x1200.width-1300_oirLRAu.jpg">
     <div class="card-content">
-      <div class="card-title">Android Games</div>
+      Android Games
     </div>
   </div>
 
   <!-- PC -->
-  <div class="card" onclick="showOnly('pc')">
+  <div class="card" data-type="pc">
     <img src="https://rubee.com.vn/admin/webroot/upload/image//images/tin-tuc/window-logo-2.jpg">
     <div class="card-content">
-      <div class="card-title">PC Games</div>
+      PC Games
     </div>
   </div>
 
-  <!-- ROMS (رجعت الصورة والاسم) -->
-  <div class="card" onclick="showOnly('roms')">
+  <!-- ROMS -->
+  <div class="card" data-type="roms">
     <img src="https://static0.howtogeekimages.com/wordpress/wp-content/uploads/2024/04/shutterstock_1290635251.jpg?w=1600&h=900&fit=crop">
     <div class="card-content">
-      <div class="card-title">ROMS</div>
+      ROMS
     </div>
   </div>
 
-</div>
-
-<!-- ===== ROMS CONTENT ===== -->
-<div class="cards">
-
-  <!-- Nintendo Switch يظهر فقط عند الضغط على ROMS -->
-  <div class="card hide roms">
+  <!-- NSW (تابع ROMS) -->
+  <div class="card" data-type="roms">
     <img src="https://pixelz.cc/wp-content/uploads/2019/08/nintendo-switch-logo-blue-and-red-uhd-4k-wallpaper.jpg">
     <div class="card-content">
-      <div class="card-title">Nintendo Switch (NSW)</div>
+      Nintendo Switch (NSW)
     </div>
   </div>
 
 </div>
 
-<!-- ===== SCRIPT ===== -->
 <script>
-function showOnly(type){
+function filter(type){
 
   let cards = document.querySelectorAll(".card");
 
   cards.forEach(card => {
 
-    // كرت ROMS الرئيسي لا يختفي
-    if(card.onclick){
-      return;
-    }
+    let t = card.getAttribute("data-type");
 
-    if(type === "roms"){
-      if(card.classList.contains("roms")){
+    if(type === "all"){
+      card.classList.remove("hide");
+    }
+    else{
+      if(t === type){
         card.classList.remove("hide");
       } else {
         card.classList.add("hide");
