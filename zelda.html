@@ -74,7 +74,6 @@ header{
 
   background:linear-gradient(135deg,#5865f2,#7c4dff);
   box-shadow:0 6px 18px rgba(88,101,242,0.25);
-
   transition:0.25s;
   border:1px solid rgba(255,255,255,0.08);
 }
@@ -92,11 +91,6 @@ header{
 .sub{
   background:linear-gradient(135deg,#1e1e2a,#2a2a3a);
   box-shadow:0 6px 18px rgba(0,0,0,0.3);
-  border:1px solid rgba(255,255,255,0.06);
-}
-
-.sub:hover{
-  box-shadow:0 10px 25px rgba(0,0,0,0.5);
 }
 
 /* LIGHTBOX */
@@ -116,6 +110,26 @@ header{
   max-height:95%;
   border-radius:12px;
 }
+
+/* التعليقات */
+input, textarea{
+  width:100%;
+  padding:10px;
+  margin-top:6px;
+  border-radius:8px;
+  border:none;
+}
+
+textarea{
+  height:80px;
+}
+
+.comment-box{
+  background:#222;
+  padding:10px;
+  margin-top:8px;
+  border-radius:8px;
+}
 </style>
 </head>
 
@@ -125,40 +139,44 @@ header{
 
 <div class="container">
 
-  <!-- صورة رئيسية -->
+  <!-- الصورة -->
   <img class="main-img" src="https://assets.nintendo.com/image/upload/c_limit,f_auto,h_300,q_auto,w_400/v1/Microsites/zelda-tears-of-the-kingdom/videos/posters/totk_microsite_officialtrailer2_fr">
 
-  <!-- معلومات -->
+  <!-- المعلومات -->
   <div class="box">
     📅 تاريخ الإصدار: 12 مايو 2023<br>
     🎮 Nintendo Switch<br>
-    🎯 نوع اللعبة: مغامرات وأكشن (Open World)<br>
+    🎯 النوع: مغامرات وأكشن (Open World)<br>
     📦 الحجم: 17 GB<br>
   </div>
 
-  <!-- القصة -->
+  <!-- القصة الكاملة -->
   <div class="box">
     <h3>📖 القصة (بدون حرق 🚫)</h3>
 
-    تدور أحداث اللعبة بعد Breath of the Wild، حيث يعود لينك وزيلدا...<br><br>
+    تدور أحداث اللعبة بعد لعبة Breath of the Wild، حيث يعود:<br>
+    🧝‍♂️ البطل لينك (Link)<br>
+    👑 الأميرة زيلدا (Zelda)<br><br>
 
-    تظهر تشققات غامضة في مملكة هايرول 🌍، وتختفي زيلدا فجأة، ويبدأ لينك رحلة بحث وإنقاذ العالم.<br><br>
+    في بداية القصة، تظهر أحداث غامضة تهز مملكة هايرول (Hyrule) 🌍، مع تشققات وأسرار غريبة في الأرض والسماء 🌌.<br><br>
 
-    🏛️ .أسرار مملكة هايرول القديمة<br>
-    🌑 قوى غامضة.<br>
-    🌌 السماء والكهوف والعالم السفلي.<br>
-    🔥 .إنقاذ العالم
+    بعد ذلك تختفي زيلدا بشكل مفاجئ، ويبدأ لينك رحلة طويلة من أجل:<br>
+    🔎 البحث عنها<br>
+    🛡️ حماية المملكة من الخطر<br>
+    🧠 كشف أسرار الحضارات القديمة<br>
+    🌍 فهم ما يحدث بين الأرض والسماء والعالم السفلي
   </div>
 
   <!-- المميزات -->
   <div class="box">
     <h3>✨ أبرز المميزات</h3>
 
-    🚀 Ultra Hand<br>
-    🪂 السماء والأرض.<br>
-    🕳️ كهوف وعوالم عميقة.<br>
-    ⚙️ فيزياء متطورة.<br>
-    🧠 .حرية اللعب
+    🚀 نظام البناء والدمج (Ultra Hand)<br>
+    🪂 التنقل بين السماء والأرض<br>
+    🕳️ استكشاف الكهوف والعالم السفلي<br>
+    ⚙️ فيزياء متطورة جدًا<br>
+    🧪 صناعة أدوات وأسلحة مبتكرة<br>
+    🧠 حرية كبيرة في حل الألغاز<br>
   </div>
 
   <!-- الصور -->
@@ -169,23 +187,47 @@ header{
     <img src="https://i.imgur.com/78qSPio.jpg" onclick="openImage(this.src)">
   </div>
 
-  <!-- روابط -->
+  <!-- التحميل -->
   <div class="box">
     <h3>⬇ التحميل</h3>
 
     <a class="btn" href="https://ouo.io/MZiezH" target="_blank">تحميل اللعبة</a>
-    <a class="btn" href="https://ouo.io/xBRaCU" target="_blank">تحميل التحديث</a>
+    <a class="btn" href="https://ouo.io/xBRaCU" target="_blank">التحديث</a>
 
-    <h3>🧰 أدوات التشغيل</h3>
+    <a class="btn sub" href="https://www.mediafire.com/file/kk2ckr9ihx9qmd5/TOTK_Arabic_V1.0-172-5-1778188660.zip/file" target="_blank">
+      🈯 التعريب (Arabic Mod)
+    </a>
 
-    <a class="btn sub" href="https://yuzu-emulator.cc/download/" target="_blank">محاكي Yuzu للبيسي</a>
-    <a class="btn sub" href="https://stable.eden-emu.dev/v0.2.0/Eden-Android-v0.2.0-legacy.apk" target="_blank">محاكي Eden للأندرويد</a>
+    <a class="btn sub" href="https://yuzu-emulator.cc/download/" target="_blank">محاكي PC</a>
+    <a class="btn sub" href="https://stable.eden-emu.dev/v0.2.0/Eden-Android-v0.2.0-legacy.apk" target="_blank">Android</a>
     <a class="btn sub" href="https://github.com/THZoria/NX_Firmware/releases/download/20.3.0/Firmware.20.3.0.zip" target="_blank">Firmware</a>
     <a class="btn sub" href="https://files.prodkeys.net/ProdKeys.net-v20.3.0.zip" target="_blank">Prod Keys</a>
   </div>
 
-  <!-- رجوع -->
-  <a class="btn sub" href="index.html">⬅ رجوع للموقع</a>
+  <!-- التقييم -->
+  <div class="box">
+    <h3>⭐ التقييم</h3>
+
+    <button class="btn sub" onclick="rate(1)">⭐</button>
+    <button class="btn sub" onclick="rate(2)">⭐⭐</button>
+    <button class="btn sub" onclick="rate(3)">⭐⭐⭐</button>
+    <button class="btn sub" onclick="rate(4)">⭐⭐⭐⭐</button>
+    <button class="btn sub" onclick="rate(5)">⭐⭐⭐⭐⭐</button>
+
+    <div id="ratingText"></div>
+  </div>
+
+  <!-- التعليقات -->
+  <div class="box">
+    <h3>💬 التعليقات</h3>
+
+    <input id="name" placeholder="اسمك">
+    <textarea id="comment" placeholder="تعليقك"></textarea>
+
+    <button class="btn" onclick="addComment()">إرسال</button>
+
+    <div id="comments"></div>
+  </div>
 
 </div>
 
@@ -195,6 +237,7 @@ header{
 </div>
 
 <script>
+
 function openImage(src){
   document.getElementById("lightbox").style.display="flex";
   document.getElementById("lightbox-img").src=src;
@@ -203,6 +246,54 @@ function openImage(src){
 function closeImage(){
   document.getElementById("lightbox").style.display="none";
 }
+
+/* ⭐ تقييم */
+function rate(n){
+  localStorage.setItem("zelda_rate", n);
+  document.getElementById("ratingText").innerHTML = "تقييمك: " + "⭐".repeat(n);
+}
+
+let saved = localStorage.getItem("zelda_rate");
+if(saved){
+  document.getElementById("ratingText").innerHTML = "تقييمك: " + "⭐".repeat(saved);
+}
+
+/* 💬 تعليقات */
+function addComment(){
+  let name = document.getElementById("name").value;
+  let text = document.getElementById("comment").value;
+
+  if(!name || !text) return;
+
+  let data = JSON.parse(localStorage.getItem("comments") || "[]");
+  data.push({name,text});
+
+  localStorage.setItem("comments", JSON.stringify(data));
+
+  loadComments();
+
+  document.getElementById("name").value="";
+  document.getElementById("comment").value="";
+}
+
+function loadComments(){
+  let data = JSON.parse(localStorage.getItem("comments") || "[]");
+
+  let box = document.getElementById("comments");
+  box.innerHTML = "";
+
+  data.slice().reverse().forEach(c=>{
+    box.innerHTML += `
+      <div class="comment-box">
+        <b>👤 ${c.name}</b><br>
+        ${c.text}
+      </div>
+    `;
+  });
+}
+
+loadComments();
+
 </script>
 
 </body>
