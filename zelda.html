@@ -60,37 +60,48 @@ header{
   transform:scale(1.03);
 }
 
-/* 🔥 أزرار احترافية */
+/* 🔥 أزرار تحميل أسطورية */
 .btn{
   display:block;
   width:100%;
-  padding:14px;
-  margin-top:10px;
-  border-radius:12px;
+  padding:15px;
+  margin-top:12px;
+  border-radius:14px;
   text-align:center;
   font-weight:bold;
   color:white;
   text-decoration:none;
 
-  background:linear-gradient(135deg,#5865f2,#7c4dff);
-  box-shadow:0 6px 18px rgba(88,101,242,0.25);
-  transition:0.25s;
-  border:1px solid rgba(255,255,255,0.08);
+  background:linear-gradient(135deg,#5865f2,#7c4dff,#00d4ff);
+  background-size:200% 200%;
+  animation: glowMove 5s ease infinite;
+
+  box-shadow:0 0 20px rgba(88,101,242,0.35);
+  border:1px solid rgba(255,255,255,0.1);
+  transition:0.3s;
+}
+
+@keyframes glowMove{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
 }
 
 .btn:hover{
-  transform:translateY(-3px);
-  box-shadow:0 10px 25px rgba(88,101,242,0.4);
+  transform:translateY(-4px) scale(1.02);
+  box-shadow:0 0 30px rgba(0,212,255,0.5);
 }
 
 .btn:active{
-  transform:scale(0.98);
+  transform:scale(0.97);
 }
 
 /* زر ثانوي */
 .sub{
   background:linear-gradient(135deg,#1e1e2a,#2a2a3a);
-  box-shadow:0 6px 18px rgba(0,0,0,0.3);
+  animation:none;
+  box-shadow:0 0 15px rgba(0,0,0,0.4);
+  border:1px solid rgba(255,255,255,0.08);
 }
 
 /* LIGHTBOX */
@@ -110,26 +121,6 @@ header{
   max-height:95%;
   border-radius:12px;
 }
-
-/* التعليقات */
-input, textarea{
-  width:100%;
-  padding:10px;
-  margin-top:6px;
-  border-radius:8px;
-  border:none;
-}
-
-textarea{
-  height:80px;
-}
-
-.comment-box{
-  background:#222;
-  padding:10px;
-  margin-top:8px;
-  border-radius:8px;
-}
 </style>
 </head>
 
@@ -139,44 +130,48 @@ textarea{
 
 <div class="container">
 
-  <!-- الصورة -->
+  <!-- صورة رئيسية -->
   <img class="main-img" src="https://assets.nintendo.com/image/upload/c_limit,f_auto,h_300,q_auto,w_400/v1/Microsites/zelda-tears-of-the-kingdom/videos/posters/totk_microsite_officialtrailer2_fr">
 
-  <!-- المعلومات -->
+  <!-- معلومات -->
   <div class="box">
     📅 تاريخ الإصدار: 12 مايو 2023<br>
-    🎮 Nintendo Switch<br>
+    🎮 المنصة الأصلية: Nintendo Switch<br>
     🎯 النوع: مغامرات وأكشن (Open World)<br>
     📦 الحجم: 17 GB<br>
   </div>
 
-  <!-- القصة الكاملة -->
+  <!-- القصة المحسنة -->
   <div class="box">
     <h3>📖 القصة (بدون حرق 🚫)</h3>
 
-    تدور أحداث اللعبة بعد لعبة Breath of the Wild، حيث يعود:<br>
-    🧝‍♂️ البطل لينك (Link)<br>
-    👑 الأميرة زيلدا (Zelda)<br><br>
+    تدور أحداث اللعبة في عالم Hyrule الواسع 🌍، بعد أحداث Breath of the Wild، حيث يعود البطل لينك في مغامرة جديدة مليئة بالغموض والأسرار.<br><br>
 
-    في بداية القصة، تظهر أحداث غامضة تهز مملكة هايرول (Hyrule) 🌍، مع تشققات وأسرار غريبة في الأرض والسماء 🌌.<br><br>
+    تبدأ القصة بظهور ظواهر غامضة في السماء والأرض 🌌، مع تشققات غير طبيعية تهدد توازن المملكة.<br><br>
 
-    بعد ذلك تختفي زيلدا بشكل مفاجئ، ويبدأ لينك رحلة طويلة من أجل:<br>
-    🔎 البحث عنها<br>
-    🛡️ حماية المملكة من الخطر<br>
-    🧠 كشف أسرار الحضارات القديمة<br>
-    🌍 فهم ما يحدث بين الأرض والسماء والعالم السفلي
+    👑 الأميرة زيلدا تختفي بشكل مفاجئ أثناء التحقيق في هذه الأحداث، مما يدفع لينك للانطلاق في رحلة خطيرة عبر:<br><br>
+
+    🔎 أعماق الكهوف المظلمة<br>
+    🌌 الجزر الطائرة في السماء<br>
+    🏛️ أطلال حضارة قديمة مجهولة<br><br>
+
+    خلال رحلته، يكتشف لينك أسرارًا عن ماضي مملكة هايرول وقوة غامضة تهدد بتدمير العالم بأكمله.<br><br>
+
+    القصة تركز على:<br>
+    ⚔️ الصراع بين القوى القديمة والجديدة<br>
+    🧠 اكتشاف الحقيقة المخفية وراء زيلدا<br>
+    🌍 إنقاذ العالم من انهيار شامل
   </div>
 
   <!-- المميزات -->
   <div class="box">
     <h3>✨ أبرز المميزات</h3>
 
-    🚀 نظام البناء والدمج (Ultra Hand)<br>
-    🪂 التنقل بين السماء والأرض<br>
-    🕳️ استكشاف الكهوف والعالم السفلي<br>
-    ⚙️ فيزياء متطورة جدًا<br>
-    🧪 صناعة أدوات وأسلحة مبتكرة<br>
-    🧠 حرية كبيرة في حل الألغاز<br>
+    🚀 Ultra Hand<br>
+    🪂 السماء والأرض<br>
+    🕳️ كهوف وعوالم عميقة<br>
+    ⚙️ فيزياء متطورة<br>
+    🧠 حرية اللعب
   </div>
 
   <!-- الصور -->
@@ -195,7 +190,7 @@ textarea{
     <a class="btn" href="https://ouo.io/xBRaCU" target="_blank">التحديث</a>
 
     <a class="btn sub" href="https://www.mediafire.com/file/kk2ckr9ihx9qmd5/TOTK_Arabic_V1.0-172-5-1778188660.zip/file" target="_blank">
-      🈯 التعريب (Arabic Mod)
+      🈯 التعريب
     </a>
 
     <a class="btn sub" href="https://yuzu-emulator.cc/download/" target="_blank">محاكي PC</a>
@@ -204,30 +199,8 @@ textarea{
     <a class="btn sub" href="https://files.prodkeys.net/ProdKeys.net-v20.3.0.zip" target="_blank">Prod Keys</a>
   </div>
 
-  <!-- التقييم -->
-  <div class="box">
-    <h3>⭐ التقييم</h3>
-
-    <button class="btn sub" onclick="rate(1)">⭐</button>
-    <button class="btn sub" onclick="rate(2)">⭐⭐</button>
-    <button class="btn sub" onclick="rate(3)">⭐⭐⭐</button>
-    <button class="btn sub" onclick="rate(4)">⭐⭐⭐⭐</button>
-    <button class="btn sub" onclick="rate(5)">⭐⭐⭐⭐⭐</button>
-
-    <div id="ratingText"></div>
-  </div>
-
-  <!-- التعليقات -->
-  <div class="box">
-    <h3>💬 التعليقات</h3>
-
-    <input id="name" placeholder="اسمك">
-    <textarea id="comment" placeholder="تعليقك"></textarea>
-
-    <button class="btn" onclick="addComment()">إرسال</button>
-
-    <div id="comments"></div>
-  </div>
+  <!-- رجوع -->
+  <a class="btn sub" href="index.html">⬅ رجوع للموقع</a>
 
 </div>
 
@@ -237,7 +210,6 @@ textarea{
 </div>
 
 <script>
-
 function openImage(src){
   document.getElementById("lightbox").style.display="flex";
   document.getElementById("lightbox-img").src=src;
@@ -246,54 +218,6 @@ function openImage(src){
 function closeImage(){
   document.getElementById("lightbox").style.display="none";
 }
-
-/* ⭐ تقييم */
-function rate(n){
-  localStorage.setItem("zelda_rate", n);
-  document.getElementById("ratingText").innerHTML = "تقييمك: " + "⭐".repeat(n);
-}
-
-let saved = localStorage.getItem("zelda_rate");
-if(saved){
-  document.getElementById("ratingText").innerHTML = "تقييمك: " + "⭐".repeat(saved);
-}
-
-/* 💬 تعليقات */
-function addComment(){
-  let name = document.getElementById("name").value;
-  let text = document.getElementById("comment").value;
-
-  if(!name || !text) return;
-
-  let data = JSON.parse(localStorage.getItem("comments") || "[]");
-  data.push({name,text});
-
-  localStorage.setItem("comments", JSON.stringify(data));
-
-  loadComments();
-
-  document.getElementById("name").value="";
-  document.getElementById("comment").value="";
-}
-
-function loadComments(){
-  let data = JSON.parse(localStorage.getItem("comments") || "[]");
-
-  let box = document.getElementById("comments");
-  box.innerHTML = "";
-
-  data.slice().reverse().forEach(c=>{
-    box.innerHTML += `
-      <div class="comment-box">
-        <b>👤 ${c.name}</b><br>
-        ${c.text}
-      </div>
-    `;
-  });
-}
-
-loadComments();
-
 </script>
 
 </body>
