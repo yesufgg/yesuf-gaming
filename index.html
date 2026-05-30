@@ -32,7 +32,7 @@ header{
   padding:25px;
 }
 
-/* كرت رئيسي */
+/* كرت */
 .card{
   background:#141827;
   border-radius:18px;
@@ -54,6 +54,7 @@ header{
   object-fit:cover;
 }
 
+/* نص الكرت */
 .card-content{
   padding:14px;
   text-align:center;
@@ -68,21 +69,6 @@ header{
 
 .active{
   display:block;
-}
-
-/* زر رجوع */
-.back{
-  margin:20px;
-  display:inline-block;
-  padding:12px 18px;
-  background:#222;
-  border-radius:10px;
-  cursor:pointer;
-  color:white;
-  text-decoration:none;
-}
-.back:hover{
-  background:#333;
 }
 </style>
 </head>
@@ -117,45 +103,44 @@ header{
 
 <!-- ANDROID -->
 <div id="android" class="page">
-  <a class="back" onclick="backHome()">⬅ رجوع</a>
 
   <div class="cards">
     <div class="card">
       <img src="https://i.imgur.com/boqUPKX.jpg">
-      <div class="card-content">Android Game 1</div>
+      <div class="card-content">Android Games</div>
     </div>
   </div>
+
 </div>
 
 <!-- PC -->
 <div id="pc" class="page">
-  <a class="back" onclick="backHome()">⬅ رجوع</a>
 
   <div class="cards">
     <div class="card">
       <img src="https://rubee.com.vn/admin/webroot/upload/image//images/tin-tuc/window-logo-2.jpg">
-      <div class="card-content">PC Game 1</div>
+      <div class="card-content">PC Games</div>
     </div>
   </div>
+
 </div>
 
 <!-- ROMS -->
 <div id="roms" class="page">
-  <a class="back" onclick="backHome()">⬅ رجوع</a>
 
   <div class="cards">
 
-    <div class="card" onclick="openNSW()">
+    <div class="card" onclick="openPage('nsw')">
       <img src="https://pixelz.cc/wp-content/uploads/2019/08/nintendo-switch-logo-blue-and-red-uhd-4k-wallpaper.jpg">
       <div class="card-content">Nintendo Switch (NSW)</div>
     </div>
 
   </div>
+
 </div>
 
 <!-- NSW -->
 <div id="nsw" class="page">
-  <a class="back" onclick="openPage('roms')">⬅ رجوع</a>
 
   <div class="cards">
 
@@ -165,6 +150,7 @@ header{
     </div>
 
   </div>
+
 </div>
 
 <script>
@@ -174,14 +160,7 @@ function openPage(page){
   document.getElementById(page).classList.add('active');
 }
 
-function backHome(){
-  openPage('home');
-}
-
-function openNSW(){
-  openPage('nsw');
-}
-
+/* Zelda تفتح صفحة مستقلة */
 function openZelda(){
   window.location.href = "zelda.html";
 }
