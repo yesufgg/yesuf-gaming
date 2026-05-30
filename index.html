@@ -5,189 +5,186 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yesuf Gaming</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
 body{
-font-family:Arial,sans-serif;
-background:#0b0d12;
-color:white;
+  margin:0;
+  font-family:'Tajawal', Arial;
+  background: radial-gradient(circle at top, #141a33, #0b0d12 70%);
+  color:white;
 }
 
+/* هيدر */
 header{
-background:linear-gradient(135deg,#5865f2,#7c4dff);
-padding:25px;
-text-align:center;
-font-size:28px;
-font-weight:bold;
-box-shadow:0 4px 20px rgba(0,0,0,.4);
+  padding:20px;
+  text-align:center;
+  font-size:26px;
+  font-weight:900;
+  background: linear-gradient(90deg,#5865f2,#7c4dff,#00d4ff);
 }
 
-.hero{
-padding:30px 20px;
-text-align:center;
-background:url('https://storage.googleapis.com/gweb-uniblog-publish-prod/images/HeroHomepage_2880x1200.width-1300_oirLRAu.jpg') center/cover;
-position:relative;
-}
-
-.hero::before{
-content:"";
-position:absolute;
-inset:0;
-background:rgba(0,0,0,.65);
-}
-
-.hero h2{
-position:relative;
-z-index:2;
-font-size:32px;
-}
-
+/* كروت */
 .cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-padding:25px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+  padding:25px;
 }
 
+/* كرت رئيسي */
 .card{
-background:#141827;
-border-radius:18px;
-overflow:hidden;
-cursor:pointer;
-transition:.25s;
-border:1px solid rgba(255,255,255,.05);
+  background:#141827;
+  border-radius:18px;
+  overflow:hidden;
+  cursor:pointer;
+  transition:0.3s;
+  border:1px solid rgba(255,255,255,0.06);
+  box-shadow:0 0 15px rgba(0,0,0,0.5);
 }
 
 .card:hover{
-transform:translateY(-8px);
-box-shadow:0 0 30px rgba(88,101,242,.35);
+  transform:translateY(-10px) scale(1.05);
+  box-shadow:0 0 35px rgba(88,101,242,0.5);
 }
 
 .card img{
-width:100%;
-height:170px;
-object-fit:cover;
-display:block;
+  width:100%;
+  height:170px;
+  object-fit:cover;
 }
 
 .card-content{
-padding:15px;
-text-align:center;
-font-size:16px;
-font-weight:bold;
+  padding:14px;
+  text-align:center;
+  font-size:17px;
+  font-weight:800;
 }
 
-.hide{
-display:none !important;
+/* صفحات */
+.page{
+  display:none;
 }
 
-a{
-text-decoration:none;
-color:white;
+.active{
+  display:block;
 }
 
-footer{
-margin-top:20px;
-padding:18px;
-text-align:center;
-color:#aaa;
-font-size:13px;
-border-top:1px solid rgba(255,255,255,.08);
+/* زر رجوع */
+.back{
+  margin:20px;
+  display:inline-block;
+  padding:12px 18px;
+  background:#222;
+  border-radius:10px;
+  cursor:pointer;
+  color:white;
+  text-decoration:none;
+}
+.back:hover{
+  background:#333;
 }
 </style>
 </head>
+
 <body>
 
-<header>🎮 Yesuf Gaming</header>
+<header>🎮 YESUF GAMING STORE</header>
 
-<div class="hero">
-<h2>Welcome To Yesuf Gaming</h2>
+<!-- HOME -->
+<div id="home" class="page active">
+
+  <div class="cards">
+
+    <div class="card" onclick="openPage('android')">
+      <img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/HeroHomepage_2880x1200.width-1300_oirLRAu.jpg">
+      <div class="card-content">Android Games</div>
+    </div>
+
+    <div class="card" onclick="openPage('pc')">
+      <img src="https://rubee.com.vn/admin/webroot/upload/image//images/tin-tuc/window-logo-2.jpg">
+      <div class="card-content">PC Games</div>
+    </div>
+
+    <div class="card" onclick="openPage('roms')">
+      <img src="https://static0.howtogeekimages.com/wordpress/wp-content/uploads/2024/04/shutterstock_1290635251.jpg">
+      <div class="card-content">ROMS</div>
+    </div>
+
+  </div>
+
 </div>
 
-<!-- الصفحة الرئيسية -->
-<div class="cards" id="home">
+<!-- ANDROID -->
+<div id="android" class="page">
+  <a class="back" onclick="backHome()">⬅ رجوع</a>
 
-<div class="card">
-<img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/HeroHomepage_2880x1200.width-1300_oirLRAu.jpg">
-<div class="card-content">Android Games</div>
+  <div class="cards">
+    <div class="card">
+      <img src="https://i.imgur.com/boqUPKX.jpg">
+      <div class="card-content">Android Game 1</div>
+    </div>
+  </div>
 </div>
 
-<div class="card">
-<img src="https://rubee.com.vn/admin/webroot/upload/image//images/tin-tuc/window-logo-2.jpg">
-<div class="card-content">PC Games</div>
-</div>
+<!-- PC -->
+<div id="pc" class="page">
+  <a class="back" onclick="backHome()">⬅ رجوع</a>
 
-<div class="card" onclick="openRoms()">
-<img src="https://static0.howtogeekimages.com/wordpress/wp-content/uploads/2024/04/shutterstock_1290635251.jpg">
-<div class="card-content">ROMS</div>
-</div>
-
+  <div class="cards">
+    <div class="card">
+      <img src="https://rubee.com.vn/admin/webroot/upload/image//images/tin-tuc/window-logo-2.jpg">
+      <div class="card-content">PC Game 1</div>
+    </div>
+  </div>
 </div>
 
 <!-- ROMS -->
-<div class="cards hide" id="roms">
+<div id="roms" class="page">
+  <a class="back" onclick="backHome()">⬅ رجوع</a>
 
-<div class="card" onclick="openNSW()">
-<img src="https://pixelz.cc/wp-content/uploads/2019/08/nintendo-switch-logo-blue-and-red-uhd-4k-wallpaper.jpg">
-<div class="card-content">Nintendo Switch (NSW)</div>
-</div>
+  <div class="cards">
 
+    <div class="card" onclick="openNSW()">
+      <img src="https://pixelz.cc/wp-content/uploads/2019/08/nintendo-switch-logo-blue-and-red-uhd-4k-wallpaper.jpg">
+      <div class="card-content">Nintendo Switch (NSW)</div>
+    </div>
+
+  </div>
 </div>
 
 <!-- NSW -->
-<div class="cards hide" id="nsw">
+<div id="nsw" class="page">
+  <a class="back" onclick="openPage('roms')">⬅ رجوع</a>
 
-<a href="zelda.html">
-<div class="card">
-<img src="https://assets.nintendo.com/image/upload/c_limit,f_auto,h_300,q_auto,w_400/v1/Microsites/zelda-tears-of-the-kingdom/videos/posters/totk_microsite_officialtrailer2_fr">
-<div class="card-content">
-The Legend Of Zelda TOTK (معربة)
-</div>
-</div>
-</a>
+  <div class="cards">
 
-</div>
+    <div class="card" onclick="openZelda()">
+      <img src="https://assets.nintendo.com/image/upload/c_limit,f_auto,h_300,q_auto,w_400/v1/Microsites/zelda-tears-of-the-kingdom/videos/posters/totk_microsite_officialtrailer2_fr">
+      <div class="card-content">The Legend Of Zelda TOTK</div>
+    </div>
 
-<footer>
-جميع الحقوق محفوظة © 2026 Yesuf Gaming
-</footer>
+  </div>
+</div>
 
 <script>
 
-function openRoms(){
-history.pushState({page:'roms'},'', '');
+function openPage(page){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById(page).classList.add('active');
+}
 
-document.getElementById('home').classList.add('hide');
-document.getElementById('roms').classList.remove('hide');
+function backHome(){
+  openPage('home');
 }
 
 function openNSW(){
-history.pushState({page:'nsw'},'', '');
-
-document.getElementById('roms').classList.add('hide');
-document.getElementById('nsw').classList.remove('hide');
+  openPage('nsw');
 }
 
-window.addEventListener('popstate',()=>{
-
-if(!document.getElementById('nsw').classList.contains('hide')){
-document.getElementById('nsw').classList.add('hide');
-document.getElementById('roms').classList.remove('hide');
-return;
+function openZelda(){
+  window.location.href = "zelda.html";
 }
-
-if(!document.getElementById('roms').classList.contains('hide')){
-document.getElementById('roms').classList.add('hide');
-document.getElementById('home').classList.remove('hide');
-return;
-}
-
-});
 
 </script>
 
