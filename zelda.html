@@ -52,24 +52,69 @@ header{
 .gallery img{
   width:100%;
   border-radius:10px;
+  cursor:pointer;
+  transition:.25s;
 }
 
-/* أزرار */
+.gallery img:hover{
+  transform:scale(1.03);
+}
+
+/* 🔥 أزرار احترافية */
 .btn{
   display:block;
   width:100%;
-  padding:12px;
+  padding:14px;
   margin-top:10px;
-  border-radius:10px;
+  border-radius:12px;
   text-align:center;
   font-weight:bold;
   color:white;
   text-decoration:none;
-  background:linear-gradient(90deg,#5865f2,#7c4dff);
+
+  background:linear-gradient(135deg,#5865f2,#7c4dff);
+  box-shadow:0 6px 18px rgba(88,101,242,0.25);
+
+  transition:0.25s;
+  border:1px solid rgba(255,255,255,0.08);
 }
 
+.btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 25px rgba(88,101,242,0.4);
+}
+
+.btn:active{
+  transform:scale(0.98);
+}
+
+/* زر ثانوي */
 .sub{
-  background:#222;
+  background:linear-gradient(135deg,#1e1e2a,#2a2a3a);
+  box-shadow:0 6px 18px rgba(0,0,0,0.3);
+  border:1px solid rgba(255,255,255,0.06);
+}
+
+.sub:hover{
+  box-shadow:0 10px 25px rgba(0,0,0,0.5);
+}
+
+/* LIGHTBOX */
+.lightbox{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.95);
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+  cursor:pointer;
+}
+
+.lightbox img{
+  max-width:95%;
+  max-height:95%;
+  border-radius:12px;
 }
 </style>
 </head>
@@ -91,57 +136,50 @@ header{
     📦 الحجم: 17 GB<br>
   </div>
 
-  <!-- القصة كاملة -->
+  <!-- القصة -->
   <div class="box">
     <h3>📖 القصة (بدون حرق 🚫)</h3>
 
-    تدور أحداث اللعبة بعد لعبة Breath of the Wild، حيث يعود:<br>
-    🧝‍♂️ البطل لينك (Link)<br>
-    👑 الأميرة زيلدا (Zelda)<br><br>
+    تدور أحداث اللعبة بعد Breath of the Wild، حيث يعود لينك وزيلدا...<br><br>
 
-    في بداية القصة، تظهر أحداث غامضة تهز مملكة هايرول (Hyrule) 🌍، مع تشققات وأسرار غريبة في الأرض والسماء 🌌.<br><br>
+    تظهر تشققات غامضة في مملكة هايرول 🌍، وتختفي زيلدا فجأة، ويبدأ لينك رحلة بحث وإنقاذ العالم.<br><br>
 
-    بعد ذلك تختفي زيلدا بشكل مفاجئ، ويبدأ لينك رحلة طويلة من أجل:<br>
-    🔎 البحث عنها<br>
-    🛡️ حماية المملكة من الخطر<br>
-    🧠 كشف أسرار الحضارات القديمة<br>
-    🌍 فهم ما يحدث بين الأرض والسماء والعالم السفلي<br><br>
-
-    🏛️ أسرار مملكة هايرول القديمة<br>
-    🌑 قوى غامضة ومجهولة<br>
-    🌌 استكشاف السماء والكهوف والأعماق<br>
-    🔥 رحلة لإنقاذ العالم
+    🏛️ .أسرار مملكة هايرول القديمة<br>
+    🌑 قوى غامضة.<br>
+    🌌 السماء والكهوف والعالم السفلي.<br>
+    🔥 .إنقاذ العالم
   </div>
 
   <!-- المميزات -->
   <div class="box">
     <h3>✨ أبرز المميزات</h3>
 
-    🚀 نظام البناء والدمج (Ultra Hand)<br>
-    🪂 التنقل بين السماء والأرض<br>
-    🕳️ استكشاف الكهوف والعالم السفلي<br>
-    ⚙️ فيزياء متطورة جدًا<br>
-    🧪 صناعة أدوات وأسلحة مبتكرة<br>
-    🧠 حرية كبيرة في حل الألغاز<br>
+    🚀 Ultra Hand<br>
+    🪂 السماء والأرض.<br>
+    🕳️ كهوف وعوالم عميقة.<br>
+    ⚙️ فيزياء متطورة.<br>
+    🧠 .حرية اللعب
   </div>
 
   <!-- الصور -->
   <div class="gallery">
-    <img src="https://i.imgur.com/boqUPKX.jpg">
-    <img src="https://i.imgur.com/zhU7O2C.jpg">
-    <img src="https://i.imgur.com/og66pZr.jpg">
-    <img src="https://i.imgur.com/78qSPio.jpg">
+    <img src="https://i.imgur.com/boqUPKX.jpg" onclick="openImage(this.src)">
+    <img src="https://i.imgur.com/zhU7O2C.jpg" onclick="openImage(this.src)">
+    <img src="https://i.imgur.com/og66pZr.jpg" onclick="openImage(this.src)">
+    <img src="https://i.imgur.com/78qSPio.jpg" onclick="openImage(this.src)">
   </div>
 
   <!-- روابط -->
   <div class="box">
     <h3>⬇ التحميل</h3>
+
     <a class="btn" href="https://ouo.io/MZiezH" target="_blank">تحميل اللعبة</a>
     <a class="btn" href="https://ouo.io/xBRaCU" target="_blank">تحميل التحديث</a>
 
     <h3>🧰 أدوات التشغيل</h3>
-    <a class="btn sub" href="https://yuzu-emulator.cc/download/" target="_blank">محاكي PC</a>
-    <a class="btn sub" href="https://stable.eden-emu.dev/v0.2.0/Eden-Android-v0.2.0-legacy.apk" target="_blank">محاكي Android</a>
+
+    <a class="btn sub" href="https://yuzu-emulator.cc/download/" target="_blank">محاكي Yuzu للبيسي</a>
+    <a class="btn sub" href="https://stable.eden-emu.dev/v0.2.0/Eden-Android-v0.2.0-legacy.apk" target="_blank">محاكي Eden للأندرويد</a>
     <a class="btn sub" href="https://github.com/THZoria/NX_Firmware/releases/download/20.3.0/Firmware.20.3.0.zip" target="_blank">Firmware</a>
     <a class="btn sub" href="https://files.prodkeys.net/ProdKeys.net-v20.3.0.zip" target="_blank">Prod Keys</a>
   </div>
@@ -150,6 +188,22 @@ header{
   <a class="btn sub" href="index.html">⬅ رجوع للموقع</a>
 
 </div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeImage()">
+  <img id="lightbox-img">
+</div>
+
+<script>
+function openImage(src){
+  document.getElementById("lightbox").style.display="flex";
+  document.getElementById("lightbox-img").src=src;
+}
+
+function closeImage(){
+  document.getElementById("lightbox").style.display="none";
+}
+</script>
 
 </body>
 </html>
