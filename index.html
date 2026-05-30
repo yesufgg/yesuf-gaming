@@ -13,6 +13,7 @@ body{
   font-family:'Tajawal', Arial;
   background: radial-gradient(circle at top, #141a33, #0b0d12 70%);
   color:white;
+  overflow-x:hidden;
 }
 
 /* هيدر */
@@ -54,7 +55,6 @@ header{
   object-fit:cover;
 }
 
-/* نص الكرت */
 .card-content{
   padding:14px;
   text-align:center;
@@ -62,7 +62,7 @@ header{
   font-weight:800;
 }
 
-/* صفحات */
+/* الصفحات */
 .page{
   display:none;
 }
@@ -75,7 +75,7 @@ header{
 
 <body>
 
-<header>🎮 YESUF GAMING STORE</header>
+<header>🎮 YESUF GAMING</header>
 
 <!-- HOME -->
 <div id="home" class="page active">
@@ -103,31 +103,26 @@ header{
 
 <!-- ANDROID -->
 <div id="android" class="page">
-
   <div class="cards">
     <div class="card">
       <img src="https://i.imgur.com/boqUPKX.jpg">
       <div class="card-content">Android Games</div>
     </div>
   </div>
-
 </div>
 
 <!-- PC -->
 <div id="pc" class="page">
-
   <div class="cards">
     <div class="card">
       <img src="https://rubee.com.vn/admin/webroot/upload/image//images/tin-tuc/window-logo-2.jpg">
       <div class="card-content">PC Games</div>
     </div>
   </div>
-
 </div>
 
 <!-- ROMS -->
 <div id="roms" class="page">
-
   <div class="cards">
 
     <div class="card" onclick="openPage('nsw')">
@@ -136,12 +131,10 @@ header{
     </div>
 
   </div>
-
 </div>
 
 <!-- NSW -->
 <div id="nsw" class="page">
-
   <div class="cards">
 
     <div class="card" onclick="openZelda()">
@@ -150,20 +143,42 @@ header{
     </div>
 
   </div>
-
 </div>
 
 <script>
 
+/* فتح صفحة + تسجيلها في التاريخ */
 function openPage(page){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+
+  document.querySelectorAll('.page').forEach(p=>{
+    p.classList.remove('active');
+  });
+
   document.getElementById(page).classList.add('active');
+
+  history.pushState({page:page}, "", "#" + page);
 }
 
-/* Zelda تفتح صفحة مستقلة */
+/* Zelda صفحة مستقلة */
 function openZelda(){
   window.location.href = "zelda.html";
 }
+
+/* زر الرجوع في المتصفح */
+window.onpopstate = function(event){
+
+  if(event.state && event.state.page){
+
+    document.querySelectorAll('.page').forEach(p=>{
+      p.classList.remove('active');
+    });
+
+    document.getElementById(event.state.page).classList.add('active');
+
+  } else {
+    openPage("home");
+  }
+};
 
 </script>
 
