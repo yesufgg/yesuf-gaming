@@ -70,6 +70,11 @@ header{
 .active{
   display:block;
 }
+
+/* GTA CARD خاص */
+.gta-card img{
+  height:200px;
+}
 </style>
 </head>
 
@@ -104,10 +109,13 @@ header{
 <!-- ANDROID -->
 <div id="android" class="page">
   <div class="cards">
-    <div class="card">
-      <img src="https://i.imgur.com/boqUPKX.jpg">
-      <div class="card-content">Android Games</div>
+
+    <!-- GTA SA CARD -->
+    <div class="card gta-card">
+      <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f352b1b5-8df2-4251-a1f4-0b87b0ebb1b1/d62lmtj-475f427e-9c87-4563-8c72-d2d48c1db1d9.png/v1/fill/w_625,h_226,q_80,strp/gta_sa___loader_2_0_by_gta_ivplayer_d62lmtj-fullview.jpg">
+      <div class="card-content">GTA San Andreas</div>
     </div>
+
   </div>
 </div>
 
@@ -147,24 +155,19 @@ header{
 
 <script>
 
-/* فتح صفحة + تسجيلها في التاريخ */
 function openPage(page){
-
   document.querySelectorAll('.page').forEach(p=>{
     p.classList.remove('active');
   });
 
   document.getElementById(page).classList.add('active');
-
   history.pushState({page:page}, "", "#" + page);
 }
 
-/* Zelda صفحة مستقلة */
 function openZelda(){
   window.location.href = "zelda.html";
 }
 
-/* زر الرجوع في المتصفح */
 window.onpopstate = function(event){
 
   if(event.state && event.state.page){
