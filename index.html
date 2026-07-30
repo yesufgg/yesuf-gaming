@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Yesuf Gaming</title>
+<title>YESUF GAMING</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
 <style>
 
@@ -15,182 +19,505 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:'Tajawal',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
 
-background:#090b13;
-color:#fff;
+background:
+radial-gradient(circle at top,#1b2450 0%,#0b1020 40%,#07090f 100%);
+
+color:white;
 overflow-x:hidden;
 
 }
 
-/* Header */
+a{
+
+text-decoration:none;
+color:white;
+
+}
 
 header{
 
-height:90px;
+position:fixed;
+top:0;
+left:0;
+right:0;
+
+height:75px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:0 7%;
+
+background:rgba(10,15,30,.75);
+
+backdrop-filter:blur(18px);
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+z-index:999;
+
+}
+
+.logo{
+
+font-size:30px;
+font-weight:900;
+
+background:linear-gradient(90deg,#00c6ff,#4d7cff,#9f5cff);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+}
+
+nav{
+
+display:flex;
+gap:28px;
+
+}
+
+nav a{
+
+font-size:17px;
+transition:.3s;
+
+}
+
+nav a:hover{
+
+color:#5ca7ff;
+
+}
+
+.hero{
+
+padding-top:140px;
+padding-bottom:80px;
+
+width:92%;
+max-width:1350px;
+
+margin:auto;
+
+display:grid;
+grid-template-columns:1.1fr 1fr;
+gap:40px;
+align-items:center;
+
+}
+
+.hero-text h1{
+
+font-size:58px;
+line-height:1.1;
+
+margin-bottom:20px;
+
+}
+
+.hero-text span{
+
+color:#4ea2ff;
+
+}
+
+.hero-text p{
+
+font-size:20px;
+
+line-height:1.9;
+
+color:#b7bfd4;
+
+margin-bottom:35px;
+
+}
+
+.buttons{
+
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+
+}
+
+.btn{
+
+padding:15px 30px;
+
+border-radius:15px;
+
+font-size:18px;
+
+font-weight:700;
+
+transition:.35s;
+
+}
+
+.btn-blue{
+
+background:#2f80ff;
+
+}
+
+.btn-blue:hover{
+
+background:#4f96ff;
+transform:translateY(-3px);
+
+}
+
+.btn-dark{
+
+background:#171d30;
+
+}
+
+.btn-dark:hover{
+
+background:#242d46;
+
+}
+
+.hero-image{
+
 display:flex;
 justify-content:center;
-align-items:center;
-font-size:35px;
-font-weight:900;
-letter-spacing:2px;
-background:linear-gradient(90deg,#005eff,#00bfff);
-box-shadow:0 5px 20px rgba(0,0,0,.4);
 
 }
 
-/* Container */
+.hero-image img{
 
-.container{
+width:100%;
+max-width:600px;
 
-width:95%;
-max-width:1200px;
+border-radius:25px;
+
+box-shadow:0 0 50px rgba(70,120,255,.3);
+
+}
+
+section{
+
+width:92%;
+max-width:1350px;
+
 margin:auto;
-padding:40px 0;
+
+padding:70px 0;
 
 }
 
-/* Title */
+.section-title{
 
-.title{
-
-text-align:center;
-font-size:20px;
+font-size:38px;
 margin-bottom:35px;
-color:#cfd8ff;
+
+font-weight:900;
 
 }
-
-/* Cards */
 
 .cards{
 
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:35px;
+
+grid-template-columns:
+repeat(auto-fit,minmax(360px,1fr));
+
+gap:30px;
 
 }
+    .card{
 
-/* Card */
+position:relative;
 
-.card{
+background:linear-gradient(180deg,#161d31,#101522);
 
-background:#121826;
-border-radius:22px;
+border-radius:24px;
+
 overflow:hidden;
+
 cursor:pointer;
-transition:.35s;
-border:2px solid transparent;
+
+transition:.4s;
+
+border:1px solid rgba(255,255,255,.08);
 
 }
 
 .card:hover{
 
-transform:translateY(-8px);
-border-color:#2f81ff;
-box-shadow:0 0 35px rgba(47,129,255,.35);
+transform:translateY(-12px);
+
+box-shadow:0 20px 45px rgba(0,0,0,.45);
+
+border-color:#3b82f6;
 
 }
 
 .card img{
 
 width:100%;
+
 height:240px;
+
 object-fit:cover;
+
 display:block;
 
-}
-
-.content{
-
-padding:22px;
-text-align:center;
+transition:.4s;
 
 }
 
-.content h2{
+.card:hover img{
 
-font-size:28px;
-margin-bottom:8px;
-
-}
-
-.content p{
-
-font-size:16px;
-color:#bfc7d9;
+transform:scale(1.05);
 
 }
 
-/* Footer */
+.overlay{
+
+position:absolute;
+
+inset:0;
+
+background:linear-gradient(to top,
+rgba(7,9,15,.95),
+rgba(7,9,15,.15));
+
+}
+
+.card-content{
+
+position:absolute;
+
+left:25px;
+
+right:25px;
+
+bottom:25px;
+
+z-index:2;
+
+}
+
+.card-content h2{
+
+font-size:30px;
+
+margin-bottom:12px;
+
+}
+
+.card-content p{
+
+font-size:17px;
+
+line-height:1.7;
+
+color:#d0d7ea;
+
+margin-bottom:18px;
+
+}
+
+.card-btn{
+
+display:inline-block;
+
+padding:12px 22px;
+
+background:#2f80ff;
+
+border-radius:12px;
+
+font-weight:700;
+
+transition:.3s;
+
+}
+
+.card-btn:hover{
+
+background:#4d97ff;
+
+}
 
 footer{
 
-margin-top:60px;
-padding:25px;
+margin-top:80px;
+
+padding:35px;
+
 text-align:center;
-background:#101624;
-color:#8f98ad;
+
+background:#0b1020;
+
+border-top:1px solid rgba(255,255,255,.08);
+
+color:#97a3bf;
 
 }
 
-/* Responsive */
+@media(max-width:950px){
 
-@media(max-width:700px){
+.hero{
 
-header{
+grid-template-columns:1fr;
 
-font-size:28px;
+text-align:center;
+
+}
+
+.buttons{
+
+justify-content:center;
+
+}
+
+.hero-text h1{
+
+font-size:42px;
+
+}
+
+nav{
+
+display:none;
+
+}
+
+.section-title{
+
+text-align:center;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.hero-text h1{
+
+font-size:34px;
+
+}
+
+.hero-text p{
+
+font-size:17px;
+
+}
+
+.cards{
+
+grid-template-columns:1fr;
 
 }
 
 .card img{
 
-height:200px;
+height:210px;
 
 }
 
-.content h2{
+.logo{
 
 font-size:24px;
+
+}
+
+header{
+
+padding:0 20px;
 
 }
 
 }
 
 </style>
-
-</head>
-
 <body>
 
 <header>
 
-YESUF GAMING
+<div class="logo">YESUF GAMING</div>
+
+<nav>
+<a href="#">Home</a>
+<a href="#games">Games</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
+</nav>
 
 </header>
 
-<div class="container">
+<section class="hero">
 
-<div class="title">
+<div class="hero-text">
 
-Android & PC Games Library
+<h1>
+Download the Best
+<span>Android</span>
+&
+<span>PC Games</span>
+</h1>
+
+<p>
+Welcome to YESUF GAMING.
+Download lightweight and premium games for Android and PC with a modern and fast experience.
+</p>
+
+<div class="buttons">
+
+<a href="#games" class="btn btn-blue">Browse Games</a>
+
+<a href="#" class="btn btn-dark">Latest Games</a>
 
 </div>
+
+</div>
+
+<div class="hero-image">
+
+<img src="https://img.goodfon.com/wallpaper/nbig/2/95/microfoft-windows-10-windows-logo.webp" alt="Hero">
+
+</div>
+
+</section>
+
+<section id="games">
+
+<h2 class="section-title">
+Game Categories
+</h2>
 
 <div class="cards">
 
 <div class="card" onclick="location.href='android.html'">
 
-<img src="https://miro.medium.com/1*XIX50Fdd6vJbIng_n2U5Pw.png">
+<img src="https://miro.medium.com/1*XIX50Fdd6vJbIng_n2U5Pw.png" alt="Android">
 
-<div class="content">
+<div class="overlay"></div>
+
+<div class="card-content">
 
 <h2>Android Games</h2>
 
-<p>Download the best Android games.</p>
+<p>
+Discover the best Android games optimized for every device.
+</p>
+
+<span class="card-btn">
+Open Category
+</span>
 
 </div>
 
@@ -198,53 +525,75 @@ Android & PC Games Library
 
 <div class="card" onclick="location.href='pc.html'">
 
-<img src="https://img.goodfon.com/wallpaper/nbig/2/95/microfoft-windows-10-windows-logo.webp">
+<img src="https://img.goodfon.com/wallpaper/nbig/2/95/microfoft-windows-10-windows-logo.webp" alt="PC">
 
-<div class="content">
+<div class="overlay"></div>
+
+<div class="card-content">
 
 <h2>PC Games</h2>
 
-<p>Download the best PC games.</p>
+<p>
+Browse lightweight and classic PC games ready to download.
+</p>
+
+<span class="card-btn">
+Open Category
+</span>
 
 </div>
 
 </div>
 
 </div>
+
+</section>
+
 <footer>
 
-© 2026 YESUF GAMING - All Rights Reserved
+© 2026 YESUF GAMING — All Rights Reserved
 
 </footer>
 
-</div>
-
 <script>
 
-// تأثير بسيط عند تحميل الصفحة
-window.addEventListener("load", () => {
+const cards = document.querySelectorAll(".card");
 
-    document.querySelectorAll(".card").forEach((card, index) => {
+const observer = new IntersectionObserver(entries=>{
 
-        card.style.opacity = "0";
-        card.style.transform = "translateY(40px)";
+entries.forEach(entry=>{
 
-        setTimeout(() => {
-            card.style.transition = ".6s";
-            card.style.opacity = "1";
-            card.style.transform = "translateY(0)";
-        }, index * 200);
+if(entry.isIntersecting){
 
-    });
+entry.target.animate([
+
+{
+opacity:0,
+transform:"translateY(50px)"
+},
+
+{
+opacity:1,
+transform:"translateY(0)"
+}
+
+],{
+
+duration:700,
+fill:"forwards"
 
 });
 
-// فتح الصفحة عند الضغط
-function openPage(page){
-    window.location.href = page;
 }
+
+});
+
+});
+
+cards.forEach(card=>observer.observe(card));
 
 </script>
 
 </body>
+
 </html>
