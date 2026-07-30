@@ -1,0 +1,1 @@
+document.getElementById("top").onclick=()=>scrollTo({top:0,behavior:"smooth"});
